@@ -3,59 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Minela Block Puzzle</title>
-<meta name="description" content="Minela: a mosaic block puzzle. Place blocks, clear lines, chain combos and wipe the whole board.">
+<title>YerlitAS Labs</title>
+<meta name="description" content="YerlitAS Labs: independent studio crafting relaxing puzzle games and practical everyday apps for Android.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<meta property="og:title" content="Minela: Block Puzzle">
-<meta property="og:description" content="Place blocks, clear lines, chain combos and wipe the whole board. 5,000 Adventure levels, a Daily Puzzle every day and Classic mode.">
-<meta property="og:image" content="https://yerlitaslabs.github.io/og-image.png">
+<meta property="og:title" content="YerlitAS Labs">
+<meta property="og:description" content="Games & apps, crafted stone by stone.">
+<meta property="og:image" content="https://yerlitaslabs.github.io/favicon.png">
 <meta property="og:url" content="https://yerlitaslabs.github.io/">
-<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg: #0d111c; --card: #1a2033; --text: #eef1f8; --muted: #a3abc2; --accent: #ffc46b; --line: #2a3150; }
+  :root { --bg: #0e1320; --card: #1a2033; --text: #eef1f8; --muted: #9fb0cc; --accent: #ffb45e; --line: #2a3150; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    margin: 0; min-height: 100vh; color: var(--text);
+    background: radial-gradient(ellipse at 50% 30%, #232c55 0%, #121833 55%, #080b16 100%) fixed;
     font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     display: flex; align-items: center; justify-content: center;
   }
-  main { max-width: 560px; padding: 40px 16px; text-align: center; }
-  .logo { display: inline-grid; grid-template-columns: repeat(3, 40px); gap: 6px; margin-bottom: 24px; }
-  .logo span { height: 40px; border-radius: 9px; box-shadow: inset 0 -5px 0 rgba(0,0,0,.22); }
-  h1 { font-size: 44px; letter-spacing: 10px; margin: 0; font-weight: 900; }
-  .tag { color: var(--muted); font-size: 18px; margin: 4px 0 28px; }
-  p { color: var(--text); }
-  .play {
-    display: inline-block; margin: 20px 0 32px; padding: 14px 28px; border-radius: 999px;
-    background: var(--accent); color: #141414; font-weight: 800; text-decoration: none;
+  main { width: 100%; max-width: 620px; padding: 40px 16px; text-align: center; }
+  .logo { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 { font-size: 42px; font-weight: 800; margin: 20px 0 0; letter-spacing: .5px; }
+  h1 span { background: linear-gradient(90deg, #ffe29a, #ffb45e, #ff8a5b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .labs { color: var(--muted); letter-spacing: 10px; font-weight: 700; font-size: 15px; margin: 0 0 6px 10px; }
+  .tag { color: var(--muted); margin: 0 0 32px; }
+  .app {
+    display: flex; gap: 16px; align-items: center; text-align: left; text-decoration: none; color: var(--text);
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px;
   }
-  .links a { color: var(--accent); margin: 0 10px; font-weight: 600; }
-  footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+  .app:hover { border-color: var(--accent); }
+  .app img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+  .app b { font-size: 19px; display: block; }
+  .app small { color: var(--muted); font-size: 14px; }
+  .app > span:nth-child(2) { min-width: 0; }
+  .app .go { margin-left: auto; color: var(--accent); font-weight: 800; white-space: nowrap; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 32px; }
+  footer a { color: var(--accent); font-weight: 600; }
 </style>
 </head>
 <body>
 <main>
-  <div class="logo" aria-hidden="true">
-    <span style="background:#ff7f78"></span><span style="background:#ffc46b"></span><span style="background:#6ee7b0"></span>
-    <span style="background:#6cc4ff"></span><span style="background:#6cc4ff"></span><span style="background:#a68bff"></span>
-    <span style="background:#f7a8d8"></span><span style="background:#ff7f78"></span><span style="background:#ffc46b"></span>
-  </div>
-  <h1>MINELA</h1>
-  <p class="tag">Mosaic block puzzle</p>
-  <p>
-    Place blocks, clear lines, chain combos and wipe the whole board. 5,000 Adventure levels, a new Daily Puzzle
-    every day, and Classic mode for endless high scores. Free to play.
-  </p>
-  <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela">Get it on Google Play</a>
-  <div class="links">
-    <a href="terms.html">Terms of Use</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html#tr">Kullanım Şartları</a>
-    <a href="privacy.html#tr">Gizlilik Politikası</a>
-    <a href="mailto:erdemyerlitas@gmail.com">Contact</a>
-  </div>
-  <footer>© 2026 YerlitAS Labs</footer>
+  <img class="logo" src="favicon.png" alt="YerlitAS Labs logo">
+  <h1>Yerlit<span>AS</span></h1>
+  <p class="labs">LABS</p>
+  <p class="tag">Games &amp; apps, crafted stone by stone.</p>
+  <a class="app" href="minela/">
+    <img src="minela/icon.png" alt="">
+    <span><b>Minela: Block Puzzle</b><small>A mosaic block puzzle: 5,000 levels, a Daily Puzzle and Classic mode.</small></span>
+    <span class="go">Open ›</span>
+  </a>
+  <footer>
+    <a href="mailto:erdemyerlitas@gmail.com">Contact</a> · © 2026 YerlitAS Labs
+  </footer>
 </main>
 </body>
 </html>
