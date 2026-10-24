@@ -163,3 +163,6 @@ video.unrulymedia.com, 947824792, RESELLER
 video.unrulymedia.com, 703273072, RESELLER
 video.unrulymedia.com, 201313863, RESELLER
 copper6.com, 766114, RESELLER
+
+# Liftoff Monetize (Vungle) DIRECT line from the Liftoff dashboard, 2026-10-24
+vungle.com, 6adcd8d5eea009f890ee42d7, DIRECT, c107d686becd2d77
