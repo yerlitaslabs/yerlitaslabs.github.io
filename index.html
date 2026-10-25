@@ -5,46 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YerlitAS Labs</title>
 <meta name="description" content="YerlitAS Labs: independent studio crafting relaxing puzzle games and practical everyday apps for Android.">
+<meta name="theme-color" content="#10163A">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="YerlitAS Labs">
 <meta property="og:description" content="Games & apps, crafted stone by stone.">
-<meta property="og:image" content="https://yerlitaslabs.github.io/favicon.png">
+<meta property="og:image" content="https://yerlitaslabs.github.io/og-image.png">
 <meta property="og:url" content="https://yerlitaslabs.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg: #0e1320; --card: #1a2033; --text: #eef1f8; --muted: #9fb0cc; --accent: #ffb45e; --line: #2a3150; }
+  /* Outfit (SIL OFL 1.1, fonts/OFL.txt), served from this site: no third-party font requests. */
+  @font-face { font-family: Outfit; font-weight: 400; font-display: swap; src: url(fonts/outfit-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: Outfit; font-weight: 400; font-display: swap; src: url(fonts/outfit-latin-ext-400.woff2) format("woff2"); unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  @font-face { font-family: Outfit; font-weight: 600; font-display: swap; src: url(fonts/outfit-latin-600.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: Outfit; font-weight: 600; font-display: swap; src: url(fonts/outfit-latin-ext-600.woff2) format("woff2"); unicode-range: U+0100-02AF, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  :root { --text: #FFFFFF; --muted: #9FAACC; --gold: #F5B94A; --card: rgba(255,255,255,.05); --line: rgba(255,255,255,.10); }
   * { box-sizing: border-box; }
+  html { background: #090D20; }
   body {
-    margin: 0; min-height: 100vh; color: var(--text);
-    background: radial-gradient(ellipse at 50% 30%, #232c55 0%, #121833 55%, #080b16 100%) fixed;
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin: 0; min-height: 100vh; color: var(--text); overflow-x: hidden;
+    background: radial-gradient(ellipse at 50% 35%, rgba(124,140,255,.16), transparent 60%),
+                linear-gradient(135deg, #1C2656 0%, #10163A 55%, #090D20 100%) fixed;
+    font: 17px/1.6 Outfit, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     display: flex; align-items: center; justify-content: center;
   }
-  main { width: 100%; max-width: 620px; padding: 40px 16px; text-align: center; }
-  .logo { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
-  h1 { font-size: 42px; font-weight: 800; margin: 20px 0 0; letter-spacing: .5px; }
-  h1 span { background: linear-gradient(90deg, #ffe29a, #ffb45e, #ff8a5b); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .labs { color: var(--muted); letter-spacing: 10px; font-weight: 700; font-size: 15px; margin: 0 0 6px 10px; }
-  .tag { color: var(--muted); margin: 0 0 32px; }
+  /* the faint giant Y of the studio covers, clipped to the viewport */
+  .bg { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
+  .ghost { position: absolute; right: -6vw; top: 50%; height: 118vh; transform: translateY(-46%); opacity: .028; }
+  main { position: relative; width: 100%; max-width: 640px; padding: 48px 16px; text-align: center; }
+  .logo { width: min(420px, 86vw); height: auto; display: block; margin: 0 auto; }
+  .tag { color: var(--muted); font-size: 19px; margin: 18px 0 40px; }
   .app {
-    display: flex; gap: 16px; align-items: center; text-align: left; text-decoration: none; color: var(--text);
+    display: flex; gap: 18px; align-items: center; text-align: left; text-decoration: none; color: var(--text);
     background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px;
+    transition: border-color .15s, transform .15s;
   }
-  .app:hover { border-color: var(--accent); }
+  .app:hover, .app:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
   .app img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
-  .app b { font-size: 19px; display: block; }
-  .app small { color: var(--muted); font-size: 14px; }
+  .app b { font-size: 19px; font-weight: 600; display: block; }
+  .app small { color: var(--muted); font-size: 15px; }
   .app > span:nth-child(2) { min-width: 0; }
-  .app .go { margin-left: auto; color: var(--accent); font-weight: 800; white-space: nowrap; }
-  footer { color: var(--muted); font-size: 14px; margin-top: 32px; }
-  footer a { color: var(--accent); font-weight: 600; }
+  .app .go { margin-left: auto; color: var(--gold); font-weight: 600; white-space: nowrap; }
+  footer { color: var(--muted); font-size: 15px; margin-top: 40px; }
+  footer a { color: var(--gold); font-weight: 600; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+<div class="bg" aria-hidden="true"><svg class="ghost" viewBox="132 120 248 280"><path d="M 132 120 L 206 120 L 256 214 L 306 120 L 380 120 L 292 272 L 292 400 L 220 400 L 220 272 Z" fill="#fff"/></svg></div>
 <main>
-  <img class="logo" src="favicon.png" alt="YerlitAS Labs logo">
-  <h1>Yerlit<span>AS</span></h1>
-  <p class="labs">LABS</p>
+  <h1 style="margin:0"><img class="logo" src="logo.svg" alt="YerlitAS Labs" width="1735" height="600"></h1>
   <p class="tag">Games &amp; apps, crafted stone by stone.</p>
   <a class="app" href="minela/">
     <img src="minela/icon.png" alt="">
