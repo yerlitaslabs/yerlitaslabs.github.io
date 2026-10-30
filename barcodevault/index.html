@@ -22,8 +22,10 @@ main { max-width:880px; margin:0 auto; padding:32px 16px 64px; }
 .hero img { width:112px; height:112px; border-radius:26px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
 h1 { font-size:2.1rem; margin:0; line-height:1.15; }
 .tag { color:var(--muted); margin:6px 0 0; font-size:1.1rem; }
-.cta { display:inline-block; margin-top:18px; background:var(--accent); color:#fff; text-decoration:none; padding:12px 22px; border-radius:999px; font-weight:600; }
-@media (prefers-color-scheme: dark) { .cta { color:#062b28; } }
+/* Official Google Play badge: keep its proportions, only resize it (the image has its own padding). */
+.badge { display:inline-block; margin:12px 0 0 -10px; line-height:0; }
+.badge img { height:80px; width:auto; }
+.l10n .badge img { height:64px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:28px 0; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
 .card h3 { margin:0 0 4px; font-size:1.02rem; }
@@ -42,7 +44,7 @@ footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; co
   <div>
     <h1>BarcodeVault</h1>
     <p class="tag">Offline barcode inventory counting for Android</p>
-    <a class="cta" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault">Free on Google Play</a>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=en"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" width="207" height="80"></a>
   </div>
 </div>
 
@@ -54,7 +56,7 @@ footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; co
   <div class="card"><h3>QR codes &amp; barcodes</h3><p>Create QR codes for links, Wi-Fi and contacts, or EAN, UPC and Code 128 barcodes. Save as PNG, JPG, PDF or SVG, or print.</p></div>
   <div class="card"><h3>Excel &amp; CSV</h3><p>Export any count to Excel (.xlsx) or CSV in one tap. Leading zeros are kept.</p></div>
   <div class="card"><h3>Backups</h3><p>Automatic daily or weekly backups, optionally encrypted with AES-256 and your own password.</p></div>
-  <div class="card"><h3>Private by design</h3><p>No account. Counts, notes, photos and backups stay on your device. Free, supported by ads.</p></div>
+  <div class="card"><h3>Private by design</h3><p>No account. Counts, notes, photos and backups stay on your device. Free with optional short video ads.</p></div>
 </div>
 
 <nav class="lang"><a href="#tr">Türkçe</a><a href="#de">Deutsch</a><a href="#fr">Français</a><a href="#es">Español</a></nav>
@@ -62,23 +64,27 @@ footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; co
 <section class="l10n" id="tr" lang="tr">
 <h2>Türkçe</h2>
 <p>BarcodeVault, Android telefonunuzu depo, mağaza ve envanterler için hızlı bir barkod sayım aracına dönüştürür. Tarayın, sayın, fotoğraf ve PDF'lerden kod okuyun, QR kod ve barkod oluşturun, Excel'e aktarın. Sayım çevrimdışı çalışır, kayıtlarınız cihazınızdan çıkmaz. <a href="https://play.google.com/store/apps/details?id=com.audio.barcodevault">Google Play'de ücretsiz</a>.</p>
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=tr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="165" height="64"></a></p>
 </section>
 <section class="l10n" id="de" lang="de">
 <h2>Deutsch</h2>
 <p>BarcodeVault macht Ihr Android-Smartphone zum schnellen Barcode-Zähler für Lager, Filialen und Inventuren. Scannen, zählen, Codes aus Fotos und PDFs lesen, QR-Codes und Barcodes erstellen und nach Excel exportieren. Das Zählen funktioniert offline, Ihre Einträge verlassen nie Ihr Gerät. <a href="https://play.google.com/store/apps/details?id=com.audio.barcodevault">Kostenlos bei Google Play</a>.</p>
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" alt="Jetzt bei Google Play" width="165" height="64"></a></p>
 </section>
 <section class="l10n" id="fr" lang="fr">
 <h2>Français</h2>
 <p>BarcodeVault transforme votre téléphone Android en compteur de codes-barres rapide pour les entrepôts, magasins et inventaires. Scannez, comptez, lisez les codes de vos photos et PDF, créez des QR codes et des codes-barres, exportez vers Excel. Le comptage fonctionne hors ligne et vos enregistrements restent sur votre appareil. <a href="https://play.google.com/store/apps/details?id=com.audio.barcodevault">Gratuit sur Google Play</a>.</p>
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=fr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="165" height="64"></a></p>
 </section>
 <section class="l10n" id="es" lang="es">
 <h2>Español</h2>
 <p>BarcodeVault convierte tu móvil Android en un contador de códigos de barras rápido para almacenes, tiendas e inventarios. Escanea, cuenta, lee códigos de fotos y PDF, crea códigos QR y de barras y exporta a Excel. El recuento funciona sin conexión y tus registros nunca salen de tu dispositivo. <a href="https://play.google.com/store/apps/details?id=com.audio.barcodevault">Gratis en Google Play</a>.</p>
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="165" height="64"></a></p>
 </section>
 
 <footer>
   <p><a href="privacy-policy.html">Privacy Policy &amp; Terms of Use</a> · Contact: <a href="mailto:erdemyerlitas@gmail.com">erdemyerlitas@gmail.com</a></p>
-  <p class="small">© 2026 YerlitAS Labs. Google Play is a trademark of Google LLC. QR Code is a registered trademark of DENSO WAVE INCORPORATED. Excel is a trademark of Microsoft Corporation.</p>
+  <p class="small">© 2026 YerlitAS Labs. Google Play and the Google Play logo are trademarks of Google LLC. QR Code is a registered trademark of DENSO WAVE INCORPORATED. Excel is a trademark of Microsoft Corporation.</p>
 </footer>
 </main></body>
 </html>
