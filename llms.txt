@@ -1,0 +1,19 @@
+# YerlitAS Labs
+
+> Independent studio making relaxing puzzle games and practical everyday apps for Android. Contact: erdemyerlitas@gmail.com
+
+## Games
+
+- [Tessera: The Light Weaver](https://yerlitaslabs.github.io/tessera/): a calm light and mirror logic puzzle for Android. Turn mirrors, split beams and fuse colors until every socket glows; each solved board becomes a stained-glass window. 1,000 machine-verified levels in ten tiers, a Sky Atlas of 100 constellations (each a live wallpaper), no timer, no lives, no in-app purchases. Free with occasional short ads between screens and optional rewarded videos; no banners. English, Turkish, German, French, Spanish. Android 8.0+. Coming soon to Google Play.
+- [Tessera (Türkçe)](https://yerlitaslabs.github.io/tessera/tr/): the same page in Turkish.
+- [Minela: Block Puzzle](https://yerlitaslabs.github.io/minela/): a mosaic block puzzle with 5,000 levels, a Daily Puzzle and a Classic mode.
+
+## Apps
+
+- [BarcodeVault](https://yerlitaslabs.github.io/barcodevault/): offline barcode inventory counting for Android. Scan, count, create QR codes and export to Excel, CSV or PDF; records stay on the device. On Google Play: https://play.google.com/store/apps/details?id=com.audio.barcodevault
+
+## Policies
+
+- [Tessera privacy policy](https://yerlitaslabs.github.io/tessera/privacy.html): what the game stores and how to delete it.
+- [Minela privacy policy](https://yerlitaslabs.github.io/minela/privacy.html)
+- [BarcodeVault privacy policy](https://yerlitaslabs.github.io/barcodevault/privacy-policy.html)

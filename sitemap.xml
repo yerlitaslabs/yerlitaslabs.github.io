@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://yerlitaslabs.github.io/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://yerlitaslabs.github.io/minela/</loc></url>
+  <url><loc>https://yerlitaslabs.github.io/minela/privacy.html</loc></url>
+  <url><loc>https://yerlitaslabs.github.io/minela/terms.html</loc></url>
+  <url><loc>https://yerlitaslabs.github.io/barcodevault/</loc></url>
+  <url><loc>https://yerlitaslabs.github.io/barcodevault/privacy-policy.html</loc></url>
+  <url>
+    <loc>https://yerlitaslabs.github.io/tessera/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/"/>
+  </url>
+  <url>
+    <loc>https://yerlitaslabs.github.io/tessera/tr/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/"/>
+  </url>
+  <url><loc>https://yerlitaslabs.github.io/tessera/privacy.html</loc><lastmod>2026-10-31</lastmod></url>
+</urlset>

@@ -1,0 +1,5 @@
+# YerlitAS Labs: every crawler and AI agent may read the whole site (game pages, privacy policies).
+User-agent: *
+Allow: /
+
+Sitemap: https://yerlitaslabs.github.io/sitemap.xml
