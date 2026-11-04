@@ -3,15 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Minela Block Puzzle</title>
-<meta name="description" content="Minela: a mosaic block puzzle. Place blocks, clear lines, chain combos and wipe the whole board.">
+<title>Minela: Block Puzzle · a mosaic block puzzle game for Android</title>
+<meta name="description" content="Minela is a relaxing block puzzle game for Android: place blocks on an 8×8 board, clear lines, chain combos and wipe the whole board. 5,000 Adventure levels, a Daily Puzzle and Classic mode.">
+<meta name="theme-color" content="#0d111c">
+<link rel="canonical" href="https://yerlitaslabs.github.io/minela/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
 <meta property="og:title" content="Minela: Block Puzzle">
 <meta property="og:description" content="Place blocks, clear lines, chain combos and wipe the whole board. 5,000 Adventure levels, a Daily Puzzle every day and Classic mode.">
 <meta property="og:image" content="https://yerlitaslabs.github.io/minela/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
 <meta property="og:url" content="https://yerlitaslabs.github.io/minela/">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Minela: Block Puzzle",
+  "alternateName": ["Minela", "Minela: Blok Bulmaca"],
+  "description": "A relaxing mosaic block puzzle: place blocks on an 8×8 board, clear rows and columns, chain combos up to MINELA and wipe the whole board. 5,000 Adventure levels in chapters named after the world's great mosaics, a Daily Puzzle every day and an endless Classic mode.",
+  "url": "https://yerlitaslabs.github.io/minela/",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.audio.minela",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.audio.minela",
+  "image": "https://yerlitaslabs.github.io/minela/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Puzzle",
+  "genre": ["Puzzle", "Block puzzle", "Brain game", "Casual"],
+  "operatingSystem": "Android 8.0 or later",
+  "inLanguage": ["en", "tr", "de", "fr", "es"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
 <style>
   :root { --bg: #0d111c; --card: #1a2033; --text: #eef1f8; --muted: #a3abc2; --accent: #ffc46b; --line: #2a3150; }
   * { box-sizing: border-box; }
@@ -38,6 +65,14 @@
   section.l10n .tag { font-size: 16px; margin: 2px 0 12px; }
   section.l10n .play { margin: 12px 0 18px; }
   .links small { color: var(--muted); }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 28px 0 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 8px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); }
+  .facts span { color: var(--muted); font-size: 14px; }
+  section.faq { text-align: left; margin-top: 28px; }
+  section.faq h2 { font-size: 20px; text-align: center; margin: 0 0 4px; }
+  section.faq h3 { font-size: 16px; margin: 16px 0 2px; color: var(--accent); }
+  section.faq p { margin: 0; color: var(--muted); }
   footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
 </style>
 </head>
@@ -60,6 +95,27 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="mailto:yerlitaslabs@gmail.com">Contact</a>
   </div>
+  <div class="facts">
+    <div><b>5,000</b><span>Adventure levels</span></div>
+    <div><b>250</b><span>mosaic chapters</span></div>
+    <div><b>3</b><span>game modes</span></div>
+    <div><b>40</b><span>achievements</span></div>
+  </div>
+  <section class="faq">
+    <h2>Questions</h2>
+    <h3>What kind of game is Minela?</h3>
+    <p>A block puzzle on an 8×8 board. Drag three pieces at a time onto the board; full rows and columns clear. Clear on move after move to build a combo, all the way to MINELA at ×10.</p>
+    <h3>How many levels are there?</h3>
+    <p>5,000 Adventure levels in 250 chapters, each named after a famous mosaic site such as Zeugma, Ephesus, Isfahan and Kyoto. There is also a Daily Puzzle every day and an endless Classic mode.</p>
+    <h3>Is it free? Are there ads?</h3>
+    <p>Minela is free and has nothing to buy. There are no banners: a short ad shows now and then between games, and rewarded videos play only when you choose them.</p>
+    <h3>Does it need the internet?</h3>
+    <p>Yes, Minela plays online, with up to 15 minutes of offline play a day.</p>
+    <h3>Is my progress saved?</h3>
+    <p>Yes. Sign in with Google Play Games to keep your progress in the cloud, and compete on two leaderboards.</p>
+    <h3>Which languages?</h3>
+    <p>English, Turkish, German, French and Spanish.</p>
+  </section>
   <nav class="lang" aria-label="Languages">
     <a href="#tr" hreflang="tr">Türkçe</a><a href="#de" hreflang="de">Deutsch</a><a href="#fr" hreflang="fr">Français</a><a href="#es" hreflang="es">Español</a>
   </nav>
