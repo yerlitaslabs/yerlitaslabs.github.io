@@ -5,8 +5,8 @@
 ## Games
 
 - [Tessera: The Light Weaver](https://yerlitaslabs.github.io/tessera/): a calm light and mirror logic puzzle for Android. Turn mirrors, split beams and fuse colors until every socket glows; each solved board becomes a stained-glass window. 1,000 machine-verified levels in ten tiers, a Sky Atlas of 100 constellations (each a live wallpaper), no timer, no lives, no in-app purchases. Free with occasional short ads between screens and optional rewarded videos; no banners. English, Turkish, German, French, Spanish. Android 8.0+. Coming soon to Google Play.
-- [Tessera (Türkçe)](https://yerlitaslabs.github.io/tessera/tr/): the same page in Turkish.
-- [Minela: Block Puzzle](https://yerlitaslabs.github.io/minela/): a mosaic block puzzle with 5,000 levels, a Daily Puzzle and a Classic mode.
+- Tessera in other languages: [Türkçe](https://yerlitaslabs.github.io/tessera/tr/), [Deutsch](https://yerlitaslabs.github.io/tessera/de/), [Français](https://yerlitaslabs.github.io/tessera/fr/), [Español](https://yerlitaslabs.github.io/tessera/es/).
+- [Minela: Block Puzzle](https://yerlitaslabs.github.io/minela/): a mosaic block puzzle with 5,000 levels, a Daily Puzzle and a Classic mode. English, Turkish, German, French, Spanish. On Google Play: https://play.google.com/store/apps/details?id=com.audio.minela
 
 ## Apps
 
