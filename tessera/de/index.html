@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera: Der Lichtweber · ein ruhiges Licht- und Spiegelrätsel für Android</title>
+<meta name="description" content="Tessera ist ein ruhiges Logikrätsel für Android: Drehe Spiegel, teile Strahlen und verschmelze Farben, bis jede Fassung leuchtet. 1.000 geprüfte Level, keine Uhr, nichts zu kaufen.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: Der Lichtweber">
+<meta property="og:description" content="Lenke Licht, verschmelze Farben, webe Bleiglas. Ein ruhiges Rätsel für Android, mit einem Daumen spielbar.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/de/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Ein Prisma, das weißes Licht in farbige Strahlen teilt, mit dem Schriftzug Tessera: The Light Weaver">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: Der Lichtweber",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "Ein ruhiges optisches Logikrätsel: Drehe Spiegel, teile Strahlen und verschmelze Farben, bis jede Fassung leuchtet; jedes gelöste Brett wird zu einem Bleiglasfenster. 1.000 geprüfte Level in zehn Stufen.",
+  "url": "https://yerlitaslabs.github.io/tessera/de/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Rätsel",
+  "genre": ["Rätsel", "Logik", "Denkspiel", "Gelegenheitsspiel"],
+  "operatingSystem": "Android 8.0 oder neuer",
+  "inLanguage": ["de", "en", "tr", "fr", "es"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Tessera-Symbol" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">DER LICHTWEBER</div>
+  <p class="lead"><strong>Tessera ist ein ruhiges Licht- und Spiegelrätsel für Android.</strong> Drehe Spiegel, teile Strahlen
+    und verschmelze Farben, bis jede Fassung leuchtet, und sieh zu, wie jedes gelöste Brett zu einem Bleiglasfenster wird.
+    Keine Uhr, keine Leben, nichts zu kaufen.</p>
+  <p class="soon">Bald bei Google Play · Deutsch, English, Türkçe, Français, Español</p>
+
+  <div class="facts">
+    <div><b>1.000</b><span>geprüfte Level</span></div>
+    <div><b>10</b><span>Stufen, jede mit einer neuen Idee</span></div>
+    <div><b>100</b><span>Sternbilder zum Erleuchten</span></div>
+    <div><b>0</b><span>Uhren, Leben oder Käufe</span></div>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Spiegel lenken einen Strahl um, Strahlteiler teilen ihn, Kombinierer verschmelzen Farben (Bernstein und Kobalt ergeben Smaragd), Brücken lassen Strahlen sich kreuzen</li>
+      <li>Jedes Level ist maschinell geprüft: lösbar, mit genau einer kürzesten Lösung; triff sie für drei Sterne</li>
+      <li>Ein Himmelsatlas voller Sternbilder, jedes ein Live-Hintergrund für deinen Startbildschirm</li>
+      <li>Jeder Klang wird live auf einer pentatonischen Skala erzeugt; mit einem Daumen spielbar</li>
+      <li>Keine Banner: ab und zu kurze Werbung zwischen zwei Bildschirmen und Videos, die du für einen Tipp oder einen kostenlosen Verstärker ansehen kannst</li>
+      <li>Optionale Erfolge in Google Play Games; die Rätsel lassen sich auch offline spielen</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>Fragen</h2>
+    <h3>Was für ein Spiel ist Tessera?</h3>
+    <p>Ein Logikrätsel über Licht: Du drehst Spiegel und setzt Prismen so, dass jeder Strahl die Fassung seiner eigenen
+      Farbe erreicht. Es ist ruhig (keine Uhr, keine Leben), aber ein echtes Rätsel: Die späteren Stufen verlangen lange
+      Spiegelketten, geteilte Strahlen und Farbfusionen.</p>
+    <h3>Ist es kostenlos? Gibt es Werbung?</h3>
+    <p>Es ist kostenlos, ohne In-App-Käufe. Es gibt keine Banner; zwischen zwei Bildschirmen kann ab und zu eine kurze
+      Vollbildwerbung erscheinen (nie während eines Rätsels, höchstens alle 90 Sekunden), und du kannst kurze Videos für
+      einen zusätzlichen Tipp oder einen kostenlosen Verstärker ansehen.</p>
+    <h3>Wie viele Level gibt es?</h3>
+    <p>1.000, in zehn Stufen vom einzelnen Spiegel bis zu optischen Matrizen aus verschmolzenen Farben. Jedes zehnte Level
+      ist ein goldgerahmter Schlussstein, das schwerste seines Kapitels.</p>
+    <h3>Kann ich offline spielen?</h3>
+    <p>Ja, die Rätsel lassen sich ohne Internetverbindung spielen. Werbung und Erfolge in Play Games brauchen eine
+      Verbindung.</p>
+    <h3>Auf welchen Geräten läuft es?</h3>
+    <p>Android 8.0 oder neuer, auf Smartphones, Tablets und Foldables (auf großen Bildschirmen auch im Querformat).</p>
+  </section>
+
+  <nav class="lang" aria-label="Sprachen">
+    <a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><b aria-current="page">Deutsch</b><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a>
+  </nav>
+  <p><a href="../privacy.html">Datenschutzerklärung</a> <span class="soon">(auf Englisch)</span></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
+</main>
+</body>
+</html>

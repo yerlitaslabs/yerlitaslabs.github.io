@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera: El Tejedor de luz · un puzle tranquilo de luz y espejos para Android</title>
+<meta name="description" content="Tessera es un puzle de lógica tranquilo para Android: gira espejos, divide haces y funde colores hasta que todos los receptores brillen. 1.000 niveles verificados, sin reloj y nada que comprar.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: El Tejedor de luz">
+<meta property="og:description" content="Dobla la luz, funde colores y teje vitrales. Un puzle tranquilo para Android que se juega con un pulgar.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/es/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Un prisma que divide la luz blanca en haces de colores, con el título Tessera: The Light Weaver">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: El Tejedor de luz",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "Un puzle de lógica óptica y tranquilo: gira espejos, divide haces y funde colores hasta que todos los receptores brillen; cada tablero resuelto se convierte en un vitral. 1.000 niveles verificados en diez etapas.",
+  "url": "https://yerlitaslabs.github.io/tessera/es/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Puzle",
+  "genre": ["Puzle", "Lógica", "Juego de ingenio", "Casual"],
+  "operatingSystem": "Android 8.0 o posterior",
+  "inLanguage": ["es", "en", "tr", "de", "fr"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Icono de Tessera" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">EL TEJEDOR DE LUZ</div>
+  <p class="lead"><strong>Tessera es un puzle tranquilo de luz y espejos para Android.</strong> Gira espejos, divide haces y
+    funde colores hasta que todos los receptores brillen, y mira cómo cada tablero resuelto se convierte en un vitral. Sin
+    reloj, sin vidas, nada que comprar.</p>
+  <p class="soon">Próximamente en Google Play · Español, English, Türkçe, Deutsch, Français</p>
+
+  <div class="facts">
+    <div><b>1.000</b><span>niveles verificados</span></div>
+    <div><b>10</b><span>etapas, cada una con una idea nueva</span></div>
+    <div><b>100</b><span>constelaciones por encender</span></div>
+    <div><b>0</b><span>relojes, vidas o compras</span></div>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Los espejos desvían el haz, los divisores lo parten, los combinadores funden colores (ámbar y cobalto dan esmeralda), los puentes dejan que los haces se crucen</li>
+      <li>Cada nivel está verificado por máquina: tiene solución y una única solución más corta; iguálala para tres estrellas</li>
+      <li>Un Atlas celeste de constelaciones, cada una un fondo animado para tu pantalla de inicio</li>
+      <li>Cada sonido se sintetiza en vivo en una escala pentatónica; se juega con un solo pulgar</li>
+      <li>Sin banners: de vez en cuando un anuncio breve entre pantallas, y vídeos que puedes elegir ver para una pista o un potenciador gratis</li>
+      <li>Logros opcionales de Google Play Games; los acertijos también se juegan sin conexión</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>Preguntas</h2>
+    <h3>¿Qué tipo de juego es Tessera?</h3>
+    <p>Un puzle de lógica sobre la luz: giras espejos y colocas prismas para que cada haz llegue al receptor de su color.
+      Es tranquilo (sin reloj ni vidas), pero es un puzle de verdad: las últimas etapas piden largas cadenas de reflejos,
+      haces divididos y fusiones de color.</p>
+    <h3>¿Es gratis? ¿Tiene anuncios?</h3>
+    <p>Es gratis y no tiene compras dentro de la aplicación. No hay banners; de vez en cuando puede aparecer un anuncio
+      breve a pantalla completa entre pantallas (nunca en mitad de un acertijo, como mucho uno cada 90 segundos), y puedes
+      elegir ver vídeos cortos para una pista extra o un potenciador gratis.</p>
+    <h3>¿Cuántos niveles hay?</h3>
+    <p>1.000, en diez etapas, desde un solo espejo hasta matrices ópticas de colores fundidos. Cada décimo nivel es una
+      Piedra clave con marco dorado, la más difícil de su capítulo.</p>
+    <h3>¿Se puede jugar sin conexión?</h3>
+    <p>Sí, los acertijos se juegan sin conexión a internet. Los anuncios y los logros de Play Games necesitan
+      conexión.</p>
+    <h3>¿En qué dispositivos funciona?</h3>
+    <p>Android 8.0 o posterior, en móviles, tabletas y plegables (en pantallas grandes también gira en horizontal).</p>
+  </section>
+
+  <nav class="lang" aria-label="Idiomas">
+    <a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><b aria-current="page">Español</b>
+  </nav>
+  <p><a href="../privacy.html">Política de privacidad</a> <span class="soon">(en inglés)</span></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
+</main>
+</body>
+</html>

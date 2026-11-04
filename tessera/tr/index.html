@@ -9,6 +9,9 @@
 <link rel="canonical" href="https://yerlitaslabs.github.io/tessera/tr/">
 <link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
 <link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
 <link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
 <link rel="icon" type="image/png" href="../icon.png">
 <meta property="og:type" content="website">
@@ -66,6 +69,8 @@
   li { margin: 4px 0; }
   a { color: var(--accent); }
   .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
   footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
 </style>
 </head>
@@ -116,7 +121,10 @@
     <p>Android 8.0 ve üzeri; telefon, tablet ve katlanabilir cihazlar (büyük ekranlarda yatay da döner).</p>
   </section>
 
-  <p><a href="../">English</a> · <a href="../privacy.html#tr">Gizlilik politikası</a></p>
+  <nav class="lang" aria-label="Diller">
+    <a href="../" hreflang="en" lang="en">English</a><b aria-current="page">Türkçe</b><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a>
+  </nav>
+  <p><a href="../privacy.html#tr">Gizlilik politikası</a></p>
   <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
 </main>
 </body>

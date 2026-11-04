@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera : Le Tisseur de lumière · un jeu de réflexion zen de lumière et de miroirs pour Android</title>
+<meta name="description" content="Tessera est un jeu de réflexion paisible pour Android : tournez des miroirs, divisez des faisceaux et fusionnez des couleurs jusqu'à ce que chaque récepteur s'illumine. 1 000 niveaux vérifiés, sans chrono, rien à acheter.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera : Le Tisseur de lumière">
+<meta property="og:description" content="Courbez la lumière, mêlez les couleurs, tissez des vitraux. Un jeu de réflexion zen pour Android, qui se joue d'un seul pouce.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/fr/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Un prisme qui divise la lumière blanche en faisceaux colorés, avec le titre Tessera: The Light Weaver">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera : Le Tisseur de lumière",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "Un jeu de réflexion optique paisible : tournez des miroirs, divisez des faisceaux et fusionnez des couleurs jusqu'à ce que chaque récepteur s'illumine ; chaque plateau résolu devient un vitrail. 1 000 niveaux vérifiés en dix paliers.",
+  "url": "https://yerlitaslabs.github.io/tessera/fr/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Réflexion",
+  "genre": ["Réflexion", "Logique", "Casse-tête", "Jeu occasionnel"],
+  "operatingSystem": "Android 8.0 ou version ultérieure",
+  "inLanguage": ["fr", "en", "tr", "de", "es"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Icône de Tessera" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">LE TISSEUR DE LUMIÈRE</div>
+  <p class="lead"><strong>Tessera est un jeu de réflexion paisible, de lumière et de miroirs, pour Android.</strong> Tournez
+    des miroirs, divisez des faisceaux et fusionnez des couleurs jusqu'à ce que chaque récepteur s'illumine, et regardez
+    chaque plateau résolu devenir un vitrail. Pas de chrono, pas de vies, rien à acheter.</p>
+  <p class="soon">Bientôt sur Google Play · Français, English, Türkçe, Deutsch, Español</p>
+
+  <div class="facts">
+    <div><b>1&nbsp;000</b><span>niveaux vérifiés</span></div>
+    <div><b>10</b><span>paliers, chacun une idée nouvelle</span></div>
+    <div><b>100</b><span>constellations à allumer</span></div>
+    <div><b>0</b><span>chrono, vie ou achat</span></div>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Les miroirs dévient un faisceau, les séparateurs le divisent, les combinateurs fusionnent les couleurs (l'ambre et le cobalt donnent l'émeraude), les ponts laissent les faisceaux se croiser</li>
+      <li>Chaque niveau est vérifié par la machine&nbsp;: résoluble, avec une seule solution la plus courte&nbsp;; atteignez-la pour trois étoiles</li>
+      <li>Un Atlas céleste de constellations, chacune un fond d'écran animé pour votre écran d'accueil</li>
+      <li>Chaque son est synthétisé en direct sur une gamme pentatonique&nbsp;; se joue d'un seul pouce</li>
+      <li>Pas de bannière&nbsp;: une courte publicité de temps en temps entre deux écrans, et des vidéos à regarder si vous le souhaitez pour un indice ou un bonus gratuit</li>
+      <li>Succès Google Play Games facultatifs&nbsp;; les énigmes se jouent aussi hors ligne</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <h3>Quel genre de jeu est Tessera&nbsp;?</h3>
+    <p>Un jeu de réflexion sur la lumière&nbsp;: vous tournez des miroirs et placez des prismes pour que chaque faisceau
+      atteigne le récepteur de sa couleur. Il est paisible (ni chrono ni vies) mais exigeant&nbsp;: les derniers paliers
+      demandent de longues chaînes de reflets, des faisceaux divisés et des fusions de couleurs.</p>
+    <h3>Est-il gratuit&nbsp;? Y a-t-il des publicités&nbsp;?</h3>
+    <p>Il est gratuit, sans achats intégrés. Pas de bannière&nbsp;; une courte publicité plein écran peut apparaître de
+      temps en temps entre deux écrans (jamais pendant une énigme, au plus une toutes les 90&nbsp;secondes), et vous pouvez
+      choisir de regarder de courtes vidéos pour un indice supplémentaire ou un bonus gratuit.</p>
+    <h3>Combien y a-t-il de niveaux&nbsp;?</h3>
+    <p>1&nbsp;000, en dix paliers, d'un simple miroir jusqu'aux matrices optiques de couleurs fusionnées. Chaque dixième
+      niveau est une Clé de voûte cerclée d'or, la plus difficile de son chapitre.</p>
+    <h3>Peut-on jouer hors ligne&nbsp;?</h3>
+    <p>Oui, les énigmes se jouent sans connexion Internet. Les publicités et les succès Play Games demandent une
+      connexion.</p>
+    <h3>Sur quels appareils fonctionne-t-il&nbsp;?</h3>
+    <p>Android 8.0 ou version ultérieure, sur téléphones, tablettes et appareils pliables (les grands écrans passent aussi
+      en paysage).</p>
+  </section>
+
+  <nav class="lang" aria-label="Langues">
+    <a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><b aria-current="page">Français</b><a href="../es/" hreflang="es" lang="es">Español</a>
+  </nav>
+  <p><a href="../privacy.html">Politique de confidentialité</a> <span class="soon">(en anglais)</span></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
+</main>
+</body>
+</html>
