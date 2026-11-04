@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BarcodeVault: app de inventario con escáner de códigos de barras</title>
+<meta name="description" content="App de inventario para Android: escanea códigos de barras, cuenta tu stock sin conexión y exporta a Excel, CSV o PDF. Sin cuenta: tus datos, en tu móvil.">
+<link rel="canonical" href="https://yerlitaslabs.github.io/barcodevault/es/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/barcodevault/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/barcodevault/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/barcodevault/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/barcodevault/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="apple-touch-icon" href="../icon.png">
+<meta name="theme-color" content="#00695c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://yerlitaslabs.github.io/barcodevault/es/">
+<meta property="og:title" content="BarcodeVault – Inventario con códigos de barras">
+<meta property="og:description" content="Escanea, cuenta y exporta tu stock a Excel, CSV o PDF. Sin conexión y sin cuenta – gratis en Google Play.">
+<meta property="og:image" content="https://yerlitaslabs.github.io/barcodevault/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/es/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
+{"@type":"FAQPage","inLanguage":"es","mainEntity":[
+{"@type":"Question","name":"¿BarcodeVault es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. BarcodeVault es gratis, se financia con anuncios y no tiene suscripción. Los nuevos recuentos, el escaneo de imágenes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis."}},
+{"@type":"Question","name":"¿Funciona sin conexión?","acceptedAnswer":{"@type":"Answer","text":"Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios."}},
+{"@type":"Question","name":"¿Qué tipos de códigos de barras lee?","acceptedAnswer":{"@type":"Answer","text":"22 tipos, entre ellos QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar y la familia GS1 DataBar."}},
+{"@type":"Question","name":"¿Puedo exportar mi inventario a Excel?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total."}},
+{"@type":"Question","name":"¿Dónde se guardan mis datos?","acceptedAnswer":{"@type":"Answer","text":"Solo en tu dispositivo. No hay cuenta ni subida a la nube. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña."}},
+{"@type":"Question","name":"¿Está disponible para iPhone?","acceptedAnswer":{"@type":"Answer","text":"No. BarcodeVault es una app para móviles con Android 8.0 o posterior, disponible en Google Play."}}
+]}
+]}
+</script>
+<style>
+:root { --bg:#f6faf9; --fg:#172121; --muted:#5c6664; --accent:#00695c; --amber:#8a5100; --card:#ffffff; --line:#d7e1df; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f1514; --fg:#dde4e2; --muted:#9aa5a4; --accent:#4fd8c4; --amber:#ffb547; --card:#172020; --line:#2a3634; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:880px; margin:0 auto; padding:32px 16px 64px; }
+.hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; padding:24px 0 8px; }
+.hero img.icon { width:112px; height:112px; border-radius:26px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+h1 { font-size:2.1rem; margin:0; line-height:1.15; }
+.tag { color:var(--muted); margin:6px 0 0; font-size:1.1rem; }
+.badge { display:inline-block; margin:12px 0 0 -10px; line-height:0; }
+.badge img { height:80px; width:auto; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:28px 0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+.card h3 { margin:0 0 4px; font-size:1.02rem; }
+.card p { margin:0; color:var(--muted); font-size:.95rem; }
+h2 { margin-top:36px; font-size:1.3rem; }
+nav.lang { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+nav.lang a, footer a, main p a { color:var(--accent); }
+footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:.9rem; }
+.small { font-size:.85rem; color:var(--muted); }
+section.tools { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:16px; padding:6px 20px 14px; margin:8px 0 28px; }
+section.tools h2 { margin-top:16px; }
+.tools-list, .uses { padding-left:20px; margin:8px 0 10px; }
+.tools-list li, .uses li { margin:4px 0; }
+ol.steps { padding-left:22px; } ol.steps li { margin:6px 0; }
+details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 16px; margin:8px 0; }
+summary { cursor:pointer; font-weight:600; }
+details p { margin:8px 0 2px; color:var(--muted); }
+</style>
+</head>
+<body><main>
+<div class="hero">
+  <img class="icon" src="../icon.png" alt="Icono de la app BarcodeVault" width="112" height="112">
+  <div>
+    <h1>BarcodeVault</h1>
+    <p class="tag">App de inventario con escáner de códigos de barras para Android</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=es&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="207" height="80"></a>
+  </div>
+</div>
+
+<nav class="lang" aria-label="Idioma"><a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="./" hreflang="es" aria-current="page">Español</a></nav>
+
+<p><strong>BarcodeVault es una app de inventario gratuita con escáner de códigos de barras para Android.</strong> Convierte tu móvil en un contador de stock rápido para almacenes, tiendas, trastiendas e inventarios en casa: escanea, cuenta y exporta tu inventario a Excel, CSV o PDF. El recuento funciona sin conexión y tus registros nunca salen de tu dispositivo.</p>
+
+<h2>Ideal para</h2>
+<ul class="uses">
+  <li><strong>Tiendas y comercios</strong> – inventario, recuento de stock y control de entregas</li>
+  <li><strong>Almacenes y trastiendas</strong> – existencias por ubicación, pasillo y estante</li>
+  <li><strong>Oficinas e IT</strong> – control de activos con números de serie (los duplicados se rechazan con aviso)</li>
+  <li><strong>Pequeños negocios</strong> – vendedores online, cafeterías, farmacias, bibliotecas y colecciones</li>
+</ul>
+
+<div class="grid">
+  <div class="card"><h3>Escanea y cuenta</h3><p>Escaneo continuo con sonido y vibración. Elige qué pasa con los códigos repetidos: sumar a la cantidad, avisar o añadir otra fila. Toca Terminar para guardar o compartir al momento.</p></div>
+  <div class="card"><h3>Excel, CSV y PDF</h3><p>Exporta cualquier recuento a Excel (.xlsx), CSV o un informe PDF listo para imprimir con un toque. Se conservan los ceros iniciales.</p></div>
+  <div class="card"><h3>Códigos QR y de barras</h3><p>Crea códigos QR para enlaces, Wi-Fi y contactos, o códigos EAN, UPC y Code 128. Guarda en PNG, JPG, PDF o SVG, o imprime.</p></div>
+  <div class="card"><h3>Fotos y PDF</h3><p>Lee todos los códigos de barras y QR de una foto de la galería o de un PDF y añádelos a un recuento.</p></div>
+  <div class="card"><h3>Copias y recordatorios</h3><p>Copias de seguridad automáticas diarias o semanales, cifrables con AES-256 y tu contraseña. Recordatorios opcionales de tus recuentos.</p></div>
+  <div class="card"><h3>Privacidad primero</h3><p>Sin cuenta. Recuentos, notas, fotos y copias se quedan en tu dispositivo. Gratis, con anuncios.</p></div>
+</div>
+
+<h2>Cómo hacer inventario con el móvil</h2>
+<ol class="steps">
+  <li><strong>Crea un recuento</strong> y ponle nombre, por ejemplo «Tienda 1 – noviembre».</li>
+  <li><strong>Escanea los códigos de barras</strong> con la cámara. Cada escaneo suma 1; escribe un número para cajas y añade una ubicación o una nota.</li>
+  <li><strong>Toca Terminar</strong> y exporta el recuento a Excel, CSV o PDF para tu gestoría o tu ERP.</li>
+</ol>
+
+<section class="tools" id="tools">
+<h2>Herramientas gratuitas para inventarios grandes</h2>
+<p>Sin suscripción: todas las herramientas son gratis. Igual que la creación de códigos QR y de barras, cada una se desbloquea durante 1 hora con un vídeo corto.</p>
+<ul class="tools-list">
+  <li><strong>Escaneo de fotos y PDF</strong> – lee todos los códigos de una foto o PDF y añádelos a un recuento.</li>
+  <li><strong>Excel combinado</strong> – varios recuentos en un libro, con totales por código de barras.</li>
+  <li><strong>Búsqueda global</strong> – escribe o escanea un código y mira en qué recuentos aparece, con cantidades y ubicaciones.</li>
+  <li><strong>Comparar con el stock esperado</strong> – importa tu lista (Excel o CSV) y ve faltantes, sobrantes y diferencias.</li>
+  <li><strong>Impresión de etiquetas</strong> – imprime muchos códigos de barras o QR en hojas de etiquetas A4 en PDF.</li>
+</ul>
+<p class="small">Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis y nunca requiere vídeo.</p>
+</section>
+
+<h2 id="faq">Preguntas frecuentes</h2>
+<details><summary>¿BarcodeVault es gratis?</summary><p>Sí. BarcodeVault es gratis, se financia con anuncios y no tiene suscripción. Los nuevos recuentos, el escaneo de imágenes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis.</p></details>
+<details><summary>¿Funciona sin conexión?</summary><p>Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios.</p></details>
+<details><summary>¿Qué tipos de códigos de barras lee?</summary><p>22 tipos, entre ellos QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar y la familia GS1 DataBar.</p></details>
+<details><summary>¿Puedo exportar mi inventario a Excel?</summary><p>Sí. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total.</p></details>
+<details><summary>¿Dónde se guardan mis datos?</summary><p>Solo en tu dispositivo. No hay cuenta ni subida a la nube. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña.</p></details>
+<details><summary>¿Está disponible para iPhone?</summary><p>No. BarcodeVault es una app para móviles con Android 8.0 o posterior, disponible en Google Play.</p></details>
+
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=es&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="207" height="80"></a></p>
+
+<footer>
+  <p><a href="../privacy-policy.html">Política de privacidad y condiciones de uso (en inglés)</a> · Contacto: <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a> · <a href="https://yerlitaslabs.github.io/">YerlitAS Labs</a></p>
+  <p class="small">© 2026 YerlitAS Labs. Google Play y el logotipo de Google Play son marcas de Google LLC. QR Code es una marca registrada de DENSO WAVE INCORPORATED. Excel es una marca de Microsoft Corporation.</p>
+</footer>
+</main></body>
+</html>

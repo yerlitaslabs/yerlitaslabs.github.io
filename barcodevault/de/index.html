@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BarcodeVault: Inventur-App mit Barcode-Scanner für Android</title>
+<meta name="description" content="Inventur-App für Android: Barcodes scannen, Bestand offline zählen und als Excel, CSV oder PDF exportieren. Kein Konto – Ihre Daten bleiben auf dem Handy.">
+<link rel="canonical" href="https://yerlitaslabs.github.io/barcodevault/de/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/barcodevault/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/barcodevault/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/barcodevault/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/barcodevault/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="apple-touch-icon" href="../icon.png">
+<meta name="theme-color" content="#00695c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://yerlitaslabs.github.io/barcodevault/de/">
+<meta property="og:title" content="BarcodeVault – Inventur per Barcode">
+<meta property="og:description" content="Scannen, zählen und den Bestand als Excel, CSV oder PDF exportieren. Offline, ohne Konto – kostenlos bei Google Play.">
+<meta property="og:image" content="https://yerlitaslabs.github.io/barcodevault/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/de/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
+{"@type":"FAQPage","inLanguage":"de","mainEntity":[
+{"@type":"Question","name":"Ist BarcodeVault kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja. BarcodeVault ist kostenlos, wird durch Werbung finanziert und hat kein Abo. Neue Zählungen, Bildscan, QR- und Barcode-Erstellung sowie die Werkzeuge werden nach einem kurzen Video für 1 Stunde freigeschaltet. Zählungen fortsetzen, Exportieren und Sichern sind immer kostenlos."}},
+{"@type":"Question","name":"Funktioniert die App offline?","acceptedAnswer":{"@type":"Answer","text":"Ja. Scannen, Zählen, Exportieren und Sichern funktionieren ohne Internet. Die Barcode-Erkennung läuft auf dem Smartphone; das Internet wird nur für Werbung genutzt."}},
+{"@type":"Question","name":"Welche Barcode-Typen werden gelesen?","acceptedAnswer":{"@type":"Answer","text":"22 Typen, darunter QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar und die GS1-DataBar-Familie."}},
+{"@type":"Question","name":"Kann ich die Inventur nach Excel exportieren?","acceptedAnswer":{"@type":"Answer","text":"Ja. Jede Zählung lässt sich als Excel (.xlsx), CSV oder druckfertiger PDF-Bericht speichern oder teilen. Führende Nullen bleiben erhalten, gleiche Barcodes können mit Gesamtmenge zu einer Zeile zusammengefasst werden."}},
+{"@type":"Question","name":"Wo werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nur auf Ihrem Gerät. Es gibt kein Konto und keinen Cloud-Upload. Sicherungsdateien können optional mit AES-256 und Ihrem eigenen Passwort verschlüsselt werden."}},
+{"@type":"Question","name":"Gibt es BarcodeVault für das iPhone?","acceptedAnswer":{"@type":"Answer","text":"Nein. BarcodeVault ist eine Android-App für Smartphones ab Android 8.0 und bei Google Play erhältlich."}}
+]}
+]}
+</script>
+<style>
+:root { --bg:#f6faf9; --fg:#172121; --muted:#5c6664; --accent:#00695c; --amber:#8a5100; --card:#ffffff; --line:#d7e1df; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f1514; --fg:#dde4e2; --muted:#9aa5a4; --accent:#4fd8c4; --amber:#ffb547; --card:#172020; --line:#2a3634; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:880px; margin:0 auto; padding:32px 16px 64px; }
+.hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; padding:24px 0 8px; }
+.hero img.icon { width:112px; height:112px; border-radius:26px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+h1 { font-size:2.1rem; margin:0; line-height:1.15; }
+.tag { color:var(--muted); margin:6px 0 0; font-size:1.1rem; }
+.badge { display:inline-block; margin:12px 0 0 -10px; line-height:0; }
+.badge img { height:80px; width:auto; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:28px 0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+.card h3 { margin:0 0 4px; font-size:1.02rem; }
+.card p { margin:0; color:var(--muted); font-size:.95rem; }
+h2 { margin-top:36px; font-size:1.3rem; }
+nav.lang { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+nav.lang a, footer a, main p a { color:var(--accent); }
+footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:.9rem; }
+.small { font-size:.85rem; color:var(--muted); }
+section.tools { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:16px; padding:6px 20px 14px; margin:8px 0 28px; }
+section.tools h2 { margin-top:16px; }
+.tools-list, .uses { padding-left:20px; margin:8px 0 10px; }
+.tools-list li, .uses li { margin:4px 0; }
+ol.steps { padding-left:22px; } ol.steps li { margin:6px 0; }
+details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 16px; margin:8px 0; }
+summary { cursor:pointer; font-weight:600; }
+details p { margin:8px 0 2px; color:var(--muted); }
+</style>
+</head>
+<body><main>
+<div class="hero">
+  <img class="icon" src="../icon.png" alt="BarcodeVault App-Symbol" width="112" height="112">
+  <div>
+    <h1>BarcodeVault</h1>
+    <p class="tag">Inventur-App mit Barcode-Scanner für Android – offline zählen</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=de&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" alt="Jetzt bei Google Play" width="207" height="80"></a>
+  </div>
+</div>
+
+<nav class="lang" aria-label="Sprache"><a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="./" hreflang="de" aria-current="page">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a></nav>
+
+<p><strong>BarcodeVault ist eine kostenlose Inventur-App mit Barcode-Scanner für Android.</strong> Sie macht Ihr Smartphone zum schnellen Bestandszähler für Lager, Filialen, Materialräume und die Inventur zu Hause: scannen, zählen und die Inventur als Excel, CSV oder PDF exportieren. Das Zählen funktioniert offline, und Ihre Einträge verlassen nie Ihr Gerät.</p>
+
+<h2>Ideal für</h2>
+<ul class="uses">
+  <li><strong>Läden und Einzelhandel</strong> – Inventur, Bestandszählung und Wareneingangskontrolle</li>
+  <li><strong>Lager und Materialräume</strong> – Bestand nach Ort, Gang und Regal</li>
+  <li><strong>Büro und IT</strong> – Inventarisierung mit Seriennummern (doppelte Scans werden mit Warnung abgelehnt)</li>
+  <li><strong>Kleine Unternehmen</strong> – Online-Händler, Cafés, Apotheken, Bibliotheken und Sammlungen</li>
+</ul>
+
+<div class="grid">
+  <div class="card"><h3>Scannen &amp; zählen</h3><p>Fortlaufendes Scannen mit Ton und Vibration. Legen Sie fest, was bei wiederholten Codes passiert: Menge erhöhen, warnen oder eigene Zeile. Mit „Fertig“ direkt speichern oder teilen.</p></div>
+  <div class="card"><h3>Excel, CSV &amp; PDF</h3><p>Jede Zählung mit einem Tipp als Excel (.xlsx), CSV oder druckfertigen PDF-Bericht exportieren. Führende Nullen bleiben erhalten.</p></div>
+  <div class="card"><h3>QR-Codes &amp; Barcodes</h3><p>QR-Codes für Links, WLAN und Kontakte oder EAN-, UPC- und Code-128-Barcodes erstellen. Als PNG, JPG, PDF oder SVG speichern oder drucken.</p></div>
+  <div class="card"><h3>Fotos &amp; PDFs</h3><p>Alle Barcodes und QR-Codes in einem Foto aus der Galerie oder in einem PDF lesen und zur Zählung hinzufügen.</p></div>
+  <div class="card"><h3>Sicherung &amp; Erinnerungen</h3><p>Automatische tägliche oder wöchentliche Sicherung, optional mit AES-256 und eigenem Passwort verschlüsselt. Optionale Erinnerungen an Ihre Zählungen.</p></div>
+  <div class="card"><h3>Datenschutz zuerst</h3><p>Kein Konto. Zählungen, Notizen, Fotos und Sicherungen bleiben auf Ihrem Gerät. Kostenlos, durch Werbung finanziert.</p></div>
+</div>
+
+<h2>So machen Sie Inventur mit dem Smartphone</h2>
+<ol class="steps">
+  <li><strong>Neue Zählung starten</strong> und benennen, zum Beispiel „Filiale 1 – November“.</li>
+  <li><strong>Barcodes mit der Kamera scannen.</strong> Jeder Scan erhöht die Menge um 1; für Kartons eine Zahl eingeben, Ort oder Notiz hinzufügen.</li>
+  <li><strong>Auf „Fertig“ tippen</strong> und die Zählung als Excel, CSV oder PDF speichern oder an Buchhaltung oder Warenwirtschaft senden.</li>
+</ol>
+
+<section class="tools" id="tools">
+<h2>Kostenlose Werkzeuge für größere Inventuren</h2>
+<p>Kein Abo: Alle Werkzeuge sind kostenlos. Wie die QR-Code- und Barcode-Erstellung wird jedes nach einem kurzen Video für 1 Stunde freigeschaltet.</p>
+<ul class="tools-list">
+  <li><strong>Fotos &amp; PDFs scannen</strong> – alle Codes in einem Foto oder PDF lesen und zur Zählung hinzufügen.</li>
+  <li><strong>Sammel-Excel</strong> – mehrere Zählungen in einer Arbeitsmappe, mit Summen je Barcode.</li>
+  <li><strong>Suche über alle Zählungen</strong> – Barcode eingeben oder scannen und sehen, in welchen Zählungen er mit welcher Menge und an welchem Ort vorkommt.</li>
+  <li><strong>Soll-Ist-Vergleich</strong> – Bestandsliste (Excel oder CSV) importieren und fehlende, zusätzliche und abweichende Mengen sehen.</li>
+  <li><strong>Etikettendruck</strong> – viele Barcodes oder QR-Codes auf A4-Etikettenbögen als PDF drucken.</li>
+</ul>
+<p class="small">Zählungen fortsetzen, Exportieren und Sichern sind immer kostenlos und brauchen nie ein Video.</p>
+</section>
+
+<h2 id="faq">Häufige Fragen</h2>
+<details><summary>Ist BarcodeVault kostenlos?</summary><p>Ja. BarcodeVault ist kostenlos, wird durch Werbung finanziert und hat kein Abo. Neue Zählungen, Bildscan, QR- und Barcode-Erstellung sowie die Werkzeuge werden nach einem kurzen Video für 1 Stunde freigeschaltet. Zählungen fortsetzen, Exportieren und Sichern sind immer kostenlos.</p></details>
+<details><summary>Funktioniert die App offline?</summary><p>Ja. Scannen, Zählen, Exportieren und Sichern funktionieren ohne Internet. Die Barcode-Erkennung läuft auf dem Smartphone; das Internet wird nur für Werbung genutzt.</p></details>
+<details><summary>Welche Barcode-Typen werden gelesen?</summary><p>22 Typen, darunter QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar und die GS1-DataBar-Familie.</p></details>
+<details><summary>Kann ich die Inventur nach Excel exportieren?</summary><p>Ja. Jede Zählung lässt sich als Excel (.xlsx), CSV oder druckfertiger PDF-Bericht speichern oder teilen. Führende Nullen bleiben erhalten, gleiche Barcodes können mit Gesamtmenge zu einer Zeile zusammengefasst werden.</p></details>
+<details><summary>Wo werden meine Daten gespeichert?</summary><p>Nur auf Ihrem Gerät. Es gibt kein Konto und keinen Cloud-Upload. Sicherungsdateien können optional mit AES-256 und Ihrem eigenen Passwort verschlüsselt werden.</p></details>
+<details><summary>Gibt es BarcodeVault für das iPhone?</summary><p>Nein. BarcodeVault ist eine Android-App für Smartphones ab Android 8.0 und bei Google Play erhältlich.</p></details>
+
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=de&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_de"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" alt="Jetzt bei Google Play" width="207" height="80"></a></p>
+
+<footer>
+  <p><a href="../privacy-policy.html">Datenschutzerklärung &amp; Nutzungsbedingungen (Englisch)</a> · Kontakt: <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a> · <a href="https://yerlitaslabs.github.io/">YerlitAS Labs</a></p>
+  <p class="small">© 2026 YerlitAS Labs. Google Play und das Google Play-Logo sind Marken von Google LLC. QR Code ist eine eingetragene Marke von DENSO WAVE INCORPORATED. Excel ist eine Marke der Microsoft Corporation.</p>
+</footer>
+</main></body>
+</html>

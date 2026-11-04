@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BarcodeVault: Barkodla Stok Sayımı ve Envanter Uygulaması</title>
+<meta name="description" content="Android için stok sayımı uygulaması: barkod okuyucuyla çevrimdışı sayın, Excel, CSV ya da PDF olarak aktarın. Hesap yok, verileriniz telefonunuzda kalır.">
+<link rel="canonical" href="https://yerlitaslabs.github.io/barcodevault/tr/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/barcodevault/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/barcodevault/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/barcodevault/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/barcodevault/es/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/barcodevault/">
+<link rel="icon" type="image/png" href="../icon.png">
+<link rel="apple-touch-icon" href="../icon.png">
+<meta name="theme-color" content="#00695c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://yerlitaslabs.github.io/barcodevault/tr/">
+<meta property="og:title" content="BarcodeVault – Barkodla stok sayımı">
+<meta property="og:description" content="Tarayın, sayın, stoklarınızı Excel, CSV ya da PDF olarak aktarın. Çevrimdışı, hesap yok – Google Play'de ücretsiz.">
+<meta property="og:image" content="https://yerlitaslabs.github.io/barcodevault/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","alternateName":"BarcodeVault: Stok Sayımı","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/tr/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
+{"@type":"FAQPage","inLanguage":"tr","mainEntity":[
+{"@type":"Question","name":"BarcodeVault ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. BarcodeVault ücretsizdir, reklamlarla desteklenir ve abonelik yoktur. Yeni sayım, görüntü tarama, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir."}},
+{"@type":"Question","name":"İnternetsiz çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar için kullanılır."}},
+{"@type":"Question","name":"Hangi barkod türlerini okur?","acceptedAnswer":{"@type":"Answer","text":"QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar ve GS1 DataBar ailesi dahil 22 tür."}},
+{"@type":"Question","name":"Stok sayımını Excel'e aktarabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir."}},
+{"@type":"Question","name":"Verilerim nerede saklanıyor?","acceptedAnswer":{"@type":"Answer","text":"Yalnızca cihazınızda. Hesap ve buluta yükleme yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir."}},
+{"@type":"Question","name":"iPhone'da var mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. BarcodeVault, Android 8.0 ve üzeri telefonlar için Google Play'de sunulan bir Android uygulamasıdır."}}
+]}
+]}
+</script>
+<style>
+:root { --bg:#f6faf9; --fg:#172121; --muted:#5c6664; --accent:#00695c; --amber:#8a5100; --card:#ffffff; --line:#d7e1df; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f1514; --fg:#dde4e2; --muted:#9aa5a4; --accent:#4fd8c4; --amber:#ffb547; --card:#172020; --line:#2a3634; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:880px; margin:0 auto; padding:32px 16px 64px; }
+.hero { display:flex; gap:24px; align-items:center; flex-wrap:wrap; padding:24px 0 8px; }
+.hero img.icon { width:112px; height:112px; border-radius:26px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+h1 { font-size:2.1rem; margin:0; line-height:1.15; }
+.tag { color:var(--muted); margin:6px 0 0; font-size:1.1rem; }
+.badge { display:inline-block; margin:12px 0 0 -10px; line-height:0; }
+.badge img { height:80px; width:auto; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; margin:28px 0; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+.card h3 { margin:0 0 4px; font-size:1.02rem; }
+.card p { margin:0; color:var(--muted); font-size:.95rem; }
+h2 { margin-top:36px; font-size:1.3rem; }
+nav.lang { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+nav.lang a, footer a, main p a { color:var(--accent); }
+footer { margin-top:48px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:.9rem; }
+.small { font-size:.85rem; color:var(--muted); }
+section.tools { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:16px; padding:6px 20px 14px; margin:8px 0 28px; }
+section.tools h2 { margin-top:16px; }
+.tools-list, .uses { padding-left:20px; margin:8px 0 10px; }
+.tools-list li, .uses li { margin:4px 0; }
+ol.steps { padding-left:22px; } ol.steps li { margin:6px 0; }
+details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 16px; margin:8px 0; }
+summary { cursor:pointer; font-weight:600; }
+details p { margin:8px 0 2px; color:var(--muted); }
+</style>
+</head>
+<body><main>
+<div class="hero">
+  <img class="icon" src="../icon.png" alt="BarcodeVault uygulama simgesi" width="112" height="112">
+  <div>
+    <h1>BarcodeVault</h1>
+    <p class="tag">Android için barkodla stok sayımı ve envanter uygulaması</p>
+    <a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=tr&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_tr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="207" height="80"></a>
+  </div>
+</div>
+
+<nav class="lang" aria-label="Dil"><a href="../" hreflang="en" lang="en">English</a><a href="./" hreflang="tr" aria-current="page">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a></nav>
+
+<p><strong>BarcodeVault, Android için ücretsiz bir stok sayımı ve barkod okuyucu uygulamasıdır.</strong> Telefonunuzu depo, mağaza, ambar ve ev envanteri için hızlı bir sayım aracına dönüştürür: tarayın, sayın, stok sayımınızı Excel, CSV ya da PDF olarak dışa aktarın. Sayım çevrimdışı çalışır ve kayıtlarınız cihazınızdan hiç çıkmaz.</p>
+
+<h2>Kimler için</h2>
+<ul class="uses">
+  <li><strong>Mağaza ve perakende</strong> – stok sayımı, envanter sayımı ve mal kabul kontrolü</li>
+  <li><strong>Depo ve ambar</strong> – konuma, koridora ve rafa göre envanter</li>
+  <li><strong>Ofis ve BT</strong> – seri numarasıyla demirbaş takibi (tekrar okutulan kod uyarıyla reddedilir)</li>
+  <li><strong>Küçük işletmeler</strong> – e-ticaret satıcıları, kafeler, eczaneler, kütüphaneler ve ev koleksiyonları</li>
+</ul>
+
+<div class="grid">
+  <div class="card"><h3>Tara ve say</h3><p>Ses ve titreşimle kesintisiz tarama. Tekrar okutulan kodlarda ne olacağını seçin: miktarı artır, uyar ya da ayrı satır ekle. Bitir'e dokunup doğrudan kaydedin veya paylaşın.</p></div>
+  <div class="card"><h3>Excel, CSV ve PDF</h3><p>Her sayımı tek dokunuşla Excel (.xlsx), CSV ya da yazdırmaya hazır PDF rapor olarak aktarın. Baştaki sıfırlar korunur.</p></div>
+  <div class="card"><h3>QR kod ve barkod</h3><p>Bağlantı, Wi-Fi ve kişi kartı için QR kod; EAN, UPC ve Code 128 barkodları oluşturun. PNG, JPG, PDF ya da SVG olarak kaydedin veya yazdırın.</p></div>
+  <div class="card"><h3>Fotoğraf ve PDF</h3><p>Galerideki bir fotoğraftaki ya da PDF belgesindeki tüm barkod ve QR kodları okuyup sayıma ekleyin.</p></div>
+  <div class="card"><h3>Yedek ve hatırlatma</h3><p>Günlük ya da haftalık otomatik yedek; isterseniz kendi şifrenizle AES-256 şifreleme. Kendi sayımlarınız için isteğe bağlı hatırlatmalar.</p></div>
+  <div class="card"><h3>Gizlilik öncelikli</h3><p>Hesap yok. Sayımlar, notlar, fotoğraflar ve yedekler cihazınızda kalır. Ücretsiz, reklamlarla desteklenir.</p></div>
+</div>
+
+<h2>Telefonla stok sayımı nasıl yapılır?</h2>
+<ol class="steps">
+  <li><strong>Yeni sayım başlatın</strong> ve bir ad verin, örneğin “Mağaza 1 – Kasım”.</li>
+  <li><strong>Barkodları kamerayla tarayın.</strong> Her okutma miktarı 1 artırır; koliler için sayı yazın, konum ya da not ekleyin.</li>
+  <li><strong>Bitir'e dokunun</strong> ve sayımı Excel, CSV ya da PDF olarak kaydedin veya muhasebecinize gönderin.</li>
+</ol>
+
+<section class="tools" id="tools">
+<h2>Büyük envanterler için ücretsiz araçlar</h2>
+<p>Abonelik yok: tüm araçlar ücretsiz. QR kod ve barkod oluşturma gibi her biri kısa bir videodan sonra 1 saatliğine açılır.</p>
+<ul class="tools-list">
+  <li><strong>Fotoğraf ve PDF tarama</strong> – bir fotoğraftaki ya da PDF'teki tüm kodları okuyup sayıma ekleyin.</li>
+  <li><strong>Toplu Excel</strong> – birden çok sayımı, barkod başına toplamlarla tek bir çalışma kitabına aktarın.</li>
+  <li><strong>Tüm sayımlarda ara</strong> – bir barkodu yazın ya da okutun; hangi sayımlarda, hangi miktar ve konumda olduğunu görün.</li>
+  <li><strong>Beklenen stokla karşılaştır</strong> – stok listenizi (Excel ya da CSV) içe aktarın; eksik, fazla ve farklı miktarları görün.</li>
+  <li><strong>Toplu etiket yazdırma</strong> – çok sayıda barkod ya da QR kodu A4 etiket sayfalarına PDF olarak basın.</li>
+</ul>
+<p class="small">Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir ve video gerektirmez.</p>
+</section>
+
+<h2 id="sss">Sık sorulan sorular</h2>
+<details><summary>BarcodeVault ücretsiz mi?</summary><p>Evet. BarcodeVault ücretsizdir, reklamlarla desteklenir ve abonelik yoktur. Yeni sayım, görüntü tarama, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir.</p></details>
+<details><summary>İnternetsiz çalışır mı?</summary><p>Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar için kullanılır.</p></details>
+<details><summary>Hangi barkod türlerini okur?</summary><p>QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar ve GS1 DataBar ailesi dahil 22 tür.</p></details>
+<details><summary>Stok sayımını Excel'e aktarabilir miyim?</summary><p>Evet. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir.</p></details>
+<details><summary>Verilerim nerede saklanıyor?</summary><p>Yalnızca cihazınızda. Hesap ve buluta yükleme yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir.</p></details>
+<details><summary>iPhone'da var mı?</summary><p>Hayır. BarcodeVault, Android 8.0 ve üzeri telefonlar için Google Play'de sunulan bir Android uygulamasıdır.</p></details>
+
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=tr&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_tr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="207" height="80"></a></p>
+
+<footer>
+  <p><a href="../privacy-policy.html#privacy-tr">Gizlilik Politikası ve Kullanım Koşulları</a> · İletişim: <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a> · <a href="https://yerlitaslabs.github.io/">YerlitAS Labs</a></p>
+  <p class="small">© 2026 YerlitAS Labs. Google Play ve Google Play logosu Google LLC'nin ticari markalarıdır. QR Code, DENSO WAVE INCORPORATED'ın tescilli ticari markasıdır. Excel, Microsoft Corporation'ın ticari markasıdır.</p>
+</footer>
+</main></body>
+</html>
