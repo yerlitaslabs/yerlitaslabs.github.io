@@ -10,7 +10,8 @@
 
 ## Apps
 
-- [BarcodeVault](https://yerlitaslabs.github.io/barcodevault/): offline barcode inventory counting for Android. Scan, count, create QR codes and export to Excel, CSV or PDF; records stay on the device. On Google Play: https://play.google.com/store/apps/details?id=com.audio.barcodevault
+- [BarcodeVault](https://yerlitaslabs.github.io/barcodevault/): an inventory app and barcode scanner for Android, made for stock counts (stocktaking) in shops, warehouses, stockrooms, offices (IT asset tracking with serial numbers) and home collections. Scan 22 barcode types with the camera (QR Code, Data Matrix, PDF417, Aztec, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, ITF, GS1 DataBar and more), count quantities with per-count duplicate rules (add to quantity, reject and warn, or separate row), add locations and notes, then export to Excel (.xlsx), CSV or a printable PDF report. Also reads barcodes from photos and PDF files, creates QR codes and barcodes (PNG, JPG, PDF, SVG), prints A4 label sheets, searches across all counts and compares a count with an expected stock list (Excel or CSV). Works offline, no account; data stays on the device, with optional AES-256 encrypted backups. Free and ad-supported, no subscription: new counts, image scanning, code creation and the tools open for 1 hour after a short video; continuing a count, exporting and backups are always free. English, Turkish, German, French, Spanish. Android 8.0+. On Google Play: https://play.google.com/store/apps/details?id=com.audio.barcodevault
+- BarcodeVault in other languages: [Türkçe](https://yerlitaslabs.github.io/barcodevault/tr/), [Deutsch](https://yerlitaslabs.github.io/barcodevault/de/), [Français](https://yerlitaslabs.github.io/barcodevault/fr/), [Español](https://yerlitaslabs.github.io/barcodevault/es/).
 
 ## Policies
 
