@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera: Işık Dokuyucu · Android için sakin bir ışık ve ayna bulmacası</title>
+<meta name="description" content="Tessera, Android için sakin bir zekâ bulmacası: aynaları döndür, ışınları böl, renkleri birleştir; her soket yandığında tahta vitraya dönüşür. 1000 doğrulanmış seviye, süre yok, satın alma yok.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: Işık Dokuyucu">
+<meta property="og:description" content="Işığı bük, renkleri birleştir, vitray ör. Tek başparmakla oynanan sakin bir Android bulmacası.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/tr/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Beyaz ışığı renkli ışınlara ayıran bir prizma ve Tessera: The Light Weaver yazısı">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Oyun Google Play'de yayımlanınca aşağıya mağaza bağlantısıyla "installUrl" ve "sameAs" eklenecek. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: Işık Dokuyucu",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "Sakin bir optik zekâ bulmacası: aynaları döndür, ışınları böl, renkleri birleştir; her soket yandığında çözülen tahta bir vitraya dönüşür. On aşamada 1000 doğrulanmış seviye.",
+  "url": "https://yerlitaslabs.github.io/tessera/tr/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Bulmaca",
+  "genre": ["Bulmaca", "Mantık", "Zekâ oyunu", "Gündelik"],
+  "operatingSystem": "Android 8.0 ve üzeri",
+  "inLanguage": ["tr", "en", "de", "fr", "es"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "erdemyerlitas@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Tessera simgesi" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">IŞIK DOKUYUCU</div>
+  <p class="lead"><strong>Tessera, Android için sakin bir ışık ve ayna bulmacasıdır.</strong> Aynaları döndür, ışınları böl,
+    renkleri birleştir; her soket parladığında çözdüğün tahta bir vitraya dönüşür. Süre yok, can yok, satın alınacak bir şey
+    yok.</p>
+  <p class="soon">Yakında Google Play'de · Türkçe, English, Deutsch, Français, Español</p>
+
+  <div class="facts">
+    <div><b>1000</b><span>doğrulanmış seviye</span></div>
+    <div><b>10</b><span>aşama, her biri yeni bir fikir</span></div>
+    <div><b>100</b><span>yakılacak takımyıldızı</span></div>
+    <div><b>0</b><span>süre, can ya da satın alma</span></div>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Aynalar ışını büker, bölücüler ikiye ayırır, sentezleyiciler renkleri birleştirir (Kehribar ile Kobalt Zümrüt olur), köprüler kesişen ışınları geçirir</li>
+      <li>Her seviye makineyle doğrulandı: çözülebilir, tek bir en kısa çözümü var; onu yakala, üç yıldızı al</li>
+      <li>Takımyıldızlarıyla dolu bir Gökyüzü Atlası; her biri ana ekranın için canlı duvar kâğıdı</li>
+      <li>Bütün sesler pentatonik gamda anlık sentezlenir; tek başparmakla oynanır</li>
+      <li>Banner yok: ara sıra ekranlar arasında kısa bir reklam ve ipucu ya da ücretsiz güçlendirici için izlemeyi seçebileceğin videolar</li>
+      <li>İsteğe bağlı Google Play Games başarımları; bulmacalar çevrimdışı da oynanır</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>Sorular</h2>
+    <h3>Tessera nasıl bir oyun?</h3>
+    <p>Işık üzerine bir zekâ bulmacası: her ışın kendi rengindeki sokete ulaşsın diye aynaları döndürür, prizmaları
+      yerleştirirsin. Sakin (süre ve can yok) ama gerçek bir bulmaca: ileri aşamalar uzun yansıma zincirleri, bölünen
+      ışınlar ve renk birleşimleri ister.</p>
+    <h3>Ücretsiz mi? Reklam var mı?</h3>
+    <p>Ücretsiz, uygulama içi satın alma yok. Banner yok; ekranlar arasında ara sıra kısa, tam ekran bir reklam çıkabilir
+      (hiçbir zaman bulmacanın ortasında değil, en fazla 90 saniyede bir) ve ek ipucu ya da ücretsiz güçlendirici için kısa
+      videolar izlemeyi seçebilirsin.</p>
+    <h3>Kaç seviye var?</h3>
+    <p>1000; tek bir aynadan birleşmiş renklerin optik matrislerine kadar on aşamada. Her onuncu seviye altın çerçeveli bir
+      Kilit Taşı'dır: bölümünün en zoru.</p>
+    <h3>Çevrimdışı oynanır mı?</h3>
+    <p>Evet, bulmacalar internet bağlantısı olmadan oynanır. Reklamlar ve Play Games başarımları bağlantı ister.</p>
+    <h3>Hangi cihazlarda çalışır?</h3>
+    <p>Android 8.0 ve üzeri; telefon, tablet ve katlanabilir cihazlar (büyük ekranlarda yatay da döner).</p>
+  </section>
+
+  <p><a href="../">English</a> · <a href="../privacy.html#tr">Gizlilik politikası</a></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:erdemyerlitas@gmail.com">erdemyerlitas@gmail.com</a></footer>
+</main>
+</body>
+</html>

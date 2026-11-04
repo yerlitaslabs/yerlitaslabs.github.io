@@ -3,11 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tessera: The Light Weaver</title>
-<meta name="description" content="Bend light, fuse colours and weave stained glass. A calm one-thumb optical puzzle for Android.">
-<meta property="og:title" content="Tessera: The Light Weaver">
-<meta property="og:description" content="Bend light, fuse colours and weave stained glass. A calm one-thumb puzzle.">
+<title>Tessera: The Light Weaver · a calm light and mirror puzzle for Android</title>
+<meta name="description" content="Tessera is a calm logic puzzle for Android: turn mirrors, split beams and fuse colors until every socket glows. 1,000 verified levels, no timer, nothing to buy.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
 <link rel="icon" type="image/png" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: The Light Weaver">
+<meta property="og:description" content="Bend light, fuse colors and weave stained glass. A calm one-thumb puzzle for Android.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="A prism splitting white light into colored beams, with the title Tessera: The Light Weaver">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: The Light Weaver",
+  "alternateName": "Tessera",
+  "description": "A calm optical logic puzzle: turn mirrors, split beams and fuse colors until every socket glows, and each solved board becomes a stained-glass window. 1,000 verified levels in ten tiers.",
+  "url": "https://yerlitaslabs.github.io/tessera/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Puzzle",
+  "genre": ["Puzzle", "Logic", "Brain game", "Casual"],
+  "operatingSystem": "Android 8.0 or later",
+  "inLanguage": ["en", "tr", "de", "fr", "es"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "erdemyerlitas@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
 <style>
   :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
   * { box-sizing: border-box; }
@@ -15,33 +50,73 @@
   main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
   img.icon { width: 112px; height: 112px; border-radius: 26px; }
   h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
   .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
   p { color: var(--text); }
+  .lead { font-size: 18px; }
   .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
   li { margin: 4px 0; }
   a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
   footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
 </style>
 </head>
 <body>
 <main>
-  <img class="icon" src="icon.png" alt="Tessera icon">
+  <img class="icon" src="icon.png" alt="Tessera icon" width="112" height="112">
   <h1>TESSERA</h1>
   <div class="tag">THE LIGHT WEAVER</div>
-  <p>Turn mirrors, split beams and fuse colours until every socket glows, and watch each solved board become a
-    window of stained glass. No timer, no lives, nothing to buy.</p>
+  <p class="lead"><strong>Tessera is a calm light and mirror puzzle for Android.</strong> Turn mirrors, split beams and fuse
+    colors until every socket glows, and watch each solved board become a window of stained glass. No timer, no
+    lives, nothing to buy.</p>
+  <p class="soon">Coming soon to Google Play · English, Türkçe, Deutsch, Français, Español</p>
+
+  <div class="facts">
+    <div><b>1,000</b><span>verified levels</span></div>
+    <div><b>10</b><span>tiers, each a new idea</span></div>
+    <div><b>100</b><span>constellations to light</span></div>
+    <div><b>0</b><span>timers, lives or purchases</span></div>
+  </div>
+
   <div class="card">
     <ul>
-      <li>1,000 verified puzzles in ten tiers, from a single mirror to optical matrices</li>
-      <li>Mirrors, splitters, colour combiners and bridges</li>
-      <li>A Sky Atlas of constellations, each one a live wallpaper</li>
-      <li>Sound synthesized live, one thumb, five languages</li>
+      <li>Mirrors bend a beam, splitters divide it, combiners fuse colors (amber and cobalt make emerald), bridges let beams cross</li>
+      <li>Every level is machine-verified: solvable, with a single fewest-turn solution; match it for three stars</li>
+      <li>A Sky Atlas of constellations, each one a live wallpaper for your home screen</li>
+      <li>Every sound synthesized live on a pentatonic scale; designed for one thumb</li>
       <li>No banners: a short ad now and then between screens, and videos you can choose for a hint or a free booster</li>
       <li>Optional Google Play Games achievements; the puzzles play offline too</li>
     </ul>
   </div>
-  <p><a href="privacy.html">Privacy policy</a> · <a href="privacy.html#tr">Gizlilik politikası</a></p>
-  <footer>© 2026 YerlitAS Labs · <a href="mailto:erdemyerlitas@gmail.com">erdemyerlitas@gmail.com</a></footer>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <h3>What kind of game is Tessera?</h3>
+    <p>A logic puzzle about light: you rotate mirrors and place prisms so that every beam reaches the socket of its own
+      color. It is calm (no timer, no lives) but real: the later tiers ask for long chains of reflections, split beams and
+      color fusions.</p>
+    <h3>Is it free? Does it have ads?</h3>
+    <p>It is free, with no in-app purchases. There are no banners; a short full-screen ad may show now and then between
+      screens (never during a puzzle, at most one every 90 seconds), and you can choose to watch short videos for an extra
+      hint or a free booster.</p>
+    <h3>How many levels are there?</h3>
+    <p>1,000, in ten tiers from a single mirror to optical matrices of fused colors. Every tenth level is a gold-framed
+      Keystone, the hardest of its chapter.</p>
+    <h3>Can I play offline?</h3>
+    <p>Yes, the puzzles play without an internet connection. Ads and Play Games achievements need a connection.</p>
+    <h3>Which devices does it run on?</h3>
+    <p>Android 8.0 or later, on phones, tablets and foldables (large screens turn freely).</p>
+  </section>
+
+  <p><a href="tr/">Türkçe</a> · <a href="privacy.html">Privacy policy</a> · <a href="privacy.html#tr">Gizlilik politikası</a></p>
+  <footer>© 2026 <a href="../">YerlitAS Labs</a> · <a href="mailto:erdemyerlitas@gmail.com">erdemyerlitas@gmail.com</a></footer>
 </main>
 </body>
 </html>
