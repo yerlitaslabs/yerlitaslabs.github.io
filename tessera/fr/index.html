@@ -21,9 +21,9 @@
 <meta property="og:description" content="Courbez la lumière, mêlez les couleurs, tissez des vitraux. Un jeu de réflexion zen pour Android, qui se joue d'un seul pouce.">
 <meta property="og:url" content="https://yerlitaslabs.github.io/tessera/fr/">
 <meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="Un prisme qui divise la lumière blanche en faisceaux colorés, avec le titre Tessera: The Light Weaver">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le triangle de lumière dans un anneau d'or, dans l'espace, avec le titre Tessera">
 <meta name="twitter:card" content="summary_large_image">
 <!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
 <script type="application/ld+json">
@@ -63,6 +63,8 @@
   .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
   .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
   .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
   .faq { text-align: left; }
   .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
   .faq p { margin: 0; }
@@ -91,11 +93,18 @@
     <div><b>0</b><span>chrono, vie ou achat</span></div>
   </div>
 
+  <div class="shots">
+    <img src="../shots/fr-1.jpg" alt="Un niveau résolu : des faisceaux colorés entre pulsars et galaxies" width="540" height="1080" loading="lazy">
+    <img src="../shots/fr-2.jpg" alt="Une clé de voûte : le triangle de lumière s'élève, cerclé d'or" width="540" height="1080" loading="lazy">
+    <img src="../shots/fr-3.jpg" alt="Une constellation achevée s'illumine" width="540" height="1080" loading="lazy">
+  </div>
+
   <div class="card">
     <ul>
       <li>Les miroirs dévient un faisceau, les séparateurs le divisent, les combinateurs fusionnent les couleurs (l'ambre et le cobalt donnent l'émeraude), les ponts laissent les faisceaux se croiser</li>
       <li>Chaque niveau est vérifié par la machine&nbsp;: résoluble, avec une seule solution la plus courte&nbsp;; atteignez-la pour trois étoiles</li>
       <li>Un Atlas céleste de constellations, chacune un fond d'écran animé pour votre écran d'accueil</li>
+      <li>Joué parmi les étoiles : la lumière va des pulsars aux galaxies en rotation, chaque palier est un nouveau secteur de l'espace</li>
       <li>Chaque son est synthétisé en direct sur une gamme pentatonique&nbsp;; se joue d'un seul pouce</li>
       <li>Pas de bannière&nbsp;: une courte publicité de temps en temps entre deux écrans, et des vidéos à regarder si vous le souhaitez pour un indice ou un bonus gratuit</li>
       <li>Succès Google Play Games facultatifs&nbsp;; les énigmes se jouent aussi hors ligne</li>
@@ -110,7 +119,7 @@
       demandent de longues chaînes de reflets, des faisceaux divisés et des fusions de couleurs.</p>
     <h3>Est-il gratuit&nbsp;? Y a-t-il des publicités&nbsp;?</h3>
     <p>Il est gratuit, sans achats intégrés. Pas de bannière&nbsp;; une courte publicité plein écran peut apparaître de
-      temps en temps entre deux écrans (jamais pendant une énigme, au plus une toutes les 90&nbsp;secondes), et vous pouvez
+      temps en temps entre deux écrans (jamais pendant une énigme, au plus une toutes les deux&nbsp;minutes), et vous pouvez
       choisir de regarder de courtes vidéos pour un indice supplémentaire ou un bonus gratuit.</p>
     <h3>Combien y a-t-il de niveaux&nbsp;?</h3>
     <p>1&nbsp;000, en dix paliers, d'un simple miroir jusqu'aux matrices optiques de couleurs fusionnées. Chaque dixième

@@ -21,9 +21,9 @@
 <meta property="og:description" content="Dobla la luz, funde colores y teje vitrales. Un puzle tranquilo para Android que se juega con un pulgar.">
 <meta property="og:url" content="https://yerlitaslabs.github.io/tessera/es/">
 <meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="Un prisma que divide la luz blanca en haces de colores, con el título Tessera: The Light Weaver">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="El triángulo de luz en un anillo de oro, en el espacio, con el título Tessera">
 <meta name="twitter:card" content="summary_large_image">
 <!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
 <script type="application/ld+json">
@@ -63,6 +63,8 @@
   .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
   .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
   .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
   .faq { text-align: left; }
   .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
   .faq p { margin: 0; }
@@ -91,11 +93,18 @@
     <div><b>0</b><span>relojes, vidas o compras</span></div>
   </div>
 
+  <div class="shots">
+    <img src="../shots/es-1.jpg" alt="Un nivel resuelto: haces de colores entre púlsares y galaxias" width="540" height="1080" loading="lazy">
+    <img src="../shots/es-2.jpg" alt="Una piedra clave: el triángulo de luz se eleva con su anillo de oro" width="540" height="1080" loading="lazy">
+    <img src="../shots/es-3.jpg" alt="Una constelación completa se enciende" width="540" height="1080" loading="lazy">
+  </div>
+
   <div class="card">
     <ul>
       <li>Los espejos desvían el haz, los divisores lo parten, los combinadores funden colores (ámbar y cobalto dan esmeralda), los puentes dejan que los haces se crucen</li>
       <li>Cada nivel está verificado por máquina: tiene solución y una única solución más corta; iguálala para tres estrellas</li>
       <li>Un Atlas celeste de constelaciones, cada una un fondo animado para tu pantalla de inicio</li>
+      <li>Se juega entre las estrellas: la luz va de los púlsares a galaxias que giran, y cada nivel es un nuevo sector del espacio</li>
       <li>Cada sonido se sintetiza en vivo en una escala pentatónica; se juega con un solo pulgar</li>
       <li>Sin banners: de vez en cuando un anuncio breve entre pantallas, y vídeos que puedes elegir ver para una pista o un potenciador gratis</li>
       <li>Logros opcionales de Google Play Games; los acertijos también se juegan sin conexión</li>
@@ -110,7 +119,7 @@
       haces divididos y fusiones de color.</p>
     <h3>¿Es gratis? ¿Tiene anuncios?</h3>
     <p>Es gratis y no tiene compras dentro de la aplicación. No hay banners; de vez en cuando puede aparecer un anuncio
-      breve a pantalla completa entre pantallas (nunca en mitad de un acertijo, como mucho uno cada 90 segundos), y puedes
+      breve a pantalla completa entre pantallas (nunca en mitad de un acertijo, como mucho uno cada dos minutos), y puedes
       elegir ver vídeos cortos para una pista extra o un potenciador gratis.</p>
     <h3>¿Cuántos niveles hay?</h3>
     <p>1.000, en diez etapas, desde un solo espejo hasta matrices ópticas de colores fundidos. Cada décimo nivel es una

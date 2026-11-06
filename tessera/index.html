@@ -20,9 +20,9 @@
 <meta property="og:description" content="Bend light, fuse colors and weave stained glass. A calm one-thumb puzzle for Android.">
 <meta property="og:url" content="https://yerlitaslabs.github.io/tessera/">
 <meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="A prism splitting white light into colored beams, with the title Tessera: The Light Weaver">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The triangle of light in a ring of gold, in deep space, with the title Tessera: The Light Weaver">
 <meta name="twitter:card" content="summary_large_image">
 <!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
 <script type="application/ld+json">
@@ -62,6 +62,8 @@
   .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
   .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
   .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
   .faq { text-align: left; }
   .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
   .faq p { margin: 0; }
@@ -90,11 +92,18 @@
     <div><b>0</b><span>timers, lives or purchases</span></div>
   </div>
 
+  <div class="shots">
+    <img src="shots/en-1.jpg" alt="A solved level: colored beams between pulsars and galaxies" width="540" height="1080" loading="lazy">
+    <img src="shots/en-2.jpg" alt="A keystone: the triangle of light rises in a ring of gold" width="540" height="1080" loading="lazy">
+    <img src="shots/en-3.jpg" alt="A finished constellation lighting up" width="540" height="1080" loading="lazy">
+  </div>
+
   <div class="card">
     <ul>
       <li>Mirrors bend a beam, splitters divide it, combiners fuse colors (amber and cobalt make emerald), bridges let beams cross</li>
       <li>Every level is machine-verified: solvable, with a single fewest-turn solution; match it for three stars</li>
       <li>A Sky Atlas of constellations, each one a live wallpaper for your home screen</li>
+      <li>Played among the stars: light flows from pulsars into turning galaxies, and each tier is a new sector of space</li>
       <li>Every sound synthesized live on a pentatonic scale; designed for one thumb</li>
       <li>No banners: a short ad now and then between screens, and videos you can choose for a hint or a free booster</li>
       <li>Optional Google Play Games achievements; the puzzles play offline too</li>
@@ -109,7 +118,7 @@
       color fusions.</p>
     <h3>Is it free? Does it have ads?</h3>
     <p>It is free, with no in-app purchases. There are no banners; a short full-screen ad may show now and then between
-      screens (never during a puzzle, at most one every 90 seconds), and you can choose to watch short videos for an extra
+      screens (never during a puzzle, at most one every two minutes), and you can choose to watch short videos for an extra
       hint or a free booster.</p>
     <h3>How many levels are there?</h3>
     <p>1,000, in ten tiers from a single mirror to optical matrices of fused colors. Every tenth level is a gold-framed

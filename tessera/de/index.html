@@ -21,9 +21,9 @@
 <meta property="og:description" content="Lenke Licht, verschmelze Farben, webe Bleiglas. Ein ruhiges Rätsel für Android, mit einem Daumen spielbar.">
 <meta property="og:url" content="https://yerlitaslabs.github.io/tessera/de/">
 <meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="Ein Prisma, das weißes Licht in farbige Strahlen teilt, mit dem Schriftzug Tessera: The Light Weaver">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Das Lichtdreieck in einem goldenen Ring im tiefen All, mit dem Titel Tessera">
 <meta name="twitter:card" content="summary_large_image">
 <!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
 <script type="application/ld+json">
@@ -63,6 +63,8 @@
   .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
   .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
   .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
   .faq { text-align: left; }
   .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
   .faq p { margin: 0; }
@@ -91,11 +93,18 @@
     <div><b>0</b><span>Uhren, Leben oder Käufe</span></div>
   </div>
 
+  <div class="shots">
+    <img src="../shots/de-1.jpg" alt="Ein gelöstes Level: farbige Strahlen zwischen Pulsaren und Galaxien" width="540" height="1080" loading="lazy">
+    <img src="../shots/de-2.jpg" alt="Ein Schlussstein: Das Lichtdreieck steigt im goldenen Ring auf" width="540" height="1080" loading="lazy">
+    <img src="../shots/de-3.jpg" alt="Ein vollendetes Sternbild leuchtet auf" width="540" height="1080" loading="lazy">
+  </div>
+
   <div class="card">
     <ul>
       <li>Spiegel lenken einen Strahl um, Strahlteiler teilen ihn, Kombinierer verschmelzen Farben (Bernstein und Kobalt ergeben Smaragd), Brücken lassen Strahlen sich kreuzen</li>
       <li>Jedes Level ist maschinell geprüft: lösbar, mit genau einer kürzesten Lösung; triff sie für drei Sterne</li>
       <li>Ein Himmelsatlas voller Sternbilder, jedes ein Live-Hintergrund für deinen Startbildschirm</li>
+      <li>Gespielt zwischen den Sternen: Licht fließt von Pulsaren in drehende Galaxien, jede Stufe ist ein neuer Sektor des Alls</li>
       <li>Jeder Klang wird live auf einer pentatonischen Skala erzeugt; mit einem Daumen spielbar</li>
       <li>Keine Banner: ab und zu kurze Werbung zwischen zwei Bildschirmen und Videos, die du für einen Tipp oder einen kostenlosen Verstärker ansehen kannst</li>
       <li>Optionale Erfolge in Google Play Games; die Rätsel lassen sich auch offline spielen</li>
@@ -110,7 +119,7 @@
       Spiegelketten, geteilte Strahlen und Farbfusionen.</p>
     <h3>Ist es kostenlos? Gibt es Werbung?</h3>
     <p>Es ist kostenlos, ohne In-App-Käufe. Es gibt keine Banner; zwischen zwei Bildschirmen kann ab und zu eine kurze
-      Vollbildwerbung erscheinen (nie während eines Rätsels, höchstens alle 90 Sekunden), und du kannst kurze Videos für
+      Vollbildwerbung erscheinen (nie während eines Rätsels, höchstens alle zwei Minuten), und du kannst kurze Videos für
       einen zusätzlichen Tipp oder einen kostenlosen Verstärker ansehen.</p>
     <h3>Wie viele Level gibt es?</h3>
     <p>1.000, in zehn Stufen vom einzelnen Spiegel bis zu optischen Matrizen aus verschmolzenen Farben. Jedes zehnte Level
