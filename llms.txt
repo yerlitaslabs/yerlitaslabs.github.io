@@ -4,7 +4,7 @@
 
 ## Games
 
-- [Tessera: The Light Weaver](https://yerlitaslabs.github.io/tessera/): a calm light and mirror logic puzzle for Android. Turn mirrors, split beams and fuse colors until every socket glows; each solved board becomes a stained-glass window. 1,000 machine-verified levels in ten tiers, a Sky Atlas of 100 constellations (each a live wallpaper), no timer, no lives, no in-app purchases. Free with occasional short ads between screens and optional rewarded videos; no banners. English, Turkish, German, French, Spanish. Android 8.0+. Coming soon to Google Play.
+- [Tessera: The Light Weaver](https://yerlitaslabs.github.io/tessera/): a calm light and mirror logic puzzle for Android. Turn mirrors, split beams and fuse colors until every socket glows; each solved board becomes a stained-glass window. 1,000 machine-verified levels in ten tiers, a Sky Atlas of 100 constellations (each a live wallpaper), no timer, no lives, no in-app purchases. Free with occasional short ads between screens and optional rewarded videos; no banners. English, Turkish, German, French, Spanish. Android 8.0+. The page has a playable demo. Coming soon to Google Play.
 - Tessera in other languages: [Türkçe](https://yerlitaslabs.github.io/tessera/tr/), [Deutsch](https://yerlitaslabs.github.io/tessera/de/), [Français](https://yerlitaslabs.github.io/tessera/fr/), [Español](https://yerlitaslabs.github.io/tessera/es/).
 - [Minela: Block Puzzle](https://yerlitaslabs.github.io/minela/): a relaxing mosaic block puzzle game for Android. Drag blocks onto an 8×8 board, clear rows and columns, chain combos up to MINELA and wipe the whole board. 5,000 Adventure levels in 250 chapters named after famous mosaic sites (Zeugma, Ephesus, Isfahan, Kyoto…), a Daily Puzzle with streaks and monthly trophies, and an endless Classic mode with a Google Play Games leaderboard. 7 boosters, special Bomb, Lightning and Prism tiles, 25 medals, 40 achievements, cloud save. Free, nothing to buy; occasional short ads between games and optional rewarded videos, no banners. Plays online (up to 15 minutes offline a day). English, Turkish, German, French, Spanish. Android 8.0+. On Google Play: https://play.google.com/store/apps/details?id=com.audio.minela
 
@@ -16,5 +16,6 @@
 ## Policies
 
 - [Tessera privacy policy](https://yerlitaslabs.github.io/tessera/privacy.html): what the game stores and how to delete it.
+- [Tessera terms of use](https://yerlitaslabs.github.io/tessera/terms.html): the terms players accept at the first launch.
 - [Minela privacy policy](https://yerlitaslabs.github.io/minela/privacy.html)
 - [BarcodeVault privacy policy](https://yerlitaslabs.github.io/barcodevault/privacy-policy.html)

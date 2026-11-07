@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera challenge</title>
+<meta name="description" content="A friend challenges you to Tessera: the same board, their turns to beat.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d0e15">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="A friend challenges you to Tessera">
+<meta property="og:description" content="The same board of light and mirrors. Can you solve it in fewer turns?">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<link rel="icon" type="image/png" href="../icon.png">
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #ffd873; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  main { width: 100%; max-width: 440px; padding: 32px 16px; text-align: center; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 16px 0 4px; font-weight: 500; }
+  .score { font-size: 34px; font-weight: 700; color: var(--accent); margin: 8px 0 0; line-height: 1.2; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .btn {
+    display: block; padding: 14px 20px; margin: 10px 0; border-radius: 999px; font-weight: 700; text-decoration: none;
+    background: var(--accent); color: #141414;
+  }
+  .btn.alt { background: none; color: var(--accent); border: 1px solid var(--line); }
+  .soon { color: var(--muted); font-size: 14px; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Tessera" width="96" height="96">
+  <h1 id="title"></h1>
+  <p class="score" id="score" hidden></p>
+  <p class="sub" id="sub"></p>
+  <a class="btn" id="open" hidden></a>
+  <a class="btn alt" id="get" hidden></a>
+  <p class="soon" id="soon" hidden></p>
+  <footer><a id="demo" href="../"></a> · YerlitAS Labs</footer>
+</main>
+<script>
+/* Reads the challenge in the link for this page only: nothing is stored or sent, and the app checks the numbers again. */
+(function () {
+  /* When the game is live on Google Play: true, and the store button replaces the "coming soon" line. */
+  var PLAY_LIVE = false;
+  var T = {
+    en: { title: 'A friend challenges you!', level: 'Level {l}', turns: 'Turns: {t}', sub: 'The same board of light and mirrors. Can you solve it in fewer turns?', none: 'A board of light and mirrors, your turn.', open: 'Open in Tessera', get: 'Get Tessera on Google Play', soon: 'Coming soon to Google Play', demo: 'Try the demo' },
+    tr: { title: 'Arkadaşın sana meydan okuyor!', level: 'Seviye {l}', turns: '{t} döndürme', sub: 'Işık ve aynalardan aynı tahta. Daha az döndürmeyle çözebilir misin?', none: 'Işık ve aynalardan bir tahta, sıra sende.', open: "Tessera'da aç", get: "Tessera'yı Google Play'den indir", soon: "Yakında Google Play'de", demo: 'Demoyu dene' },
+    de: { title: 'Eine Herausforderung für dich!', level: 'Level {l}', turns: 'Züge: {t}', sub: 'Dasselbe Feld aus Licht und Spiegeln. Schaffst du es in weniger Zügen?', none: 'Ein Feld aus Licht und Spiegeln, du bist dran.', open: 'In Tessera öffnen', get: 'Tessera bei Google Play', soon: 'Bald bei Google Play', demo: 'Demo ausprobieren' },
+    fr: { title: 'Un ami te défie !', level: 'Niveau {l}', turns: 'Rotations : {t}', sub: 'Le même plateau de lumière et de miroirs. Feras-tu moins de rotations ?', none: 'Un plateau de lumière et de miroirs, à toi de jouer.', open: 'Ouvrir dans Tessera', get: 'Tessera sur Google Play', soon: 'Bientôt sur Google Play', demo: 'Essayer la démo' },
+    es: { title: '¡Un amigo te reta!', level: 'Nivel {l}', turns: 'Giros: {t}', sub: 'El mismo tablero de luz y espejos. ¿Puedes resolverlo con menos giros?', none: 'Un tablero de luz y espejos, te toca.', open: 'Abrir en Tessera', get: 'Tessera en Google Play', soon: 'Próximamente en Google Play', demo: 'Probar la demo' }
+  };
+  var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  var t = T[lang] || T.en;
+  document.documentElement.lang = T[lang] ? lang : 'en';
+  var set = function (id, text) { document.getElementById(id).textContent = text; };
+  set('title', t.title);
+  set('demo', t.demo);
+
+  var query = new URLSearchParams(location.search);
+  var level = query.get('l') || '', turns = query.get('t') || '';
+  var sound = /^[1-9][0-9]{0,3}$/.test(level) && /^[1-9][0-9]{0,2}$/.test(turns);
+  if (sound) {
+    var score = document.getElementById('score');
+    score.textContent = t.level.replace('{l}', level) + ' · ' + t.turns.replace('{t}', turns);
+    score.hidden = false;
+    set('sub', t.sub);
+  } else {
+    set('sub', t.none);
+  }
+
+  /* The level rides through the install, so the challenge opens right after installing (Google Play install referrer). */
+  var referrer = 'utm_source=duel&utm_medium=link' + (sound ? '&l=' + level + '&t=' + turns : '');
+  var store = 'https://play.google.com/store/apps/details?id=com.audio.tessera&referrer=' + encodeURIComponent(referrer);
+  var fallback = PLAY_LIVE ? store : 'https://yerlitaslabs.github.io/tessera/';
+  if (PLAY_LIVE) {
+    var get = document.getElementById('get');
+    get.href = store;
+    get.textContent = t.get;
+    get.hidden = false;
+  } else {
+    var soon = document.getElementById('soon');
+    soon.textContent = t.soon;
+    soon.hidden = false;
+  }
+
+  if (sound && /Android/i.test(navigator.userAgent)) {
+    var open = document.getElementById('open');
+    open.href = 'intent://yerlitaslabs.github.io/tessera/c/?l=' + level + '&t=' + turns +
+      '#Intent;scheme=https;package=com.audio.tessera;S.browser_fallback_url=' + encodeURIComponent(fallback) + ';end';
+    open.textContent = t.open;
+    open.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

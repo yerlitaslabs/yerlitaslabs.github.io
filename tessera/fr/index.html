@@ -74,6 +74,16 @@
   nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
   nav.lang b { font-weight: 600; }
   footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+  #demo { margin: 24px auto 8px; max-width: 360px; }
+  .d-goal { color: var(--accent); margin: 0 0 12px; font-weight: 500; }
+  .d-board { position: relative; width: 100%; aspect-ratio: 1; }
+  .d-board canvas { display: block; width: 100%; height: 100%; }
+  .d-mirror { position: absolute; padding: 0; margin: 0; background: none; border: 0; border-radius: 10px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .d-mirror:focus-visible { outline: 2px solid var(--accent); }
+  .d-note { min-height: 26px; color: var(--muted); margin: 10px 0 4px; font-size: 15px; }
+  .d-cta { display: block; padding: 12px 18px; margin: 8px 0; border-radius: 999px; font-weight: 700; text-decoration: none; background: #ffd873; color: #141414; }
+  .d-cta.d-soon { background: none; color: var(--accent); border: 1px solid var(--line); font-weight: 500; }
+  .d-again { background: none; border: 0; color: var(--accent); font: inherit; cursor: pointer; padding: 6px; }
 </style>
 </head>
 <body>
@@ -85,6 +95,16 @@
     des miroirs, divisez des faisceaux et fusionnez des couleurs jusqu'à ce que chaque récepteur s'illumine, et regardez
     chaque plateau résolu devenir un vitrail. Pas de chrono, pas de vies, rien à acheter.</p>
   <p class="soon">Bientôt sur Google Play · Français, English, Türkçe, Deutsch, Español</p>
+  <section id="demo" aria-label="Démo jouable">
+    <p class="d-goal"></p>
+    <div class="d-board"><canvas width="340" height="340"></canvas></div>
+    <p class="d-note" aria-live="polite"></p>
+    <div class="d-done" hidden>
+      <a class="d-cta"></a>
+      <button class="d-again" type="button"></button>
+    </div>
+  </section>
+  <script src="../demo.js" defer></script>
 
   <div class="facts">
     <div><b>1&nbsp;000</b><span>niveaux vérifiés</span></div>
@@ -107,6 +127,7 @@
       <li>Joué parmi les étoiles : la lumière va des pulsars aux galaxies en rotation, chaque palier est un nouveau secteur de l'espace</li>
       <li>Chaque son est synthétisé en direct sur une gamme pentatonique&nbsp;; se joue d'un seul pouce</li>
       <li>Pas de bannière&nbsp;: une courte publicité de temps en temps entre deux écrans, et des vidéos à regarder si vous le souhaitez pour un indice ou un bonus gratuit</li>
+      <li>Partage ta carte de score, défie un ami sur le même plateau et garde ton ciel en widget sur l'écran d'accueil</li>
       <li>Succès Google Play Games facultatifs&nbsp;; les énigmes se jouent aussi hors ligne</li>
     </ul>
   </div>
