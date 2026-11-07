@@ -6,5 +6,13 @@
       "package_name": "com.audio.minela",
       "sha256_cert_fingerprints": ["A2:B0:21:BF:3F:7B:A5:6A:96:7F:E3:C1:A1:8B:52:7B:63:CA:15:A3:42:C2:49:B1:2F:A1:A5:DC:24:7C:90:A9"]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.audio.tessera",
+      "sha256_cert_fingerprints": ["88:39:15:F4:0C:A9:B4:73:86:95:3C:C7:9C:FC:D0:F7:A5:19:ED:1B:B4:5B:32:35:53:F8:F2:5D:9A:D3:E4:D2"]
+    }
   }
 ]
