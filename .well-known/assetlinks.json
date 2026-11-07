@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.audio.minela",
+      "sha256_cert_fingerprints": ["A2:B0:21:BF:3F:7B:A5:6A:96:7F:E3:C1:A1:8B:52:7B:63:CA:15:A3:42:C2:49:B1:2F:A1:A5:DC:24:7C:90:A9"]
+    }
+  }
+]

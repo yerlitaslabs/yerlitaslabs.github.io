@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minela challenge</title>
+<meta name="description" content="A friend challenges you to Minela: the same pieces, their score to beat.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d111c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="A friend challenges you to Minela">
+<meta property="og:description" content="Same pieces, same order. Can you beat their score?">
+<meta property="og:image" content="https://yerlitaslabs.github.io/minela/og-image.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<style>
+  :root { --bg: #0d111c; --card: #1a2033; --text: #eef1f8; --muted: #a3abc2; --accent: #ffc46b; --line: #2a3150; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  main { width: 100%; max-width: 440px; padding: 32px 16px; text-align: center; }
+  .icon { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 16px 0 4px; }
+  .score { font-size: 56px; font-weight: 900; color: var(--accent); margin: 8px 0 0; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .btn {
+    display: block; padding: 14px 20px; margin: 10px 0; border-radius: 999px; font-weight: 800; text-decoration: none;
+    background: var(--accent); color: #141414;
+  }
+  .btn.alt { background: none; color: var(--accent); border: 1px solid var(--line); }
+  footer { color: var(--muted); font-size: 14px; margin-top: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Minela">
+  <h1 id="title"></h1>
+  <p class="score" id="score" hidden></p>
+  <p class="sub" id="sub"></p>
+  <a class="btn" id="open" hidden></a>
+  <a class="btn alt" id="get"></a>
+  <footer><a id="demo" href="../"></a> · YerlitAS Labs</footer>
+</main>
+<script>
+/* Reads the challenge in the link for this page only: nothing is stored or sent, and the app checks the code again. */
+(function () {
+  var T = {
+    en: { title: 'A friend challenges you!', sub: 'Same pieces, same order. Can you beat this score?', none: 'Same pieces, your turn.', open: 'Open in Minela', get: 'Get Minela on Google Play', demo: 'Try the demo', fmt: 'en' },
+    tr: { title: 'Arkadaşın sana meydan okuyor!', sub: 'Aynı parçalar, aynı sıra. Bu skoru geçebilir misin?', none: 'Aynı parçalar, sıra sende.', open: "Minela'da aç", get: "Minela'yı Google Play'den indir", demo: 'Demoyu dene', fmt: 'tr' },
+    de: { title: 'Eine Herausforderung für dich!', sub: 'Gleiche Teile, gleiche Reihenfolge. Schaffst du mehr?', none: 'Gleiche Teile, du bist dran.', open: 'In Minela öffnen', get: 'Minela bei Google Play', demo: 'Demo ausprobieren', fmt: 'de' },
+    fr: { title: 'Un ami te défie !', sub: 'Mêmes pièces, même ordre. Feras-tu mieux ?', none: 'Mêmes pièces, à toi de jouer.', open: 'Ouvrir dans Minela', get: 'Minela sur Google Play', demo: 'Essayer la démo', fmt: 'fr' },
+    es: { title: '¡Un amigo te reta!', sub: 'Mismas piezas, mismo orden. ¿Puedes superar esta puntuación?', none: 'Mismas piezas, te toca.', open: 'Abrir en Minela', get: 'Minela en Google Play', demo: 'Probar la demo', fmt: 'es' }
+  };
+  var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+  var t = T[lang] || T.en;
+  document.documentElement.lang = T[lang] ? lang : 'en';
+  var set = function (id, text) { document.getElementById(id).textContent = text; };
+  set('title', t.title);
+  set('demo', t.demo);
+
+  var code = new URLSearchParams(location.search).get('d') || '';
+  var sound = /^[A-Za-z0-9_-]{8,400}$/.test(code);
+  var score = null;
+  if (sound) {
+    try {
+      var head = atob(code.slice(0, 8).replace(/-/g, '+').replace(/_/g, '/'));
+      if (head.charCodeAt(0) === 1) {
+        score = head.charCodeAt(1) * 16777216 + head.charCodeAt(2) * 65536 + head.charCodeAt(3) * 256 + head.charCodeAt(4);
+      }
+    } catch (e) { score = null; }
+  }
+  if (score !== null && score > 0 && score <= 100000000) {
+    var el = document.getElementById('score');
+    el.textContent = score.toLocaleString(t.fmt);
+    el.hidden = false;
+    set('sub', t.sub);
+  } else {
+    set('sub', t.none);
+  }
+
+  /* The code rides through the install, so the challenge opens right after installing (Google Play install referrer). */
+  var referrer = 'utm_source=duel&utm_medium=link' + (sound ? '&d=' + code : '');
+  var store = 'https://play.google.com/store/apps/details?id=com.audio.minela&referrer=' + encodeURIComponent(referrer);
+  var get = document.getElementById('get');
+  get.href = store;
+  get.textContent = t.get;
+
+  if (sound && /Android/i.test(navigator.userAgent)) {
+    var open = document.getElementById('open');
+    open.href = 'intent://yerlitaslabs.github.io/minela/c/?d=' + code +
+      '#Intent;scheme=https;package=com.audio.minela;S.browser_fallback_url=' + encodeURIComponent(store) + ';end';
+    open.textContent = t.open;
+    open.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>

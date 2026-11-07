@@ -74,6 +74,27 @@
   section.faq h3 { font-size: 16px; margin: 16px 0 2px; color: var(--accent); }
   section.faq p { margin: 0; color: var(--muted); }
   footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+  #teaser { margin: 0 auto 24px; max-width: 360px; touch-action: manipulation; }
+  .t-goal { font-weight: 800; margin: 0 0 12px; }
+  .t-board {
+    display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; padding: 6px; aspect-ratio: 1;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  }
+  .t-cell { background: #0d111c; border-radius: 6px; transition: transform .2s, opacity .2s; }
+  .t-cell.full { box-shadow: inset 0 -3px 0 rgba(0,0,0,.22); }
+  .t-cell.ghost { opacity: .55; }
+  .t-cell.pop { transform: scale(.2); opacity: 0; }
+  .t-tray { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; height: 76px; }
+  .t-slot { display: flex; align-items: center; justify-content: center; touch-action: none; cursor: grab; border-radius: 12px; }
+  .t-slot.picked { outline: 2px solid var(--accent); }
+  .t-piece { position: relative; }
+  .t-piece i { position: absolute; border-radius: 22%; box-shadow: inset 0 -3px 0 rgba(0,0,0,.22); }
+  .t-float { position: fixed; left: 0; top: 0; z-index: 9; pointer-events: none; opacity: .9; }
+  .t-note { color: var(--muted); min-height: 26px; margin: 8px 0 0; font-weight: 700; }
+  .t-note.big { color: var(--accent); font-size: 26px; font-weight: 900; }
+  .t-done .play { margin: 8px 0 8px; }
+  .t-again { background: none; border: 0; color: var(--accent); font: inherit; font-weight: 700; cursor: pointer; display: block; margin: 0 auto; padding: 6px; }
+  @media (prefers-reduced-motion: reduce) { .t-cell { transition: none; } }
 </style>
 </head>
 <body>
@@ -85,11 +106,248 @@
   </div>
   <h1>MINELA</h1>
   <p class="tag">Mosaic block puzzle</p>
+  <section id="teaser" aria-label="Playable demo">
+    <p class="t-goal" id="t-goal"></p>
+    <div class="t-board" id="t-board" role="img"></div>
+    <div class="t-tray" id="t-tray"></div>
+    <p class="t-note" id="t-note" aria-live="polite"></p>
+    <div class="t-done" id="t-done" hidden>
+      <a class="play" id="t-play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;referrer=utm_source%3Dsite%26utm_medium%3Dteaser"></a>
+      <button class="t-again" id="t-again" type="button"></button>
+    </div>
+  </section>
+  <script>
+  /* Playable teaser: three pieces, three moves, the whole board cleared. Nothing is stored or sent. */
+  (function () {
+    var T = {
+      en: { goal: 'Try it: empty the whole board in 3 moves', hint: 'Drag each piece into the gap that fits it', stuck: 'So close! Try again', again: 'Play again', play: 'Play 5,000 levels on Google Play', lines: ['Nice!', 'Excellent!'], clear: 'ALL CLEAR!', board: 'A playable Minela board' },
+      tr: { goal: 'Dene: 3 hamlede tüm tahtayı temizle', hint: 'Her parçayı ona uyan boşluğa sürükle', stuck: 'Az kaldı! Tekrar dene', again: 'Tekrar oyna', play: "5000 seviyeyi Google Play'de oyna", lines: ['Güzel!', 'Harika!'], clear: 'ALL CLEAR!', board: 'Oynanabilir bir Minela tahtası' },
+      de: { goal: 'Probier es: Leere das ganze Brett in 3 Zügen', hint: 'Zieh jedes Teil in die passende Lücke', stuck: 'Fast! Versuch es noch einmal', again: 'Nochmal spielen', play: '5.000 Level bei Google Play spielen', lines: ['Schön!', 'Großartig!'], clear: 'ALL CLEAR!', board: 'Ein spielbares Minela-Brett' },
+      fr: { goal: 'Essayez : videz tout le plateau en 3 coups', hint: 'Glissez chaque pièce dans le trou qui lui va', stuck: 'Presque ! Réessayez', again: 'Rejouer', play: 'Jouer aux 5 000 niveaux sur Google Play', lines: ['Bien !', 'Excellent !'], clear: 'ALL CLEAR !', board: 'Un plateau Minela jouable' },
+      es: { goal: 'Pruébalo: vacía todo el tablero en 3 movimientos', hint: 'Arrastra cada pieza al hueco que le encaja', stuck: '¡Casi! Inténtalo otra vez', again: 'Jugar otra vez', play: 'Juega 5000 niveles en Google Play', lines: ['¡Bien!', '¡Excelente!'], clear: '¡ALL CLEAR!', board: 'Un tablero de Minela jugable' }
+    };
+    var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var t = T[lang] || T.en;
+    var COLORS = ['#ff7f78', '#ffc46b', '#6ee7b0', '#6cc4ff', '#a68bff', '#f7a8d8'];
+    var N = 8;
+    /* "." empty, digits are block colors. Each gap takes exactly one piece: rows 1-2, 4-5 and 7 then clear. */
+    var START = [
+      '........',
+      '123..456',
+      '561..234',
+      '........',
+      '34.56123',
+      '12..3456',
+      '........',
+      '456123..'
+    ];
+    var PIECES = [
+      { color: 2, cells: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+      { color: 5, cells: [[0, 0], [1, 0], [1, 1]] },
+      { color: 3, cells: [[0, 0], [0, 1]] }
+    ];
+    var boardEl = document.getElementById('t-board');
+    var trayEl = document.getElementById('t-tray');
+    var noteEl = document.getElementById('t-note');
+    var doneEl = document.getElementById('t-done');
+    var grid, used, moves, cleared, drag = null, picked = null, cells = [];
+
+    document.getElementById('t-goal').textContent = t.goal;
+    document.getElementById('t-play').textContent = t.play;
+    boardEl.setAttribute('aria-label', t.board);
+    var again = document.getElementById('t-again');
+    again.textContent = t.again;
+    again.addEventListener('click', reset);
+
+    for (var i = 0; i < N * N; i++) {
+      var c = document.createElement('div');
+      c.className = 't-cell';
+      boardEl.appendChild(c);
+      cells.push(c);
+    }
+
+    function reset() {
+      grid = START.map(function (row) { return row.split('').map(function (ch) { return ch === '.' ? 0 : +ch; }); });
+      used = [false, false, false];
+      moves = 0;
+      cleared = 0;
+      picked = null;
+      doneEl.hidden = true;
+      noteEl.textContent = t.hint;
+      noteEl.className = 't-note';
+      draw();
+      drawTray();
+    }
+
+    function draw(preview) {
+      for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) {
+        var el = cells[r * N + c];
+        var v = grid[r][c];
+        el.style.background = v ? COLORS[v - 1] : '';
+        el.className = 't-cell' + (v ? ' full' : '');
+      }
+      if (preview) preview.spots.forEach(function (s) {
+        var el = cells[s[0] * N + s[1]];
+        el.style.background = COLORS[preview.color - 1];
+        el.className = 't-cell full ghost';
+      });
+    }
+
+    function drawTray() {
+      trayEl.textContent = '';
+      PIECES.forEach(function (p, i) {
+        var slot = document.createElement('div');
+        slot.className = 't-slot' + (picked === i ? ' picked' : '');
+        if (!used[i]) {
+          slot.appendChild(pieceEl(p, 26));
+          slot.addEventListener('pointerdown', function (e) { startDrag(e, i); });
+        }
+        trayEl.appendChild(slot);
+      });
+    }
+
+    function pieceEl(p, size) {
+      var el = document.createElement('div');
+      el.className = 't-piece';
+      var h = 0, w = 0;
+      p.cells.forEach(function (c) { h = Math.max(h, c[0] + 1); w = Math.max(w, c[1] + 1); });
+      el.style.width = w * size + 'px';
+      el.style.height = h * size + 'px';
+      p.cells.forEach(function (c) {
+        var b = document.createElement('i');
+        b.style.cssText = 'left:' + c[1] * size + 'px;top:' + c[0] * size + 'px;width:' + (size - 3) + 'px;height:' + (size - 3) + 'px;background:' + COLORS[p.color - 1];
+        el.appendChild(b);
+      });
+      return el;
+    }
+
+    function fits(p, r0, c0) {
+      return p.cells.every(function (c) {
+        var r = r0 + c[0], k = c0 + c[1];
+        return r >= 0 && k >= 0 && r < N && k < N && !grid[r][k];
+      });
+    }
+
+    /* The board cell under the piece's top-left block, with the piece held above the finger on touch screens. */
+    function target(e, p) {
+      var box = boardEl.getBoundingClientRect();
+      var size = box.width / N;
+      var h = 0, w = 0;
+      p.cells.forEach(function (c) { h = Math.max(h, c[0] + 1); w = Math.max(w, c[1] + 1); });
+      var lift = e.pointerType === 'touch' ? size * 1.4 : 0;
+      var x = e.clientX - box.left - w * size / 2;
+      var y = e.clientY - box.top - h * size / 2 - lift;
+      return [Math.round(y / size), Math.round(x / size), size, lift];
+    }
+
+    function startDrag(e, i) {
+      if (used[i] || moves >= 3) return;
+      e.preventDefault();
+      var size = boardEl.getBoundingClientRect().width / N;
+      var ghost = pieceEl(PIECES[i], size);
+      ghost.classList.add('t-float');
+      document.body.appendChild(ghost);
+      drag = { i: i, ghost: ghost, x: e.clientX, y: e.clientY, moved: false };
+      moveDrag(e);
+    }
+
+    function moveDrag(e) {
+      if (!drag) return;
+      if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 8) drag.moved = true;
+      var p = PIECES[drag.i];
+      var at = target(e, p);
+      var box = drag.ghost.getBoundingClientRect();
+      drag.ghost.style.left = e.clientX - box.width / 2 + 'px';
+      drag.ghost.style.top = e.clientY - box.height / 2 - at[3] + 'px';
+      if (fits(p, at[0], at[1])) {
+        draw({ color: p.color, spots: p.cells.map(function (c) { return [at[0] + c[0], at[1] + c[1]]; }) });
+      } else {
+        draw();
+      }
+    }
+
+    function endDrag(e) {
+      if (!drag) return;
+      var d = drag;
+      drag = null;
+      d.ghost.remove();
+      var p = PIECES[d.i];
+      var at = target(e, p);
+      if (fits(p, at[0], at[1])) {
+        place(d.i, at[0], at[1]);
+      } else if (!d.moved) {
+        /* A tap picks the piece; the next tap on the board puts it down. */
+        picked = d.i;
+        drawTray();
+        draw();
+      } else {
+        draw();
+      }
+    }
+
+    boardEl.addEventListener('click', function (e) {
+      if (picked === null) return;
+      var box = boardEl.getBoundingClientRect();
+      var size = box.width / N;
+      var r = Math.floor((e.clientY - box.top) / size), c = Math.floor((e.clientX - box.left) / size);
+      if (fits(PIECES[picked], r, c)) place(picked, r, c);
+    });
+
+    function place(i, r0, c0) {
+      var p = PIECES[i];
+      p.cells.forEach(function (c) { grid[r0 + c[0]][c0 + c[1]] = p.color; });
+      used[i] = true;
+      picked = null;
+      moves++;
+      draw();
+      drawTray();
+      var rows = [], cols = [];
+      for (var r = 0; r < N; r++) if (grid[r].every(Boolean)) rows.push(r);
+      for (var c = 0; c < N; c++) if (grid.every(function (row) { return row[c]; })) cols.push(c);
+      if (rows.length + cols.length) {
+        rows.forEach(function (r) { for (var c = 0; c < N; c++) cells[r * N + c].classList.add('pop'); });
+        cols.forEach(function (c) { for (var r = 0; r < N; r++) cells[r * N + c].classList.add('pop'); });
+        setTimeout(function () {
+          rows.forEach(function (r) { grid[r] = grid[r].map(function () { return 0; }); });
+          cols.forEach(function (c) { grid.forEach(function (row) { row[c] = 0; }); });
+          draw();
+          settle();
+        }, 260);
+        cleared++;
+        noteEl.textContent = t.lines[Math.min(cleared - 1, 1)];
+      } else {
+        settle();
+      }
+    }
+
+    function settle() {
+      var empty = grid.every(function (row) { return row.every(function (v) { return !v; }); });
+      if (empty) {
+        noteEl.textContent = t.clear;
+        noteEl.className = 't-note big';
+        doneEl.hidden = false;
+      } else if (moves >= 3) {
+        noteEl.textContent = t.stuck;
+        doneEl.hidden = false;
+      }
+    }
+
+    window.addEventListener('pointermove', moveDrag);
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', function () {
+      if (!drag) return;
+      drag.ghost.remove();
+      drag = null;
+      draw();
+    });
+    reset();
+  })();
+  </script>
   <p>
     Place blocks, clear lines, chain combos and wipe the whole board. 5,000 Adventure levels, a new Daily Puzzle
     every day, and Classic mode for endless high scores. Free to play.
   </p>
-  <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela">Get it on Google Play</a>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbutton">Get it on Google Play</a>
   <div class="links">
     <a href="terms.html">Terms of Use</a>
     <a href="privacy.html">Privacy Policy</a>
@@ -127,7 +385,7 @@
       Blokları yerleştir, satırları temizle, kombo yap ve tüm tahtayı sil. 5000 Macera seviyesi, her gün yepyeni bir
       Günlük Bulmaca ve en yüksek skorun için sonsuz Klasik mod. Ücretsiz oynanır.
     </p>
-    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=tr">Google Play’den indir</a>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=tr&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbutton">Google Play’den indir</a>
     <div class="links">
       <a href="terms.html#tr">Kullanım Şartları</a>
       <a href="privacy.html#tr">Gizlilik Politikası</a>
@@ -142,7 +400,7 @@
       Blöcke legen, Reihen räumen, Combos verketten und das ganze Brett leeren. 5.000 Abenteuer-Level, jeden Tag ein
       neues Tagesrätsel und der Klassisch-Modus für endlose Highscores. Kostenlos spielbar.
     </p>
-    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=de">Jetzt bei Google Play</a>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=de&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbutton">Jetzt bei Google Play</a>
     <div class="links">
       <a href="terms.html">Nutzungsbedingungen</a>
       <a href="privacy.html">Datenschutzerklärung</a>
@@ -158,7 +416,7 @@
       Placez des blocs, effacez des lignes, enchaînez les combos et videz tout le plateau. 5&nbsp;000 niveaux
       d'Aventure, un nouveau Puzzle du jour chaque jour et le mode Classique pour battre vos records sans fin. Jeu gratuit.
     </p>
-    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=fr">Disponible sur Google Play</a>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=fr&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbutton">Disponible sur Google Play</a>
     <div class="links">
       <a href="terms.html">Conditions d'utilisation</a>
       <a href="privacy.html">Politique de confidentialité</a>
@@ -174,7 +432,7 @@
       Coloca bloques, limpia líneas, encadena combos y vacía todo el tablero. 5000 niveles de Aventura, un Puzle diario
       nuevo cada día y el modo Clásico para batir tu récord sin fin. Juego gratuito.
     </p>
-    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=es">Disponible en Google Play</a>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.audio.minela&amp;hl=es&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbutton">Disponible en Google Play</a>
     <div class="links">
       <a href="terms.html">Condiciones de uso</a>
       <a href="privacy.html">Política de privacidad</a>
