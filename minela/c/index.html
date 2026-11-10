@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Minela challenge</title>
-<meta name="description" content="A friend challenges you to Minela: the same pieces, their score to beat.">
+<meta name="description" content="A friend challenges you to Minela: the same game, their result to beat.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0d111c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YerlitAS Labs">
 <meta property="og:title" content="A friend challenges you to Minela">
-<meta property="og:description" content="Same pieces, same order. Can you beat their score?">
+<meta property="og:description" content="The same game, your turn. Can you beat your friend?">
 <meta property="og:image" content="https://yerlitaslabs.github.io/minela/og-image.png">
 <link rel="icon" type="image/png" href="../favicon.png">
 <style>
@@ -50,11 +50,11 @@
 /* Reads the challenge in the link for this page only: nothing is stored or sent, and the app checks the code again. */
 (function () {
   var T = {
-    en: { title: 'A friend challenges you!', sub: 'Same pieces, same order. Can you beat this score?', none: 'Same pieces, your turn.', open: 'Open in Minela', get: 'Get Minela on Google Play', demo: 'Try the demo', fmt: 'en' },
-    tr: { title: 'Arkadaşın sana meydan okuyor!', sub: 'Aynı parçalar, aynı sıra. Bu skoru geçebilir misin?', none: 'Aynı parçalar, sıra sende.', open: "Minela'da aç", get: "Minela'yı Google Play'den indir", demo: 'Demoyu dene', fmt: 'tr' },
-    de: { title: 'Eine Herausforderung für dich!', sub: 'Gleiche Teile, gleiche Reihenfolge. Schaffst du mehr?', none: 'Gleiche Teile, du bist dran.', open: 'In Minela öffnen', get: 'Minela bei Google Play', demo: 'Demo ausprobieren', fmt: 'de' },
-    fr: { title: 'Un ami te défie !', sub: 'Mêmes pièces, même ordre. Feras-tu mieux ?', none: 'Mêmes pièces, à toi de jouer.', open: 'Ouvrir dans Minela', get: 'Minela sur Google Play', demo: 'Essayer la démo', fmt: 'fr' },
-    es: { title: '¡Un amigo te reta!', sub: 'Mismas piezas, mismo orden. ¿Puedes superar esta puntuación?', none: 'Mismas piezas, te toca.', open: 'Abrir en Minela', get: 'Minela en Google Play', demo: 'Probar la demo', fmt: 'es' }
+    en: { title: 'A friend challenges you!', sub: 'Same pieces, same order. Can you beat this score?', none: 'Same pieces, your turn.', open: 'Open in Minela', get: 'Get Minela on Google Play', demo: 'Try the demo', fmt: 'en', moves: '{n} moves', level: 'Same board, same goal. Can you solve it in fewer moves?' },
+    tr: { title: 'Arkadaşın sana meydan okuyor!', sub: 'Aynı parçalar, aynı sıra. Bu skoru geçebilir misin?', none: 'Aynı parçalar, sıra sende.', open: "Minela'da aç", get: "Minela'yı Google Play'den indir", demo: 'Demoyu dene', fmt: 'tr', moves: '{n} hamle', level: 'Aynı tahta, aynı hedef. Daha az hamlede çözebilir misin?' },
+    de: { title: 'Eine Herausforderung für dich!', sub: 'Gleiche Teile, gleiche Reihenfolge. Schaffst du mehr?', none: 'Gleiche Teile, du bist dran.', open: 'In Minela öffnen', get: 'Minela bei Google Play', demo: 'Demo ausprobieren', fmt: 'de', moves: '{n} Züge', level: 'Gleiches Brett, gleiches Ziel. Schaffst du es in weniger Zügen?' },
+    fr: { title: 'Un ami te défie !', sub: 'Mêmes pièces, même ordre. Feras-tu mieux ?', none: 'Mêmes pièces, à toi de jouer.', open: 'Ouvrir dans Minela', get: 'Minela sur Google Play', demo: 'Essayer la démo', fmt: 'fr', moves: '{n} coups', level: 'Même plateau, même objectif. Feras-tu mieux ?' },
+    es: { title: '¡Un amigo te reta!', sub: 'Mismas piezas, mismo orden. ¿Puedes superar esta puntuación?', none: 'Mismas piezas, te toca.', open: 'Abrir en Minela', get: 'Minela en Google Play', demo: 'Probar la demo', fmt: 'es', moves: '{n} movimientos', level: 'Mismo tablero, mismo objetivo. ¿Puedes hacerlo en menos?' }
   };
   var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
   var t = T[lang] || T.en;
@@ -65,16 +65,26 @@
 
   var code = new URLSearchParams(location.search).get('d') || '';
   var sound = /^[A-Za-z0-9_-]{8,400}$/.test(code);
+  /* Two kinds of challenge: a Classic game (version 1: its score and pieces) or a solved level (version 2: its moves). */
   var score = null;
+  var moves = null;
   if (sound) {
     try {
       var head = atob(code.slice(0, 8).replace(/-/g, '+').replace(/_/g, '/'));
       if (head.charCodeAt(0) === 1) {
         score = head.charCodeAt(1) * 16777216 + head.charCodeAt(2) * 65536 + head.charCodeAt(3) * 256 + head.charCodeAt(4);
+      } else if (head.charCodeAt(0) === 2 && code.length === 12) {
+        var body = atob(code.replace(/-/g, '+').replace(/_/g, '/'));
+        moves = body.charCodeAt(6) * 256 + body.charCodeAt(7);
       }
-    } catch (e) { score = null; }
+    } catch (e) { score = null; moves = null; }
   }
-  if (score !== null && score > 0 && score <= 100000000) {
+  if (moves !== null && moves > 0 && moves <= 999) {
+    var shown = document.getElementById('score');
+    shown.textContent = t.moves.replace('{n}', moves);
+    shown.hidden = false;
+    set('sub', t.level);
+  } else if (score !== null && score > 0 && score <= 100000000) {
     var el = document.getElementById('score');
     el.textContent = score.toLocaleString(t.fmt);
     el.hidden = false;
