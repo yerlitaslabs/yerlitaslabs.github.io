@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera: 光を紡ぐ者 · Android向けの光と鏡の穏やかなパズル</title>
+<meta name="description" content="TesseraはAndroid向けの穏やかなロジックパズルです。鏡を回し、光線を分け、色を混ぜて、すべてのソケットを光らせましょう。検証済みの1000レベル、制限時間なし、購入するものもありません。">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/ja/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="pt" href="https://yerlitaslabs.github.io/tessera/pt/">
+<link rel="alternate" hreflang="it" href="https://yerlitaslabs.github.io/tessera/it/">
+<link rel="alternate" hreflang="ja" href="https://yerlitaslabs.github.io/tessera/ja/">
+<link rel="alternate" hreflang="ko" href="https://yerlitaslabs.github.io/tessera/ko/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: 光を紡ぐ者">
+<meta property="og:description" content="光を曲げ、色を混ぜ、ステンドグラスを紡ぐ。片手の親指で遊べる、Android向けの穏やかなパズル。">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/ja/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="宇宙に浮かぶ金の輪と光の三角形、Tesseraのタイトル">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: 光を紡ぐ者",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "穏やかな光学ロジックパズル。鏡を回し、光線を分け、色を混ぜて、すべてのソケットを光らせましょう。解いた盤面はステンドグラスになります。10段階、検証済みの1000レベル。",
+  "url": "https://yerlitaslabs.github.io/tessera/ja/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "パズル",
+  "genre": ["パズル", "ロジック", "脳トレ", "カジュアル"],
+  "operatingSystem": "Android 8.0以降",
+  "inLanguage": ["ja", "en", "ko", "es", "fr", "de", "it", "pt", "tr"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+  #demo { margin: 24px auto 8px; max-width: 360px; }
+  .d-goal { color: var(--accent); margin: 0 0 12px; font-weight: 500; }
+  .d-board { position: relative; width: 100%; aspect-ratio: 1; }
+  .d-board canvas { display: block; width: 100%; height: 100%; }
+  .d-mirror { position: absolute; padding: 0; margin: 0; background: none; border: 0; border-radius: 10px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .d-mirror:focus-visible { outline: 2px solid var(--accent); }
+  .d-note { min-height: 26px; color: var(--muted); margin: 10px 0 4px; font-size: 15px; }
+  .d-cta { display: block; padding: 12px 18px; margin: 8px 0; border-radius: 999px; font-weight: 700; text-decoration: none; background: #ffd873; color: #141414; }
+  .d-cta.d-soon { background: none; color: var(--accent); border: 1px solid var(--line); font-weight: 500; }
+  .d-again { background: none; border: 0; color: var(--accent); font: inherit; cursor: pointer; padding: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Tesseraのアイコン" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">光を紡ぐ者</div>
+  <p class="lead"><strong>Tesseraは、Android向けの光と鏡の穏やかなパズルです。</strong>鏡を回し、光線を分け、色を混ぜて、すべてのソケットを光らせましょう。解いた盤面はひとつずつステンドグラスになります。制限時間なし、ライフなし、購入するものもありません。</p>
+  <p class="soon">まもなくGoogle Playに登場 · 日本語を含む9言語に対応</p>
+  <section id="demo" aria-label="遊べるデモ">
+    <p class="d-goal"></p>
+    <div class="d-board"><canvas width="340" height="340"></canvas></div>
+    <p class="d-note" aria-live="polite"></p>
+    <div class="d-done" hidden>
+      <a class="d-cta"></a>
+      <button class="d-again" type="button"></button>
+    </div>
+  </section>
+  <script src="../demo.js" defer></script>
+
+  <div class="facts">
+    <div><b>1000</b><span>検証済みのレベル</span></div>
+    <div><b>10</b><span>新しいアイデアのある段階</span></div>
+    <div><b>100</b><span>灯す星座</span></div>
+    <div><b>0</b><span>制限時間、ライフ、課金</span></div>
+  </div>
+
+  <div class="shots">
+    <img src="../shots/ja-1.jpg" alt="解かれたレベル:パルサーと銀河のあいだを走る色とりどりの光線" width="540" height="1080" loading="lazy">
+    <img src="../shots/ja-2.jpg" alt="キーストーン:光の三角形が金の輪とともに昇る" width="540" height="1080" loading="lazy">
+    <img src="../shots/ja-3.jpg" alt="完成した星座が灯る" width="540" height="1080" loading="lazy">
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>鏡は光線を曲げ、スプリッターは分け、コンバイナーは色を融合し(琥珀とコバルトでエメラルド)、ブリッジでは光線が交差できます</li>
+      <li>すべてのレベルはコンピューターで検証済み。解けること、最短の解答がただ1つであることを確認しています。最短で解けば星3つ</li>
+      <li>星座の星空アトラス。どの星座もホーム画面のライブ壁紙にできます</li>
+      <li>星々の中で遊ぶ:光はパルサーから回転する銀河へ。段階ごとに宇宙の新しい領域が広がります</li>
+      <li>すべての音はペンタトニック音階でリアルタイムに合成。片手の親指で遊べます</li>
+      <li>バナー広告なし。画面の切り替わりにときどき短い広告が出るほか、報酬のために自分で選んで見る動画があります</li>
+      <li>スコアカードをシェアし、同じ盤面で友だちに挑戦し、ウィジェットでホーム画面に星空を飾れます</li>
+      <li>Google Play ゲームの実績はお好みで。パズルはオフラインでも遊べます</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>よくある質問</h2>
+    <h3>Tesseraはどんなゲームですか?</h3>
+    <p>光のロジックパズルです。鏡を回し、プリズムを置いて、それぞれの光線を同じ色のソケットへ届けます。穏やかなゲーム(制限時間もライフもなし)ですが、本格的なパズルです。後半の段階では、長い反射の連鎖や分かれた光線、色の融合が求められます。</p>
+    <h3>無料ですか?広告はありますか?</h3>
+    <p>無料で、アプリ内購入はありません。バナー広告はなく、画面の切り替わりにときどき短い全画面広告が出ることがあります(パズルの途中には出ません)。追加のヒントやブースターなどの報酬のために、短い動画を自分で選んで見ることもできます。</p>
+    <h3>レベルはいくつありますか?</h3>
+    <p>1000レベル、10段階です。1枚の鏡から、融合した色の光学マトリクスまで。10レベルごとに、その章でいちばん難しい金の枠のキーストーンがあります。</p>
+    <h3>オフラインで遊べますか?</h3>
+    <p>はい、パズルはインターネットに接続しなくても遊べます。広告とPlay ゲームの実績には接続が必要です。</p>
+    <h3>どの端末で動きますか?</h3>
+    <p>Android 8.0以降のスマートフォン、タブレット、折りたたみ端末(大きな画面では横向きにも対応)。</p>
+  </section>
+
+  <nav class="lang" aria-label="言語">
+    <a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a><a href="../pt/" hreflang="pt" lang="pt">Português</a><a href="../it/" hreflang="it" lang="it">Italiano</a><b aria-current="page">日本語</b><a href="../ko/" hreflang="ko" lang="ko">한국어</a>
+  </nav>
+  <p><a href="../privacy.html">プライバシーポリシー(英語)</a> · <a href="../terms.html">利用規約(英語)</a></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tessera: O Tecelão de Luz · um quebra-cabeça calmo de luz e espelhos para Android</title>
+<meta name="description" content="Tessera é um quebra-cabeça lógico e calmo para Android: gire espelhos, divida feixes e funda cores até todos os receptores brilharem. 1.000 níveis verificados, sem cronômetro e nada para comprar.">
+<meta name="theme-color" content="#0d0e15">
+<link rel="canonical" href="https://yerlitaslabs.github.io/tessera/pt/">
+<link rel="alternate" hreflang="en" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="alternate" hreflang="tr" href="https://yerlitaslabs.github.io/tessera/tr/">
+<link rel="alternate" hreflang="de" href="https://yerlitaslabs.github.io/tessera/de/">
+<link rel="alternate" hreflang="fr" href="https://yerlitaslabs.github.io/tessera/fr/">
+<link rel="alternate" hreflang="es" href="https://yerlitaslabs.github.io/tessera/es/">
+<link rel="alternate" hreflang="pt" href="https://yerlitaslabs.github.io/tessera/pt/">
+<link rel="alternate" hreflang="it" href="https://yerlitaslabs.github.io/tessera/it/">
+<link rel="alternate" hreflang="ja" href="https://yerlitaslabs.github.io/tessera/ja/">
+<link rel="alternate" hreflang="ko" href="https://yerlitaslabs.github.io/tessera/ko/">
+<link rel="alternate" hreflang="x-default" href="https://yerlitaslabs.github.io/tessera/">
+<link rel="icon" type="image/png" href="../icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="YerlitAS Labs">
+<meta property="og:title" content="Tessera: O Tecelão de Luz">
+<meta property="og:description" content="Dobre a luz, funda cores e teça vitrais. Um quebra-cabeça calmo para Android que se joga com um polegar.">
+<meta property="og:url" content="https://yerlitaslabs.github.io/tessera/pt/">
+<meta property="og:image" content="https://yerlitaslabs.github.io/tessera/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="O triângulo de luz num anel de ouro, no espaço, com o título Tessera">
+<meta name="twitter:card" content="summary_large_image">
+<!-- When the game is live on Google Play: add "installUrl" and "sameAs" with its store link below. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Tessera: O Tecelão de Luz",
+  "alternateName": ["Tessera", "Tessera: The Light Weaver"],
+  "description": "Um quebra-cabeça de lógica óptica e calmo: gire espelhos, divida feixes e funda cores até todos os receptores brilharem; cada tabuleiro resolvido vira um vitral. 1.000 níveis verificados em dez fases.",
+  "url": "https://yerlitaslabs.github.io/tessera/pt/",
+  "image": "https://yerlitaslabs.github.io/tessera/og-image.png",
+  "applicationCategory": "GameApplication",
+  "applicationSubCategory": "Quebra-cabeça",
+  "genre": ["Quebra-cabeça", "Lógica", "Jogo de raciocínio", "Casual"],
+  "operatingSystem": "Android 8.0 ou posterior",
+  "inLanguage": ["pt", "en", "es", "fr", "de", "it", "tr", "ja", "ko"],
+  "contentRating": "PEGI 3",
+  "isFamilyFriendly": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+  "author": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/", "email": "yerlitaslabs@gmail.com" },
+  "publisher": { "@type": "Organization", "name": "YerlitAS Labs", "url": "https://yerlitaslabs.github.io/" }
+}
+</script>
+<style>
+  :root { --bg: #0d0e15; --card: #1a1c23; --text: #e8e6e1; --muted: #9a9daa; --accent: #f4ebd9; --line: #2a2d36; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
+  img.icon { width: 112px; height: 112px; border-radius: 26px; }
+  h1 { font-weight: 300; letter-spacing: 12px; font-size: 36px; margin: 22px 0 0; color: var(--accent); }
+  h2 { font-weight: 500; font-size: 20px; color: var(--accent); margin: 34px 0 10px; text-align: left; }
+  .tag { letter-spacing: 5px; color: var(--muted); font-size: 13px; margin: 6px 0 28px; }
+  p { color: var(--text); }
+  .lead { font-size: 18px; }
+  .card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px; margin: 26px 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+  .facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .facts b { display: block; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .facts span { color: var(--muted); font-size: 14px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px 0; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+  .faq { text-align: left; }
+  .faq h3 { font-size: 16px; margin: 18px 0 4px; color: var(--accent); }
+  .faq p { margin: 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .soon { color: var(--muted); font-size: 14px; }
+  nav.lang { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 40px 0 8px; }
+  nav.lang b { font-weight: 600; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 40px; }
+  #demo { margin: 24px auto 8px; max-width: 360px; }
+  .d-goal { color: var(--accent); margin: 0 0 12px; font-weight: 500; }
+  .d-board { position: relative; width: 100%; aspect-ratio: 1; }
+  .d-board canvas { display: block; width: 100%; height: 100%; }
+  .d-mirror { position: absolute; padding: 0; margin: 0; background: none; border: 0; border-radius: 10px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .d-mirror:focus-visible { outline: 2px solid var(--accent); }
+  .d-note { min-height: 26px; color: var(--muted); margin: 10px 0 4px; font-size: 15px; }
+  .d-cta { display: block; padding: 12px 18px; margin: 8px 0; border-radius: 999px; font-weight: 700; text-decoration: none; background: #ffd873; color: #141414; }
+  .d-cta.d-soon { background: none; color: var(--accent); border: 1px solid var(--line); font-weight: 500; }
+  .d-again { background: none; border: 0; color: var(--accent); font: inherit; cursor: pointer; padding: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../icon.png" alt="Ícone de Tessera" width="112" height="112">
+  <h1>TESSERA</h1>
+  <div class="tag">O TECELÃO DE LUZ</div>
+  <p class="lead"><strong>Tessera é um quebra-cabeça calmo de luz e espelhos para Android.</strong> Gire espelhos, divida
+    feixes e funda cores até todos os receptores brilharem, e veja cada tabuleiro resolvido virar um vitral. Sem
+    cronômetro, sem vidas, nada para comprar.</p>
+  <p class="soon">Em breve no Google Play · em 9 idiomas, incluindo Português</p>
+  <section id="demo" aria-label="Demo jogável">
+    <p class="d-goal"></p>
+    <div class="d-board"><canvas width="340" height="340"></canvas></div>
+    <p class="d-note" aria-live="polite"></p>
+    <div class="d-done" hidden>
+      <a class="d-cta"></a>
+      <button class="d-again" type="button"></button>
+    </div>
+  </section>
+  <script src="../demo.js" defer></script>
+
+  <div class="facts">
+    <div><b>1.000</b><span>níveis verificados</span></div>
+    <div><b>10</b><span>fases, cada uma com uma ideia nova</span></div>
+    <div><b>100</b><span>constelações para acender</span></div>
+    <div><b>0</b><span>cronômetros, vidas ou compras</span></div>
+  </div>
+
+  <div class="shots">
+    <img src="../shots/pt-1.jpg" alt="Um nível resolvido: feixes coloridos entre pulsares e galáxias" width="540" height="1080" loading="lazy">
+    <img src="../shots/pt-2.jpg" alt="Uma Pedra-Chave: o triângulo de luz sobe com seu anel de ouro" width="540" height="1080" loading="lazy">
+    <img src="../shots/pt-3.jpg" alt="Uma constelação completa se acende" width="540" height="1080" loading="lazy">
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Os espelhos dobram o feixe, os divisores o separam, os combinadores fundem cores (âmbar e cobalto fazem esmeralda), as pontes deixam os feixes se cruzarem</li>
+      <li>Cada nível é verificado por máquina: tem solução e uma única solução mais curta; iguale-a para ganhar três estrelas</li>
+      <li>Um Atlas do Céu de constelações, cada uma um papel de parede animado para a sua tela inicial</li>
+      <li>Joga-se entre as estrelas: a luz vai dos pulsares a galáxias que giram, e cada fase é um novo setor do espaço</li>
+      <li>Cada som é sintetizado ao vivo numa escala pentatônica; joga-se com um só polegar</li>
+      <li>Sem banners: um anúncio curto de vez em quando entre telas, e vídeos que você escolhe assistir em troca de uma recompensa</li>
+      <li>Compartilhe seu cartão de pontuação, desafie um amigo no mesmo tabuleiro e leve seu céu como widget na tela inicial</li>
+      <li>Conquistas opcionais do Google Play Games; os quebra-cabeças também funcionam sem internet</li>
+    </ul>
+  </div>
+
+  <section class="faq">
+    <h2>Perguntas</h2>
+    <h3>Que tipo de jogo é Tessera?</h3>
+    <p>Um quebra-cabeça de lógica sobre a luz: você gira espelhos e coloca prismas para que cada feixe chegue ao receptor
+      da sua cor. É calmo (sem cronômetro nem vidas), mas é um quebra-cabeça de verdade: as últimas fases pedem longas
+      cadeias de reflexos, feixes divididos e fusões de cor.</p>
+    <h3>É grátis? Tem anúncios?</h3>
+    <p>É grátis e não tem compras no app. Não há banners; de vez em quando pode aparecer um anúncio curto em tela cheia
+      entre telas (nunca no meio de um quebra-cabeça), e você pode escolher assistir a vídeos curtos em troca de uma
+      recompensa, como uma dica extra ou um reforço.</p>
+    <h3>Quantos níveis existem?</h3>
+    <p>1.000, em dez fases, de um único espelho até matrizes ópticas de cores fundidas. Cada décimo nível é uma
+      Pedra-Chave de moldura dourada, a mais difícil do seu capítulo.</p>
+    <h3>Dá para jogar offline?</h3>
+    <p>Sim, os quebra-cabeças funcionam sem internet. Os anúncios e as conquistas do Play Games precisam de conexão.</p>
+    <h3>Em quais aparelhos funciona?</h3>
+    <p>Android 8.0 ou posterior, em celulares, tablets e dobráveis (em telas grandes também gira na horizontal).</p>
+  </section>
+
+  <nav class="lang" aria-label="Idiomas">
+    <a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a><b aria-current="page">Português</b><a href="../it/" hreflang="it" lang="it">Italiano</a><a href="../ja/" hreflang="ja" lang="ja">日本語</a><a href="../ko/" hreflang="ko" lang="ko">한국어</a>
+  </nav>
+  <p><a href="../privacy.html">Política de privacidade (em inglês)</a> · <a href="../terms.html">Termos de uso (em inglês)</a></p>
+  <footer>© 2026 <a href="../../">YerlitAS Labs</a> · <a href="mailto:yerlitaslabs@gmail.com">yerlitaslabs@gmail.com</a></footer>
+</main>
+</body>
+</html>
