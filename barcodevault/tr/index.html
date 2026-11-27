@@ -29,11 +29,11 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","alternateName":"BarcodeVault: Stok Sayımı","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/tr/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
 {"@type":"FAQPage","inLanguage":"tr","mainEntity":[
-{"@type":"Question","name":"BarcodeVault ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. BarcodeVault ücretsizdir, reklamlarla desteklenir ve abonelik yoktur. Her gün 3 yeni sayım ücretsizdir. Sonraki yeni sayımlar, görüntü tarama, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir."}},
-{"@type":"Question","name":"İnternetsiz çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar için kullanılır."}},
+{"@type":"Question","name":"BarcodeVault ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet, BarcodeVault ücretsiz indirilir ve reklamlarla desteklenir. Her gün 3 yeni sayım ücretsizdir; sonraki yeni sayımlar, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. İsteğe bağlı BarcodeVault Pro aboneliği (aylık, 3 gün ücretsiz deneme) tüm reklamları kaldırır; Excel, CSV ve PDF'e aktarma, görüntüden tarama ve Google Drive yedeği ekler."}},
+{"@type":"Question","name":"İnternetsiz çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar, Pro satın alma, uygulama güncellemeleri ve isteğe bağlı Google Drive yedeği için kullanılır."}},
 {"@type":"Question","name":"Hangi barkod türlerini okur?","acceptedAnswer":{"@type":"Answer","text":"QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar ve GS1 DataBar ailesi dahil 22 tür."}},
-{"@type":"Question","name":"Stok sayımını Excel'e aktarabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir."}},
-{"@type":"Question","name":"Verilerim nerede saklanıyor?","acceptedAnswer":{"@type":"Answer","text":"Yalnızca cihazınızda. Hesap ve buluta yükleme yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir."}},
+{"@type":"Question","name":"Stok sayımını Excel'e aktarabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet, BarcodeVault Pro ile. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir."}},
+{"@type":"Question","name":"Verilerim nerede saklanıyor?","acceptedAnswer":{"@type":"Answer","text":"Cihazınızda. Hesap yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir; Pro ile bir kopya kendi Google Drive'ınızda tutulabilir."}},
 {"@type":"Question","name":"iPhone'da var mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. BarcodeVault, Android 8.0 ve üzeri telefonlar için Google Play'de sunulan bir Android uygulamasıdır."}}
 ]}
 ]}
@@ -81,7 +81,7 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <nav class="lang" aria-label="Dil"><a href="../" hreflang="en" lang="en">English</a><a href="./" hreflang="tr" aria-current="page">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../es/" hreflang="es" lang="es">Español</a></nav>
 
-<p><strong>BarcodeVault, Android için ücretsiz bir stok sayımı ve barkod okuyucu uygulamasıdır.</strong> Telefonunuzu depo, mağaza, ambar ve ev envanteri için hızlı bir sayım aracına dönüştürür: tarayın, sayın, stok sayımınızı Excel, CSV ya da PDF olarak dışa aktarın. Sayım çevrimdışı çalışır ve kayıtlarınız cihazınızdan hiç çıkmaz.</p>
+<p><strong>BarcodeVault, Android için ücretsiz bir stok sayımı ve barkod okuyucu uygulamasıdır.</strong> Telefonunuzu depo, mağaza, ambar ve ev envanteri için hızlı bir sayım aracına dönüştürür: tarayın, sayın, stok sayımınızı Excel, CSV ya da PDF olarak dışa aktarın. Sayım çevrimdışı çalışır ve kayıtlarınız cihazınızda kalır.</p>
 
 <h2>Kimler için</h2>
 <ul class="uses">
@@ -93,39 +93,42 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <div class="grid">
   <div class="card"><h3>Tara ve say</h3><p>Ses ve titreşimle kesintisiz tarama. Tekrar okutulan kodlarda ne olacağını seçin: miktarı artır, uyar ya da ayrı satır ekle. Bitir'e dokunup doğrudan kaydedin veya paylaşın.</p></div>
-  <div class="card"><h3>Excel, CSV ve PDF</h3><p>Her sayımı tek dokunuşla Excel (.xlsx), CSV ya da yazdırmaya hazır PDF rapor olarak aktarın. Baştaki sıfırlar korunur.</p></div>
+  <div class="card"><h3>Excel, CSV ve PDF</h3><p>Her sayımı tek dokunuşla Excel (.xlsx), CSV ya da yazdırmaya hazır PDF rapor olarak aktarın. Baştaki sıfırlar korunur. BarcodeVault Pro'ya dahildir.</p></div>
   <div class="card"><h3>QR kod ve barkod</h3><p>Bağlantı, Wi-Fi ve kişi kartı için QR kod; EAN, UPC ve Code 128 barkodları oluşturun. PNG, JPG, PDF ya da SVG olarak kaydedin veya yazdırın.</p></div>
-  <div class="card"><h3>Fotoğraf ve PDF</h3><p>Galerideki bir fotoğraftaki ya da PDF belgesindeki tüm barkod ve QR kodları okuyup sayıma ekleyin.</p></div>
+  <div class="card"><h3>Fotoğraf ve PDF</h3><p>Galerideki bir fotoğraftaki ya da PDF belgesindeki tüm barkod ve QR kodları okuyup sayıma ekleyin. Pro'ya dahildir.</p></div>
   <div class="card"><h3>Yedek ve hatırlatma</h3><p>Günlük ya da haftalık otomatik yedek; isterseniz kendi şifrenizle AES-256 şifreleme. Kendi sayımlarınız için isteğe bağlı hatırlatmalar.</p></div>
-  <div class="card"><h3>Gizlilik öncelikli</h3><p>Hesap yok. Sayımlar, notlar, fotoğraflar ve yedekler cihazınızda kalır. Ücretsiz, reklamlarla desteklenir.</p></div>
+  <div class="card"><h3>Gizlilik öncelikli</h3><p>Hesap yok. Sayımlar, notlar, fotoğraflar ve yedekler cihazınızda kalır; yalnızca Drive yedeğini açarsanız bir kopya kendi Google Drive'ınıza gider. Reklamlı ücretsiz ya da Pro ile reklamsız.</p></div>
+  <div class="card"><h3>Okuyucular ve birimler</h3><p>Kamerayı, Bluetooth okuyucuyu ya da el terminalini (Zebra, Honeywell ve diğerleri) kullanın. Adet, koli, kg ya da litre olarak sayın; bir koliyi tek okutmayla sayın.</p></div>
 </div>
 
 <h2>Telefonla stok sayımı nasıl yapılır?</h2>
 <ol class="steps">
   <li><strong>Yeni sayım başlatın</strong> ve bir ad verin, örneğin “Mağaza 1 – Kasım”.</li>
   <li><strong>Barkodları kamerayla tarayın.</strong> Her okutma miktarı 1 artırır; koliler için sayı yazın, konum ya da not ekleyin.</li>
-  <li><strong>Bitir'e dokunun</strong> ve sayımı Excel, CSV ya da PDF olarak kaydedin veya muhasebecinize gönderin.</li>
+  <li><strong>Bitir'e dokunun</strong> ve sayımı Pro ile Excel, CSV ya da PDF olarak kaydedin veya muhasebecinize gönderin.</li>
 </ol>
 
 <section class="tools" id="tools">
-<h2>Büyük envanterler için ücretsiz araçlar</h2>
-<p>Abonelik yok: tüm araçlar ücretsiz. QR kod ve barkod oluşturma gibi her biri kısa bir videodan sonra 1 saatliğine açılır.</p>
+<h2>Büyük envanterler için araçlar</h2>
+<p>Reklamlı ücretsiz: QR kod ve barkod oluşturma gibi her araç kısa bir videodan sonra 1 saatliğine açılır. Görüntüden tarama ve toplu Excel, tüm araçları reklamsız açan BarcodeVault Pro'ya dahildir.</p>
 <ul class="tools-list">
-  <li><strong>Fotoğraf ve PDF tarama</strong> – bir fotoğraftaki ya da PDF'teki tüm kodları okuyup sayıma ekleyin.</li>
-  <li><strong>Toplu Excel</strong> – birden çok sayımı, barkod başına toplamlarla tek bir çalışma kitabına aktarın.</li>
+  <li><strong>Fotoğraf ve PDF tarama (Pro)</strong> – bir fotoğraftaki ya da PDF'teki tüm kodları okuyup sayıma ekleyin.</li>
+  <li><strong>Toplu Excel (Pro)</strong> – birden çok sayımı, barkod başına toplamlarla tek bir çalışma kitabına aktarın.</li>
   <li><strong>Tüm sayımlarda ara</strong> – bir barkodu yazın ya da okutun; hangi sayımlarda, hangi miktar ve konumda olduğunu görün.</li>
   <li><strong>Beklenen stokla karşılaştır</strong> – stok listenizi (Excel ya da CSV) içe aktarın; eksik, fazla ve farklı miktarları görün.</li>
   <li><strong>Toplu etiket yazdırma</strong> – çok sayıda barkod ya da QR kodu A4 etiket sayfalarına PDF olarak basın.</li>
+  <li><strong>Ürün kataloğu</strong> – ürün listenizi (Excel ya da CSV) içe aktarın; yalnızca barkod yerine ürün adlarını ve birimleri görün.</li>
+  <li><strong>Sayımları birleştir</strong> – birden çok telefondaki sayımları toplam miktarlarla tek sayımda birleştirin.</li>
 </ul>
-<p class="small">Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir ve video gerektirmez.</p>
+<p class="small">Sayıma devam etmek, her gün ilk üç yeni sayım ve telefondaki yedekler hiç video gerektirmez. BarcodeVault Pro, 3 gün ücretsiz denemeli aylık bir aboneliktir: reklamsız kullanım, Excel, CSV ve PDF'e aktarma, görüntüden tarama ve Google Drive yedeği.</p>
 </section>
 
 <h2 id="sss">Sık sorulan sorular</h2>
-<details><summary>BarcodeVault ücretsiz mi?</summary><p>Evet. BarcodeVault ücretsizdir, reklamlarla desteklenir ve abonelik yoktur. Her gün 3 yeni sayım ücretsizdir. Sonraki yeni sayımlar, görüntü tarama, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. Sayıma devam etmek, dışa aktarma ve yedekleme her zaman ücretsizdir.</p></details>
-<details><summary>İnternetsiz çalışır mı?</summary><p>Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar için kullanılır.</p></details>
+<details><summary>BarcodeVault ücretsiz mi?</summary><p>Evet, BarcodeVault ücretsiz indirilir ve reklamlarla desteklenir. Her gün 3 yeni sayım ücretsizdir; sonraki yeni sayımlar, QR ve barkod oluşturma ile araçlar kısa bir videodan sonra 1 saat açık kalır. İsteğe bağlı BarcodeVault Pro aboneliği (aylık, 3 gün ücretsiz deneme) tüm reklamları kaldırır; Excel, CSV ve PDF'e aktarma, görüntüden tarama ve Google Drive yedeği ekler.</p></details>
+<details><summary>İnternetsiz çalışır mı?</summary><p>Evet. Tarama, sayım, dışa aktarma ve yedekleme internet olmadan çalışır. Barkod tanıma telefonda yapılır; internet yalnızca reklamlar, Pro satın alma, uygulama güncellemeleri ve isteğe bağlı Google Drive yedeği için kullanılır.</p></details>
 <details><summary>Hangi barkod türlerini okur?</summary><p>QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar ve GS1 DataBar ailesi dahil 22 tür.</p></details>
-<details><summary>Stok sayımını Excel'e aktarabilir miyim?</summary><p>Evet. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir.</p></details>
-<details><summary>Verilerim nerede saklanıyor?</summary><p>Yalnızca cihazınızda. Hesap ve buluta yükleme yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir.</p></details>
+<details><summary>Stok sayımını Excel'e aktarabilir miyim?</summary><p>Evet, BarcodeVault Pro ile. Her sayım Excel (.xlsx), CSV ya da yazdırılabilir PDF rapor olarak kaydedilebilir veya paylaşılabilir. Baştaki sıfırlar korunur; aynı barkodlar toplam miktarla tek satırda birleştirilebilir.</p></details>
+<details><summary>Verilerim nerede saklanıyor?</summary><p>Cihazınızda. Hesap yoktur. İsteğe bağlı yedek dosyaları kendi şifrenizle AES-256 ile şifrelenebilir; Pro ile bir kopya kendi Google Drive'ınızda tutulabilir.</p></details>
 <details><summary>iPhone'da var mı?</summary><p>Hayır. BarcodeVault, Android 8.0 ve üzeri telefonlar için Google Play'de sunulan bir Android uygulamasıdır.</p></details>
 
 <p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=tr&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_tr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den alın" width="207" height="80"></a></p>

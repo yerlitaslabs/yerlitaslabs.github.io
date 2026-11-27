@@ -29,11 +29,11 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/fr/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
 {"@type":"FAQPage","inLanguage":"fr","mainEntity":[
-{"@type":"Question","name":"BarcodeVault est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. BarcodeVault est gratuit, financé par la publicité et sans abonnement. Trois nouveaux inventaires sont gratuits chaque jour. Les inventaires suivants, le scan d'images, la création de QR codes et de codes-barres et les outils se débloquent pendant 1 heure après une courte vidéo. Poursuivre un inventaire, exporter et sauvegarder restent toujours gratuits."}},
-{"@type":"Question","name":"L'application fonctionne-t-elle hors ligne ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le scan, le comptage, l'export et les sauvegardes fonctionnent sans connexion. La reconnaissance des codes-barres se fait sur le téléphone ; Internet ne sert qu'à la publicité."}},
+{"@type":"Question","name":"BarcodeVault est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, BarcodeVault se télécharge gratuitement et est financé par la publicité. Trois nouveaux inventaires sont gratuits chaque jour ; les inventaires suivants, la création de QR codes et de codes-barres et les outils se débloquent pendant 1 heure après une courte vidéo. L'abonnement facultatif BarcodeVault Pro (mensuel, avec 3 jours d'essai gratuit) supprime toutes les annonces et ajoute l'export Excel, CSV et PDF, le scan d'images et la sauvegarde Google Drive."}},
+{"@type":"Question","name":"L'application fonctionne-t-elle hors ligne ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le scan, le comptage, l'export et les sauvegardes fonctionnent sans connexion. La reconnaissance des codes-barres se fait sur le téléphone ; Internet ne sert qu'à la publicité, aux achats Pro, aux mises à jour et à la sauvegarde Google Drive facultative."}},
 {"@type":"Question","name":"Quels types de codes-barres sont lus ?","acceptedAnswer":{"@type":"Answer","text":"22 types, dont QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar et la famille GS1 DataBar."}},
-{"@type":"Question","name":"Puis-je exporter mon inventaire vers Excel ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Chaque inventaire peut être enregistré ou partagé en Excel (.xlsx), CSV ou rapport PDF imprimable. Les zéros initiaux sont conservés et les codes identiques peuvent être fusionnés en une ligne avec la quantité totale."}},
-{"@type":"Question","name":"Où sont stockées mes données ?","acceptedAnswer":{"@type":"Answer","text":"Uniquement sur votre appareil. Pas de compte ni d'envoi vers le cloud. Les fichiers de sauvegarde peuvent être chiffrés en AES-256 avec votre propre mot de passe."}},
+{"@type":"Question","name":"Puis-je exporter mon inventaire vers Excel ?","acceptedAnswer":{"@type":"Answer","text":"Oui, avec BarcodeVault Pro. Chaque inventaire peut être enregistré ou partagé en Excel (.xlsx), CSV ou rapport PDF imprimable. Les zéros initiaux sont conservés et les codes identiques peuvent être fusionnés en une ligne avec la quantité totale."}},
+{"@type":"Question","name":"Où sont stockées mes données ?","acceptedAnswer":{"@type":"Answer","text":"Sur votre appareil. Pas de compte. Les fichiers de sauvegarde peuvent être chiffrés en AES-256 avec votre propre mot de passe et, avec Pro, une copie peut être conservée dans votre propre Google Drive."}},
 {"@type":"Question","name":"BarcodeVault existe-t-il sur iPhone ?","acceptedAnswer":{"@type":"Answer","text":"Non. BarcodeVault est une application Android pour les téléphones sous Android 8.0 ou version ultérieure, disponible sur Google Play."}}
 ]}
 ]}
@@ -81,7 +81,7 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <nav class="lang" aria-label="Langue"><a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="./" hreflang="fr" aria-current="page">Français</a><a href="../es/" hreflang="es" lang="es">Español</a></nav>
 
-<p><strong>BarcodeVault est une application d'inventaire gratuite avec scanner de codes-barres pour Android.</strong> Elle transforme votre téléphone en compteur de stock rapide pour les entrepôts, magasins, réserves et inventaires à la maison : scannez, comptez et exportez votre inventaire en Excel, CSV ou PDF. Le comptage fonctionne hors ligne et vos enregistrements ne quittent jamais votre appareil.</p>
+<p><strong>BarcodeVault est une application d'inventaire gratuite avec scanner de codes-barres pour Android.</strong> Elle transforme votre téléphone en compteur de stock rapide pour les entrepôts, magasins, réserves et inventaires à la maison : scannez, comptez et exportez votre inventaire en Excel, CSV ou PDF. Le comptage fonctionne hors ligne et vos enregistrements restent sur votre appareil.</p>
 
 <h2>Pour qui</h2>
 <ul class="uses">
@@ -93,39 +93,42 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <div class="grid">
   <div class="card"><h3>Scanner et compter</h3><p>Scan continu avec son et vibration. Choisissez ce qui se passe avec un code répété : augmenter la quantité, avertir ou ajouter une ligne. Touchez Terminer pour enregistrer ou partager directement.</p></div>
-  <div class="card"><h3>Excel, CSV et PDF</h3><p>Exportez chaque inventaire en Excel (.xlsx), CSV ou rapport PDF prêt à imprimer en une touche. Les zéros initiaux sont conservés.</p></div>
+  <div class="card"><h3>Excel, CSV et PDF</h3><p>Exportez chaque inventaire en Excel (.xlsx), CSV ou rapport PDF prêt à imprimer en une touche. Les zéros initiaux sont conservés. Inclus dans BarcodeVault Pro.</p></div>
   <div class="card"><h3>QR codes et codes-barres</h3><p>Créez des QR codes pour liens, Wi-Fi et contacts, ou des codes EAN, UPC et Code 128. Enregistrez en PNG, JPG, PDF ou SVG, ou imprimez.</p></div>
-  <div class="card"><h3>Photos et PDF</h3><p>Lisez tous les codes-barres et QR codes d'une photo de la galerie ou d'un document PDF et ajoutez-les à un inventaire.</p></div>
+  <div class="card"><h3>Photos et PDF</h3><p>Lisez tous les codes-barres et QR codes d'une photo de la galerie ou d'un document PDF et ajoutez-les à un inventaire. Inclus dans Pro.</p></div>
   <div class="card"><h3>Sauvegardes et rappels</h3><p>Sauvegardes automatiques quotidiennes ou hebdomadaires, chiffrables en AES-256 avec votre mot de passe. Rappels facultatifs pour vos inventaires.</p></div>
-  <div class="card"><h3>Confidentialité d'abord</h3><p>Aucun compte. Inventaires, notes, photos et sauvegardes restent sur votre appareil. Gratuit, financé par la publicité.</p></div>
+  <div class="card"><h3>Confidentialité d'abord</h3><p>Aucun compte. Inventaires, notes, photos et sauvegardes restent sur votre appareil ; une copie va sur votre propre Google Drive seulement si vous activez la sauvegarde Drive. Gratuit avec publicité, ou sans publicité avec Pro.</p></div>
+  <div class="card"><h3>Lecteurs et unités</h3><p>Utilisez la caméra, un lecteur Bluetooth ou un terminal portable (Zebra, Honeywell et d'autres). Comptez à la pièce, au carton, au kg ou au litre, et comptez un carton entier en un scan.</p></div>
 </div>
 
 <h2>Comment faire un inventaire avec son téléphone</h2>
 <ol class="steps">
   <li><strong>Créez un inventaire</strong> et nommez-le, par exemple « Magasin 1 – novembre ».</li>
   <li><strong>Scannez les codes-barres</strong> avec l'appareil photo. Chaque scan ajoute 1 à la quantité ; saisissez un nombre pour les cartons, ajoutez un emplacement ou une note.</li>
-  <li><strong>Touchez Terminer</strong> et exportez l'inventaire en Excel, CSV ou PDF pour votre comptable ou votre logiciel de gestion.</li>
+  <li><strong>Touchez Terminer</strong> et exportez l'inventaire avec Pro en Excel, CSV ou PDF pour votre comptable ou votre logiciel de gestion.</li>
 </ol>
 
 <section class="tools" id="tools">
-<h2>Outils gratuits pour les grands inventaires</h2>
-<p>Sans abonnement : tous les outils sont gratuits. Comme la création de QR codes et de codes-barres, chacun se débloque pendant 1 heure après une courte vidéo.</p>
+<h2>Outils pour les grands inventaires</h2>
+<p>Gratuit avec publicité : comme la création de QR codes et de codes-barres, chaque outil se débloque pendant 1 heure après une courte vidéo. Le scan d'images et l'Excel groupé font partie de BarcodeVault Pro, qui ouvre tous les outils sans publicité.</p>
 <ul class="tools-list">
-  <li><strong>Scan de photos et PDF</strong> – lisez tous les codes d'une photo ou d'un PDF et ajoutez-les à un inventaire.</li>
-  <li><strong>Excel groupé</strong> – plusieurs inventaires dans un seul classeur, avec les totaux par code-barres.</li>
+  <li><strong>Scan de photos et PDF (Pro)</strong> – lisez tous les codes d'une photo ou d'un PDF et ajoutez-les à un inventaire.</li>
+  <li><strong>Excel groupé (Pro)</strong> – plusieurs inventaires dans un seul classeur, avec les totaux par code-barres.</li>
   <li><strong>Recherche globale</strong> – saisissez ou scannez un code et voyez dans quels inventaires il apparaît, avec quantités et emplacements.</li>
   <li><strong>Comparaison avec le stock attendu</strong> – importez votre liste (Excel ou CSV) et voyez les manquants, les surplus et les écarts.</li>
   <li><strong>Impression d'étiquettes</strong> – imprimez de nombreux codes-barres ou QR codes sur des planches A4 en PDF.</li>
+  <li><strong>Catalogue produits</strong> – importez votre liste de produits (Excel ou CSV) et voyez les noms et unités au lieu des seuls codes-barres.</li>
+  <li><strong>Fusion d'inventaires</strong> – regroupez les inventaires de plusieurs téléphones en un seul, avec les quantités totales.</li>
 </ul>
-<p class="small">Poursuivre un inventaire, exporter et sauvegarder restent toujours gratuits, sans vidéo.</p>
+<p class="small">Poursuivre un inventaire, les trois premiers nouveaux inventaires de chaque jour et les sauvegardes sur le téléphone ne demandent jamais de vidéo. BarcodeVault Pro est un abonnement mensuel avec 3 jours d'essai gratuit : sans publicité, export Excel, CSV et PDF, scan d'images et sauvegarde Google Drive.</p>
 </section>
 
 <h2 id="faq">Questions fréquentes</h2>
-<details><summary>BarcodeVault est-il gratuit ?</summary><p>Oui. BarcodeVault est gratuit, financé par la publicité et sans abonnement. Trois nouveaux inventaires sont gratuits chaque jour. Les inventaires suivants, le scan d'images, la création de QR codes et de codes-barres et les outils se débloquent pendant 1 heure après une courte vidéo. Poursuivre un inventaire, exporter et sauvegarder restent toujours gratuits.</p></details>
-<details><summary>L'application fonctionne-t-elle hors ligne ?</summary><p>Oui. Le scan, le comptage, l'export et les sauvegardes fonctionnent sans connexion. La reconnaissance des codes-barres se fait sur le téléphone ; Internet ne sert qu'à la publicité.</p></details>
+<details><summary>BarcodeVault est-il gratuit ?</summary><p>Oui, BarcodeVault se télécharge gratuitement et est financé par la publicité. Trois nouveaux inventaires sont gratuits chaque jour ; les inventaires suivants, la création de QR codes et de codes-barres et les outils se débloquent pendant 1 heure après une courte vidéo. L'abonnement facultatif BarcodeVault Pro (mensuel, avec 3 jours d'essai gratuit) supprime toutes les annonces et ajoute l'export Excel, CSV et PDF, le scan d'images et la sauvegarde Google Drive.</p></details>
+<details><summary>L'application fonctionne-t-elle hors ligne ?</summary><p>Oui. Le scan, le comptage, l'export et les sauvegardes fonctionnent sans connexion. La reconnaissance des codes-barres se fait sur le téléphone ; Internet ne sert qu'à la publicité, aux achats Pro, aux mises à jour et à la sauvegarde Google Drive facultative.</p></details>
 <details><summary>Quels types de codes-barres sont lus ?</summary><p>22 types, dont QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar et la famille GS1 DataBar.</p></details>
-<details><summary>Puis-je exporter mon inventaire vers Excel ?</summary><p>Oui. Chaque inventaire peut être enregistré ou partagé en Excel (.xlsx), CSV ou rapport PDF imprimable. Les zéros initiaux sont conservés et les codes identiques peuvent être fusionnés en une ligne avec la quantité totale.</p></details>
-<details><summary>Où sont stockées mes données ?</summary><p>Uniquement sur votre appareil. Pas de compte ni d'envoi vers le cloud. Les fichiers de sauvegarde peuvent être chiffrés en AES-256 avec votre propre mot de passe.</p></details>
+<details><summary>Puis-je exporter mon inventaire vers Excel ?</summary><p>Oui, avec BarcodeVault Pro. Chaque inventaire peut être enregistré ou partagé en Excel (.xlsx), CSV ou rapport PDF imprimable. Les zéros initiaux sont conservés et les codes identiques peuvent être fusionnés en une ligne avec la quantité totale.</p></details>
+<details><summary>Où sont stockées mes données ?</summary><p>Sur votre appareil. Pas de compte. Les fichiers de sauvegarde peuvent être chiffrés en AES-256 avec votre propre mot de passe et, avec Pro, une copie peut être conservée dans votre propre Google Drive.</p></details>
 <details><summary>BarcodeVault existe-t-il sur iPhone ?</summary><p>Non. BarcodeVault est une application Android pour les téléphones sous Android 8.0 ou version ultérieure, disponible sur Google Play.</p></details>
 
 <p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=fr&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_fr"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png" alt="Disponible sur Google Play" width="207" height="80"></a></p>

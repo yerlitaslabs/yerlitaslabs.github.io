@@ -31,11 +31,11 @@
 {"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","alternateName":["BarcodeVault: Inventory Scan","BarcodeVault: Stok Sayımı"],"description":"Offline inventory app and barcode scanner for Android. Scan barcodes and QR codes, count stock and export to Excel, CSV or PDF. Data stays on the device; no account needed.","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Inventory management","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","screenshot":"https://yerlitaslabs.github.io/barcodevault/og-image.png","url":"https://yerlitaslabs.github.io/barcodevault/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","installUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Barcode and QR code scanning (22 types)","Stock counting with duplicate rules","Export to Excel (.xlsx), CSV and PDF","Scan barcodes from photos and PDF files","QR code and barcode generator","A4 label sheet printing","Compare a count with an expected stock list","Encrypted backups (AES-256)","Works offline, no account"],"publisher":{"@id":"https://yerlitaslabs.github.io/#org"}},
 {"@type":"Organization","@id":"https://yerlitaslabs.github.io/#org","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/","email":"yerlitaslabs@gmail.com"},
 {"@type":"FAQPage","@id":"https://yerlitaslabs.github.io/barcodevault/#faq","mainEntity":[
-{"@type":"Question","name":"Is BarcodeVault free?","acceptedAnswer":{"@type":"Answer","text":"Yes. BarcodeVault is free and supported by ads, with no subscription. Three new counts every day are free. More new counts, image scanning, QR and barcode creation and the tools open for 1 hour after a short video. Continuing a count, exporting and backups are always free."}},
-{"@type":"Question","name":"Does BarcodeVault work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Scanning, counting, exporting and backups work without an internet connection. Barcode recognition runs on the phone; the internet is only used for ads."}},
+{"@type":"Question","name":"Is BarcodeVault free?","acceptedAnswer":{"@type":"Answer","text":"Yes, BarcodeVault is free to download and supported by ads. Three new counts every day are free; more new counts, QR and barcode creation and the tools open for 1 hour after a short video. The optional BarcodeVault Pro subscription (monthly, with a 3-day free trial) removes all ads and adds exporting to Excel, CSV and PDF, image scanning and Google Drive backup."}},
+{"@type":"Question","name":"Does BarcodeVault work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Scanning, counting, exporting and backups work without an internet connection. Barcode recognition runs on the phone; the internet is only used for ads, Pro purchases, app updates and the optional Google Drive backup."}},
 {"@type":"Question","name":"Which barcode types can it read?","acceptedAnswer":{"@type":"Answer","text":"22 types, including QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar and the GS1 DataBar family."}},
-{"@type":"Question","name":"Can I export my inventory count to Excel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every count can be exported to Excel (.xlsx), CSV or a printable PDF report, saved to your phone or shared. Leading zeros are kept and identical barcodes can be merged into one row with total quantities."}},
-{"@type":"Question","name":"Where are my counts stored?","acceptedAnswer":{"@type":"Answer","text":"Only on your device. There is no account and no cloud upload. Optional backup files can be encrypted with AES-256 and your own password."}},
+{"@type":"Question","name":"Can I export my inventory count to Excel?","acceptedAnswer":{"@type":"Answer","text":"Yes, with BarcodeVault Pro. Every count can be exported to Excel (.xlsx), CSV or a printable PDF report, saved to your phone or shared. Leading zeros are kept and identical barcodes can be merged into one row with total quantities."}},
+{"@type":"Question","name":"Where are my counts stored?","acceptedAnswer":{"@type":"Answer","text":"On your device. There is no account. Optional backup files can be encrypted with AES-256 and your own password, and with Pro a copy can be kept in your own Google Drive."}},
 {"@type":"Question","name":"Can I compare a count with my stock list?","acceptedAnswer":{"@type":"Answer","text":"Yes. Import your expected stock list as Excel or CSV and BarcodeVault shows missing items, extra items and different quantities."}},
 {"@type":"Question","name":"Is BarcodeVault available for iPhone?","acceptedAnswer":{"@type":"Answer","text":"No. BarcodeVault is an Android app for phones with Android 8.0 or later, available on Google Play."}}
 ]}
@@ -86,7 +86,7 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <nav class="lang" aria-label="Language"><a href="./" hreflang="en" aria-current="page">English</a><a href="tr/" hreflang="tr" lang="tr">Türkçe</a><a href="de/" hreflang="de" lang="de">Deutsch</a><a href="fr/" hreflang="fr" lang="fr">Français</a><a href="es/" hreflang="es" lang="es">Español</a></nav>
 
-<p><strong>BarcodeVault is a free inventory app and barcode scanner for Android.</strong> It turns your phone into a fast stock counter for warehouses, stores, stockrooms and home inventories: scan, count and export your stocktake to Excel, CSV or PDF. Counting works offline, and your records never leave your device.</p>
+<p><strong>BarcodeVault is a free inventory app and barcode scanner for Android.</strong> It turns your phone into a fast stock counter for warehouses, stores, stockrooms and home inventories: scan, count and export your stocktake to Excel, CSV or PDF. Counting works offline, and your records stay on your device.</p>
 
 <h2>Made for</h2>
 <ul class="uses">
@@ -98,39 +98,42 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <div class="grid">
   <div class="card"><h3>Scan &amp; count</h3><p>Continuous scanning with sound and vibration. Choose what happens with repeated codes: add to the quantity, warn, or add a separate row. Tap Finish to go straight to saving or sharing.</p></div>
-  <div class="card"><h3>Excel, CSV &amp; PDF</h3><p>Export any count to Excel (.xlsx), CSV or a print-ready PDF report in one tap. Leading zeros are kept.</p></div>
+  <div class="card"><h3>Excel, CSV &amp; PDF</h3><p>Export any count to Excel (.xlsx), CSV or a print-ready PDF report in one tap. Leading zeros are kept. Part of BarcodeVault Pro.</p></div>
   <div class="card"><h3>QR codes &amp; barcodes</h3><p>Create QR codes for links, Wi-Fi and contacts, or EAN, UPC and Code 128 barcodes. Save as PNG, JPG, PDF or SVG, or print.</p></div>
-  <div class="card"><h3>Photos &amp; PDFs</h3><p>Read every barcode and QR code in a photo from your gallery or in a PDF document, and add them to a count.</p></div>
+  <div class="card"><h3>Photos &amp; PDFs</h3><p>Read every barcode and QR code in a photo from your gallery or in a PDF document, and add them to a count. Part of Pro.</p></div>
   <div class="card"><h3>Backups &amp; reminders</h3><p>Automatic daily or weekly backups, optionally encrypted with AES-256 and your own password. Optional reminders about your own counts.</p></div>
-  <div class="card"><h3>Private by design</h3><p>No account. Counts, notes, photos and backups stay on your device. Free, supported by ads.</p></div>
+  <div class="card"><h3>Private by design</h3><p>No account. Counts, notes, photos and backups stay on your device; a copy goes to your own Google Drive only if you turn on Drive backup. Free with ads, or ad-free with Pro.</p></div>
+  <div class="card"><h3>Scanners &amp; units</h3><p>Use the camera, a Bluetooth scanner or a handheld terminal (Zebra, Honeywell and more). Count by piece, box, kg or litre, and scan a whole case at once.</p></div>
 </div>
 
 <h2>How to count inventory with your phone</h2>
 <ol class="steps">
   <li><strong>Start a count</strong> and give it a name, for example “Store 1 – November”.</li>
   <li><strong>Scan the barcodes</strong> with the camera. Each scan adds 1 to the quantity; type a number for boxes, add a location or a note.</li>
-  <li><strong>Tap Finish</strong> and export the count to Excel, CSV or PDF – save it or send it to your accountant or ERP.</li>
+  <li><strong>Tap Finish</strong> and export the count to Excel, CSV or PDF with Pro – save it or send it to your accountant or ERP.</li>
 </ol>
 
 <section class="tools" id="tools">
-<h2>Free tools for bigger inventories</h2>
-<p>No subscription: every tool is free. Like QR code and barcode creation, each one opens for 1 hour after a short video.</p>
+<h2>Tools for bigger inventories</h2>
+<p>Free with ads: like QR code and barcode creation, each tool opens for 1 hour after a short video. Image scanning and combined Excel are part of BarcodeVault Pro, which opens every tool without ads.</p>
 <ul class="tools-list">
-  <li><strong>Scan photos &amp; PDFs</strong> – read every barcode and QR code in a photo or PDF and add them to a count.</li>
-  <li><strong>Combined Excel</strong> – export several counts into one workbook, with totals per barcode across all counts.</li>
+  <li><strong>Scan photos &amp; PDFs (Pro)</strong> – read every barcode and QR code in a photo or PDF and add them to a count.</li>
+  <li><strong>Combined Excel (Pro)</strong> – export several counts into one workbook, with totals per barcode across all counts.</li>
   <li><strong>Search all counts</strong> – type or scan a barcode and see in which counts it appears, with quantities and locations.</li>
   <li><strong>Compare with expected stock</strong> – import your stock list (Excel or CSV) and see missing, extra and different quantities.</li>
   <li><strong>Batch label printing</strong> – print many barcodes or QR codes on A4 label sheets as a PDF.</li>
+  <li><strong>Product catalog</strong> – import your product list (Excel or CSV) and see product names and units instead of bare barcodes.</li>
+  <li><strong>Merge counts</strong> – combine counts from several phones into one count with total quantities.</li>
 </ul>
-<p class="small">Continuing an existing count, exporting and backups are always free and never need a video.</p>
+<p class="small">Continuing an existing count, your first three new counts each day and backups on your phone never need a video. BarcodeVault Pro is a monthly subscription with a 3-day free trial: no ads, exporting to Excel, CSV and PDF, image scanning and Google Drive backup.</p>
 </section>
 
 <h2 id="faq">Frequently asked questions</h2>
-<details><summary>Is BarcodeVault free?</summary><p>Yes. BarcodeVault is free and supported by ads, with no subscription. Three new counts every day are free. More new counts, image scanning, QR and barcode creation and the tools open for 1 hour after a short video. Continuing a count, exporting and backups are always free.</p></details>
-<details><summary>Does BarcodeVault work offline?</summary><p>Yes. Scanning, counting, exporting and backups work without an internet connection. Barcode recognition runs on the phone; the internet is only used for ads.</p></details>
+<details><summary>Is BarcodeVault free?</summary><p>Yes, BarcodeVault is free to download and supported by ads. Three new counts every day are free; more new counts, QR and barcode creation and the tools open for 1 hour after a short video. The optional BarcodeVault Pro subscription (monthly, with a 3-day free trial) removes all ads and adds exporting to Excel, CSV and PDF, image scanning and Google Drive backup.</p></details>
+<details><summary>Does BarcodeVault work offline?</summary><p>Yes. Scanning, counting, exporting and backups work without an internet connection. Barcode recognition runs on the phone; the internet is only used for ads, Pro purchases, app updates and the optional Google Drive backup.</p></details>
 <details><summary>Which barcode types can it read?</summary><p>22 types, including QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar and the GS1 DataBar family.</p></details>
-<details><summary>Can I export my inventory count to Excel?</summary><p>Yes. Every count can be exported to Excel (.xlsx), CSV or a printable PDF report, saved to your phone or shared. Leading zeros are kept and identical barcodes can be merged into one row with total quantities.</p></details>
-<details><summary>Where are my counts stored?</summary><p>Only on your device. There is no account and no cloud upload. Optional backup files can be encrypted with AES-256 and your own password.</p></details>
+<details><summary>Can I export my inventory count to Excel?</summary><p>Yes, with BarcodeVault Pro. Every count can be exported to Excel (.xlsx), CSV or a printable PDF report, saved to your phone or shared. Leading zeros are kept and identical barcodes can be merged into one row with total quantities.</p></details>
+<details><summary>Where are my counts stored?</summary><p>On your device. There is no account. Optional backup files can be encrypted with AES-256 and your own password, and with Pro a copy can be kept in your own Google Drive.</p></details>
 <details><summary>Can I compare a count with my stock list?</summary><p>Yes. Import your expected stock list as Excel or CSV and BarcodeVault shows missing items, extra items and different quantities.</p></details>
 <details><summary>Is BarcodeVault available for iPhone?</summary><p>No. BarcodeVault is an Android app for phones with Android 8.0 or later, available on Google Play.</p></details>
 

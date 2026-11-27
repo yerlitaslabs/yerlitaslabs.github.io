@@ -29,11 +29,11 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"MobileApplication","@id":"https://yerlitaslabs.github.io/barcodevault/#app","name":"BarcodeVault","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","image":"https://yerlitaslabs.github.io/barcodevault/icon.png","url":"https://yerlitaslabs.github.io/barcodevault/es/","downloadUrl":"https://play.google.com/store/apps/details?id=com.audio.barcodevault","inLanguage":["en","tr","de","fr","es"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"YerlitAS Labs","url":"https://yerlitaslabs.github.io/"}},
 {"@type":"FAQPage","inLanguage":"es","mainEntity":[
-{"@type":"Question","name":"¿BarcodeVault es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. BarcodeVault es gratis, se financia con anuncios y no tiene suscripción. Tres recuentos nuevos son gratis cada día. Los recuentos nuevos siguientes, el escaneo de imágenes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis."}},
-{"@type":"Question","name":"¿Funciona sin conexión?","acceptedAnswer":{"@type":"Answer","text":"Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios."}},
+{"@type":"Question","name":"¿BarcodeVault es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí, BarcodeVault se descarga gratis y se financia con anuncios. Tres recuentos nuevos son gratis cada día; los siguientes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. La suscripción opcional BarcodeVault Pro (mensual, con 3 días de prueba gratis) elimina todos los anuncios y añade la exportación a Excel, CSV y PDF, el escaneo de imágenes y la copia en Google Drive."}},
+{"@type":"Question","name":"¿Funciona sin conexión?","acceptedAnswer":{"@type":"Answer","text":"Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios, las compras de Pro, las actualizaciones y la copia opcional en Google Drive."}},
 {"@type":"Question","name":"¿Qué tipos de códigos de barras lee?","acceptedAnswer":{"@type":"Answer","text":"22 tipos, entre ellos QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar y la familia GS1 DataBar."}},
-{"@type":"Question","name":"¿Puedo exportar mi inventario a Excel?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total."}},
-{"@type":"Question","name":"¿Dónde se guardan mis datos?","acceptedAnswer":{"@type":"Answer","text":"Solo en tu dispositivo. No hay cuenta ni subida a la nube. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña."}},
+{"@type":"Question","name":"¿Puedo exportar mi inventario a Excel?","acceptedAnswer":{"@type":"Answer","text":"Sí, con BarcodeVault Pro. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total."}},
+{"@type":"Question","name":"¿Dónde se guardan mis datos?","acceptedAnswer":{"@type":"Answer","text":"En tu dispositivo. No hay cuenta. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña y, con Pro, puede guardarse una copia en tu propio Google Drive."}},
 {"@type":"Question","name":"¿Está disponible para iPhone?","acceptedAnswer":{"@type":"Answer","text":"No. BarcodeVault es una app para móviles con Android 8.0 o posterior, disponible en Google Play."}}
 ]}
 ]}
@@ -81,7 +81,7 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <nav class="lang" aria-label="Idioma"><a href="../" hreflang="en" lang="en">English</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="./" hreflang="es" aria-current="page">Español</a></nav>
 
-<p><strong>BarcodeVault es una app de inventario gratuita con escáner de códigos de barras para Android.</strong> Convierte tu móvil en un contador de stock rápido para almacenes, tiendas, trastiendas e inventarios en casa: escanea, cuenta y exporta tu inventario a Excel, CSV o PDF. El recuento funciona sin conexión y tus registros nunca salen de tu dispositivo.</p>
+<p><strong>BarcodeVault es una app de inventario gratuita con escáner de códigos de barras para Android.</strong> Convierte tu móvil en un contador de stock rápido para almacenes, tiendas, trastiendas e inventarios en casa: escanea, cuenta y exporta tu inventario a Excel, CSV o PDF. El recuento funciona sin conexión y tus registros se quedan en tu dispositivo.</p>
 
 <h2>Ideal para</h2>
 <ul class="uses">
@@ -93,39 +93,42 @@ details p { margin:8px 0 2px; color:var(--muted); }
 
 <div class="grid">
   <div class="card"><h3>Escanea y cuenta</h3><p>Escaneo continuo con sonido y vibración. Elige qué pasa con los códigos repetidos: sumar a la cantidad, avisar o añadir otra fila. Toca Terminar para guardar o compartir al momento.</p></div>
-  <div class="card"><h3>Excel, CSV y PDF</h3><p>Exporta cualquier recuento a Excel (.xlsx), CSV o un informe PDF listo para imprimir con un toque. Se conservan los ceros iniciales.</p></div>
+  <div class="card"><h3>Excel, CSV y PDF</h3><p>Exporta cualquier recuento a Excel (.xlsx), CSV o un informe PDF listo para imprimir con un toque. Se conservan los ceros iniciales. Incluido en BarcodeVault Pro.</p></div>
   <div class="card"><h3>Códigos QR y de barras</h3><p>Crea códigos QR para enlaces, Wi-Fi y contactos, o códigos EAN, UPC y Code 128. Guarda en PNG, JPG, PDF o SVG, o imprime.</p></div>
-  <div class="card"><h3>Fotos y PDF</h3><p>Lee todos los códigos de barras y QR de una foto de la galería o de un PDF y añádelos a un recuento.</p></div>
+  <div class="card"><h3>Fotos y PDF</h3><p>Lee todos los códigos de barras y QR de una foto de la galería o de un PDF y añádelos a un recuento. Incluido en Pro.</p></div>
   <div class="card"><h3>Copias y recordatorios</h3><p>Copias de seguridad automáticas diarias o semanales, cifrables con AES-256 y tu contraseña. Recordatorios opcionales de tus recuentos.</p></div>
-  <div class="card"><h3>Privacidad primero</h3><p>Sin cuenta. Recuentos, notas, fotos y copias se quedan en tu dispositivo. Gratis, con anuncios.</p></div>
+  <div class="card"><h3>Privacidad primero</h3><p>Sin cuenta. Recuentos, notas, fotos y copias se quedan en tu dispositivo; solo si activas la copia en Drive se guarda una copia en tu propio Google Drive. Gratis con anuncios, o sin anuncios con Pro.</p></div>
+  <div class="card"><h3>Lectores y unidades</h3><p>Usa la cámara, un lector Bluetooth o un terminal portátil (Zebra, Honeywell y más). Cuenta por unidad, caja, kg o litro, y cuenta una caja entera con un solo escaneo.</p></div>
 </div>
 
 <h2>Cómo hacer inventario con el móvil</h2>
 <ol class="steps">
   <li><strong>Crea un recuento</strong> y ponle nombre, por ejemplo «Tienda 1 – noviembre».</li>
   <li><strong>Escanea los códigos de barras</strong> con la cámara. Cada escaneo suma 1; escribe un número para cajas y añade una ubicación o una nota.</li>
-  <li><strong>Toca Terminar</strong> y exporta el recuento a Excel, CSV o PDF para tu gestoría o tu ERP.</li>
+  <li><strong>Toca Terminar</strong> y exporta el recuento con Pro a Excel, CSV o PDF para tu gestoría o tu ERP.</li>
 </ol>
 
 <section class="tools" id="tools">
-<h2>Herramientas gratuitas para inventarios grandes</h2>
-<p>Sin suscripción: todas las herramientas son gratis. Igual que la creación de códigos QR y de barras, cada una se desbloquea durante 1 hora con un vídeo corto.</p>
+<h2>Herramientas para inventarios grandes</h2>
+<p>Gratis con anuncios: igual que la creación de códigos QR y de barras, cada herramienta se desbloquea durante 1 hora con un vídeo corto. El escaneo de imágenes y el Excel combinado forman parte de BarcodeVault Pro, que abre todas las herramientas sin anuncios.</p>
 <ul class="tools-list">
-  <li><strong>Escaneo de fotos y PDF</strong> – lee todos los códigos de una foto o PDF y añádelos a un recuento.</li>
-  <li><strong>Excel combinado</strong> – varios recuentos en un libro, con totales por código de barras.</li>
+  <li><strong>Escaneo de fotos y PDF (Pro)</strong> – lee todos los códigos de una foto o PDF y añádelos a un recuento.</li>
+  <li><strong>Excel combinado (Pro)</strong> – varios recuentos en un libro, con totales por código de barras.</li>
   <li><strong>Búsqueda global</strong> – escribe o escanea un código y mira en qué recuentos aparece, con cantidades y ubicaciones.</li>
   <li><strong>Comparar con el stock esperado</strong> – importa tu lista (Excel o CSV) y ve faltantes, sobrantes y diferencias.</li>
   <li><strong>Impresión de etiquetas</strong> – imprime muchos códigos de barras o QR en hojas de etiquetas A4 en PDF.</li>
+  <li><strong>Catálogo de productos</strong> – importa tu lista de productos (Excel o CSV) y ve nombres y unidades en lugar de solo códigos.</li>
+  <li><strong>Combinar recuentos</strong> – une los recuentos de varios teléfonos en uno solo con las cantidades totales.</li>
 </ul>
-<p class="small">Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis y nunca requiere vídeo.</p>
+<p class="small">Continuar un recuento, los tres primeros recuentos nuevos de cada día y las copias en el teléfono nunca requieren vídeo. BarcodeVault Pro es una suscripción mensual con 3 días de prueba gratis: sin anuncios, exportación a Excel, CSV y PDF, escaneo de imágenes y copia en Google Drive.</p>
 </section>
 
 <h2 id="faq">Preguntas frecuentes</h2>
-<details><summary>¿BarcodeVault es gratis?</summary><p>Sí. BarcodeVault es gratis, se financia con anuncios y no tiene suscripción. Tres recuentos nuevos son gratis cada día. Los recuentos nuevos siguientes, el escaneo de imágenes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. Continuar un recuento, exportar y hacer copias de seguridad es siempre gratis.</p></details>
-<details><summary>¿Funciona sin conexión?</summary><p>Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios.</p></details>
+<details><summary>¿BarcodeVault es gratis?</summary><p>Sí, BarcodeVault se descarga gratis y se financia con anuncios. Tres recuentos nuevos son gratis cada día; los siguientes, la creación de códigos QR y de barras y las herramientas se desbloquean durante 1 hora tras un vídeo corto. La suscripción opcional BarcodeVault Pro (mensual, con 3 días de prueba gratis) elimina todos los anuncios y añade la exportación a Excel, CSV y PDF, el escaneo de imágenes y la copia en Google Drive.</p></details>
+<details><summary>¿Funciona sin conexión?</summary><p>Sí. El escaneo, el recuento, la exportación y las copias de seguridad funcionan sin internet. El reconocimiento de códigos se hace en el móvil; internet solo se usa para los anuncios, las compras de Pro, las actualizaciones y la copia opcional en Google Drive.</p></details>
 <details><summary>¿Qué tipos de códigos de barras lee?</summary><p>22 tipos, entre ellos QR Code, Micro QR, rMQR, Data Matrix, PDF417, Aztec, MaxiCode, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, ITF, Codabar y la familia GS1 DataBar.</p></details>
-<details><summary>¿Puedo exportar mi inventario a Excel?</summary><p>Sí. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total.</p></details>
-<details><summary>¿Dónde se guardan mis datos?</summary><p>Solo en tu dispositivo. No hay cuenta ni subida a la nube. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña.</p></details>
+<details><summary>¿Puedo exportar mi inventario a Excel?</summary><p>Sí, con BarcodeVault Pro. Cada recuento se puede guardar o compartir como Excel (.xlsx), CSV o informe PDF imprimible. Se conservan los ceros iniciales y los códigos iguales pueden unirse en una fila con la cantidad total.</p></details>
+<details><summary>¿Dónde se guardan mis datos?</summary><p>En tu dispositivo. No hay cuenta. Las copias de seguridad pueden cifrarse con AES-256 y tu propia contraseña y, con Pro, puede guardarse una copia en tu propio Google Drive.</p></details>
 <details><summary>¿Está disponible para iPhone?</summary><p>No. BarcodeVault es una app para móviles con Android 8.0 o posterior, disponible en Google Play.</p></details>
 
 <p><a class="badge" href="https://play.google.com/store/apps/details?id=com.audio.barcodevault&amp;hl=es&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dbadge%26utm_campaign%3Dbarcodevault_es"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="207" height="80"></a></p>
